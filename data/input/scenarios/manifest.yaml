@@ -1,20 +1,20 @@
 bundle_id: masc_case_study_3x3
 generated_on: '2026-02-28'
 scenarios:
-- scenario_id: k_18
-  path: data/input/scenarios/k_18
+- scenario_id: ka_18
+  path: data/input/scenarios/ka_18
   num_days: 112
   machine_count: 12
   block_count: 18
   landing_count: 18
-- scenario_id: k_40
-  path: data/input/scenarios/k_40
+- scenario_id: ka_40
+  path: data/input/scenarios/ka_40
   num_days: 112
   machine_count: 24
   block_count: 40
   landing_count: 40
-- scenario_id: k_6
-  path: data/input/scenarios/k_6
+- scenario_id: ka_6
+  path: data/input/scenarios/ka_6
   num_days: 112
   machine_count: 6
   block_count: 6

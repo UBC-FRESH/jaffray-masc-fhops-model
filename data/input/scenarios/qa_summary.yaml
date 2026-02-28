@@ -1,11 +1,11 @@
 generated_on: '2026-02-28'
 scenarios:
-- scenario_id: k_18
-  qa_summary: k_18/qa_summary.yaml
-- scenario_id: k_40
-  qa_summary: k_40/qa_summary.yaml
-- scenario_id: k_6
-  qa_summary: k_6/qa_summary.yaml
+- scenario_id: ka_18
+  qa_summary: ka_18/qa_summary.yaml
+- scenario_id: ka_40
+  qa_summary: ka_40/qa_summary.yaml
+- scenario_id: ka_6
+  qa_summary: ka_6/qa_summary.yaml
 - scenario_id: ni_18
   qa_summary: ni_18/qa_summary.yaml
 - scenario_id: ni_40

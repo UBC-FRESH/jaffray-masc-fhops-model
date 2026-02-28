@@ -1,10 +1,10 @@
 # MASc Modelling Paper — Scenario Bundle Notes
 
 ## Status
-- Active (Phase 1 intake and alignment)
+- Active (Phase 4 generation and QA)
 
 ## Decisions
-- Study-area labels: `k` (Kamloops), `ni` (North Island), `pg` (Prince George).
+- Study-area labels: `ka` (Kamloops), `ni` (North Island), `pg` (Prince George).
 - Scenario naming: `<area>_<size>` where size is `6`, `18`, `40`.
 - Output layout: `data/input/scenarios/<area>_<size>/`.
 - Manifests: one per scenario plus a parent manifest for the 3×3 bundle.
@@ -13,7 +13,7 @@
 - Planning horizon: `num_days = 112` (16 weeks) for all nine scenarios.
 
 ## Inventory (blocks.csv)
-- `k_6`, `k_18`, `k_40` present with 6/18/40 rows respectively.
+- `ka_6`, `ka_18`, `ka_40` present with 6/18/40 rows respectively.
 - `ni_6`, `ni_18`, `ni_40` present with 6/18/40 rows respectively.
 - `pg_6`, `pg_18`, `pg_40` present with 6/18/40 rows respectively.
 - All nine `blocks.csv` files share the same 7 columns:
@@ -78,11 +78,13 @@
 - SA runs executed with reduced iteration budgets to confirm solver execution; outputs stored in
   `data/output/solver_sweeps/*_sa.csv`.
 - Iteration budgets used:
-  - Size 6: `k_6` (500 iters), `ni_6` (100), `pg_6` (100).
-  - Size 18: `k_18` (800), `ni_18` (50), `pg_18` (50).
-  - Size 40: `k_40` (20), `ni_40` (10), `pg_40` (10).
-- MIP smoke test on `k_6` failed with HiGHS (no feasible solution found within the 60s limit);
+  - Size 6: `ka_6` (500 iters), `ni_6` (100), `pg_6` (100).
+  - Size 18: `ka_18` (800), `ni_18` (50), `pg_18` (50).
+  - Size 40: `ka_40` (20), `ni_40` (10), `pg_40` (10).
+- MIP smoke test on `ka_6` failed with HiGHS (no feasible solution found within the 60s limit);
   needs follow-up (driver/limits/feasibility checks).
+- KPI check against SA outputs shows full completion for `ka_6`, `ka_18`, `ka_40`, and `pg_6`;
+  the remaining scenarios still have nonzero `remaining_work_total` under the reduced budgets.
 
 ## Assumptions to document in manifests
 - All nine scenarios are compiled with consistent input schemas and parameter

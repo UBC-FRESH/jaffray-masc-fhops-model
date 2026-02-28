@@ -1,17 +1,17 @@
 # FHOPS MASc Modelling Paper Roadmap
 
-- [ ] Phase 1 — Intake, alignment, and requirements
-  - [ ] Task 1.1 — Confirm scope and datasets
+- [x] Phase 1 — Intake, alignment, and requirements
+  - [x] Task 1.1 — Confirm scope and datasets
     - [x] Subtask 1.1.1 — Confirm the 3 study areas and 3 size tiers (S/M/L)
     - [x] Subtask 1.1.2 — Inventory existing `blocks.csv` inputs per scenario
     - [x] Subtask 1.1.3 — Define naming conventions for scenarios and outputs
-  - [ ] Task 1.2 — FHOPS data contract review
+  - [x] Task 1.2 — FHOPS data contract review
     - [x] Subtask 1.2.1 — Identify required input files and schema fields
     - [x] Subtask 1.2.2 — Map each required input to available or synthetic sources
     - [x] Subtask 1.2.3 — Document any missing or ambiguous requirements
-  - [ ] Task 1.3 — Reproducibility plan
-    - [ ] Subtask 1.3.1 — Decide script entry points and config format
-    - [ ] Subtask 1.3.2 — Define scenario manifests and metadata schema
+  - [x] Task 1.3 — Reproducibility plan
+    - [x] Subtask 1.3.1 — Decide script entry points and config format
+    - [x] Subtask 1.3.2 — Define scenario manifests and metadata schema
 
 - [ ] Phase 2 — Dataset synthesis design
   - [ ] Task 2.1 — Assess FHOPS synthesis tooling
@@ -26,17 +26,17 @@
     - [ ] Subtask 2.3.1 — Specify FHOPS validation checks per input file
     - [ ] Subtask 2.3.2 — Define acceptance criteria for each scenario tier
 
-- [ ] Phase 3 — Implement synthesis pipeline
-  - [ ] Task 3.1 — Build reproducible generators
+- [x] Phase 3 — Implement synthesis pipeline
+  - [x] Task 3.1 — Build reproducible generators
     - [x] Subtask 3.1.1 — Implement config-driven generators for missing inputs
     - [x] Subtask 3.1.2 — Create scenario manifest writer (metadata + provenance)
     - [x] Subtask 3.1.3 — Add deterministic seeds and logging
-  - [ ] Task 3.2 — Integrate FHOPS validation
+  - [x] Task 3.2 — Integrate FHOPS validation
     - [x] Subtask 3.2.1 — Add loader/validator checks for generated datasets
     - [x] Subtask 3.2.2 — Capture QA summaries (row counts, ranges, constraints)
 
 - [ ] Phase 4 — Generate nine scenarios and QA
-  - [ ] Task 4.1 — Generate scenario inputs
+  - [x] Task 4.1 — Generate scenario inputs
     - [x] Subtask 4.1.1 — Produce S/M/L datasets for each study area
     - [x] Subtask 4.1.2 — Store outputs in versioned, scenario-specific folders
   - [ ] Task 4.2 — Validate and smoke test

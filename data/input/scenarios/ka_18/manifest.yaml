@@ -1,11 +1,11 @@
-scenario_id: k_18
-area: k
+scenario_id: ka_18
+area: ka
 size: '18'
 num_days: 112
 machine_count: 12
 landing_capacity: 2
 daily_hours: 24.0
-blocks_source: data/input/blocks/K_18/blocks.csv
+blocks_source: data/input/blocks/KA_18/blocks.csv
 generated_on: '2026-02-28'
 totals:
   total_work_required: 71386.13414781365

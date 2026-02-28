@@ -1,11 +1,11 @@
-scenario_id: k_6
-area: k
+scenario_id: ka_6
+area: ka
 size: '6'
 num_days: 112
 machine_count: 6
 landing_capacity: 2
 daily_hours: 24.0
-blocks_source: data/input/blocks/K_6/blocks.csv
+blocks_source: data/input/blocks/KA_6/blocks.csv
 generated_on: '2026-02-28'
 totals:
   total_work_required: 30913.355595202192
