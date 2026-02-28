@@ -1,0 +1,55 @@
+scenario_id: ni_6
+counts:
+  blocks: 6
+  machines: 6
+  landings: 6
+  calendar_rows: 672
+  prod_rate_rows: 36
+block_metrics:
+  work_required:
+    min: 2857.880527
+    max: 125689.602179
+    mean: 53848.44061683333
+  ground_slope_percent:
+    min: 34.099469
+    max: 49.385767
+    mean: 43.63474216666666
+  volume_per_ha_m3:
+    min: 129.096
+    max: 595.878333
+    mean: 366.086107
+  stem_density_per_ha:
+    min: 263.25
+    max: 1191.857143
+    mean: 684.9025793333334
+  avg_stem_size_m3:
+    min: 0.18764
+    max: 1.374589
+    mean: 0.6591721666666667
+machine_roles:
+  feller_buncher: 2
+  grapple_skidder: 2
+  processor: 1
+  loader: 1
+production_rates:
+  feller_buncher:
+    min: 205.02123
+    max: 2729.691194
+    mean: 1317.7341393333334
+  grapple_skidder:
+    min: 406.765774
+    max: 1088.676319
+    mean: 607.5367296666667
+  processor:
+    min: 388.994246
+    max: 1288.521448
+    mean: 746.3442433333333
+  loader:
+    min: 658.0
+    max: 658.0
+    mean: 658.0
+rate_floor_count:
+  feller_buncher: 0
+  grapple_skidder: 0
+  processor: 0
+  loader: 0

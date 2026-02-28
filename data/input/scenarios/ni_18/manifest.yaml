@@ -1,0 +1,26 @@
+scenario_id: ni_18
+area: ni
+size: '18'
+num_days: 112
+machine_count: 12
+landing_capacity: 2
+daily_hours: 24.0
+blocks_source: data/input/blocks/NI_18/blocks.csv
+generated_on: '2026-02-28'
+totals:
+  total_work_required: 755749.6353762257
+assumptions:
+  landing_per_block: true
+  harvest_system_id: ground_fb_loader_liveheel
+  objective_weights:
+    production: 1.0
+    mobilisation: 0.5
+  shift_schedule:
+    shifts_per_day: 3
+    hours_per_shift: 8.0
+    days_per_week: 7
+  loader_productivity_model: barko450_ground_skid_block
+  feller_buncher_productivity_model: lahrsen_2025_daily
+  skidder_productivity_model: adv6n7
+  processor_productivity_model: berry_2019
+  slope_fallback: median_of_scenario_blocks

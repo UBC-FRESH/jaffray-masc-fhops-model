@@ -1,0 +1,25 @@
+name: MASc NI 6 blocks
+num_days: 112
+schema_version: 1.0.0
+data:
+  blocks: data/blocks.csv
+  machines: data/machines.csv
+  landings: data/landings.csv
+  calendar: data/calendar.csv
+  prod_rates: data/prod_rates.csv
+timeline:
+  shifts:
+  - name: S1
+    hours: 8.0
+    shifts_per_day: 1
+  - name: S2
+    hours: 8.0
+    shifts_per_day: 1
+  - name: S3
+    hours: 8.0
+    shifts_per_day: 1
+  blackouts: []
+  days_per_week: 7
+objective_weights:
+  production: 1.0
+  mobilisation: 0.5

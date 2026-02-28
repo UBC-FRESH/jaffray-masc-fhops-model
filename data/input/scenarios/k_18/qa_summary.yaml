@@ -1,0 +1,55 @@
+scenario_id: k_18
+counts:
+  blocks: 18
+  machines: 12
+  landings: 18
+  calendar_rows: 1344
+  prod_rate_rows: 216
+block_metrics:
+  work_required:
+    min: 314.022971
+    max: 12848.447326
+    mean: 3965.8963415000003
+  ground_slope_percent:
+    min: 5.343298
+    max: 25.745673
+    mean: 15.776524555555556
+  volume_per_ha_m3:
+    min: 11.2635
+    max: 242.788333
+    mean: 107.47330461111112
+  stem_density_per_ha:
+    min: 100.652174
+    max: 1377.0
+    mean: 546.9938637777777
+  avg_stem_size_m3:
+    min: 0.015742
+    max: 0.603797
+    mean: 0.24139827777777778
+machine_roles:
+  feller_buncher: 3
+  grapple_skidder: 3
+  processor: 3
+  loader: 3
+production_rates:
+  feller_buncher:
+    min: 69.83639
+    max: 1279.798529
+    mean: 534.7500508333333
+  grapple_skidder:
+    min: 431.280297
+    max: 1130.354574
+    mean: 601.3704228888889
+  processor:
+    min: 258.722148
+    max: 704.378343
+    mean: 429.7352335
+  loader:
+    min: 658.0
+    max: 658.0
+    mean: 658.0
+rate_floor_count:
+  feller_buncher: 0
+  grapple_skidder: 0
+  processor: 0
+  loader: 0

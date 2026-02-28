@@ -1,0 +1,7 @@
+id,landing_id,harvest_system_id,work_required,earliest_start,latest_finish,avg_stem_size_m3,volume_per_ha_m3,stem_density_per_ha,ground_slope_percent,volume_per_ha_m3_sigma,stem_density_per_ha_sigma
+B74735,L01,ground_fb_loader_liveheel,5077.390142,1,112,0.231838,97.256,419.5,22.744451,19.4512,83.9
+B76319,L02,ground_fb_loader_liveheel,6535.0352,1,112,0.084651,44.855889,529.888889,15.410471,8.971178,105.977778
+B76352,L03,ground_fb_loader_liveheel,5605.581074,1,112,0.10188,42.876091,420.848485,14.361759,8.575218,84.169697
+B77252,L04,ground_fb_loader_liveheel,532.878882,1,112,0.015742,11.2635,715.5,14.16372,2.2527,143.1
+B77300,L05,ground_fb_loader_liveheel,314.022971,1,112,0.32697,76.184,233.0,50.2367,15.2368,46.6
+B77363,L06,ground_fb_loader_liveheel,12848.447326,1,112,0.603797,240.915,399.0,10.13616,48.183,79.8
