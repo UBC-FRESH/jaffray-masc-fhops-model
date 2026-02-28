@@ -76,6 +76,7 @@ PY`
 - Normalised manifest `blocks_source` paths to be repo-relative.
 - Added QA summary outputs and shift-timeline defaults (3×8h, 7 days/week) to the generator.
 - Updated requirements for generator/runtime dependencies.
+- Chunked commits, attempted push (pending credentials), and ran solver sweep smoke tests (SA).
 - Documented generator usage and outputs in README and scenario notes.
 
 Commands:
@@ -278,4 +279,141 @@ PY`
 - `head -n 20 /home/gep/projects/jaffray-masc-fhops-model/data/input/scenarios/k_6/scenario.yaml`
 - `head -n 20 /home/gep/projects/jaffray-masc-fhops-model/data/input/scenarios/k_6/qa_summary.yaml`
 - `head -n 20 /home/gep/projects/jaffray-masc-fhops-model/data/input/scenarios/qa_summary.yaml`
+- `git -C /home/gep/projects/jaffray-masc-fhops-model status --short`
+- `git -C /home/gep/projects/jaffray-masc-fhops-model config user.name "Codex"`
+- `git -C /home/gep/projects/jaffray-masc-fhops-model config user.email "codex@openai.com"`
+- `git -C /home/gep/projects/jaffray-masc-fhops-model add .gitignore`
+- `git -C /home/gep/projects/jaffray-masc-fhops-model commit -m "Add local venv ignore"`
+- `git -C /home/gep/projects/jaffray-masc-fhops-model add -A data/blocks data/input/blocks`
+- `git -C /home/gep/projects/jaffray-masc-fhops-model commit -m "Move blocks inputs under data/input/blocks"`
+- `git -C /home/gep/projects/jaffray-masc-fhops-model add AGENTS.md ROADMAP.md reference`
+- `git -C /home/gep/projects/jaffray-masc-fhops-model commit -m "Add MASc governance docs and references"`
+- `git -C /home/gep/projects/jaffray-masc-fhops-model add README.md requirements.txt scripts notes`
+- `git -C /home/gep/projects/jaffray-masc-fhops-model commit -m "Add scenario generator and planning notes"`
+- `git -C /home/gep/projects/jaffray-masc-fhops-model add data/input/scenarios`
+- `git -C /home/gep/projects/jaffray-masc-fhops-model commit -m "Add generated FHOPS scenario bundles"`
+- `git -C /home/gep/projects/jaffray-masc-fhops-model add CHANGE_LOG.md`
+- `git -C /home/gep/projects/jaffray-masc-fhops-model commit -m "Add change log"`
+- `git -C /home/gep/projects/jaffray-masc-fhops-model remote -v`
+- `git -C /home/gep/projects/jaffray-masc-fhops-model push origin main`
+- `PYTHONPATH=/home/gep/projects/fhops/src /home/gep/projects/jaffray-masc-fhops-model/.venv/bin/python -m fhops.cli.main --help`
+- `PYTHONPATH=/home/gep/projects/fhops/src /home/gep/projects/jaffray-masc-fhops-model/.venv/bin/python -m fhops.cli.main solve-mip --help`
+- `PYTHONPATH=/home/gep/projects/fhops/src /home/gep/projects/jaffray-masc-fhops-model/.venv/bin/python -m fhops.cli.main solve-heur --help`
+- `mkdir -p /home/gep/projects/jaffray-masc-fhops-model/data/output/solver_sweeps`
+- `PYTHONPATH=/home/gep/projects/fhops/src /home/gep/projects/jaffray-masc-fhops-model/.venv/bin/python -m fhops.cli.main solve-mip data/input/scenarios/k_6/scenario.yaml --out data/output/solver_sweeps/k_6_mip.csv --time-limit 60`
+- `PYTHONPATH=/home/gep/projects/fhops/src /home/gep/projects/jaffray-masc-fhops-model/.venv/bin/python -m fhops.cli.main solve-heur data/input/scenarios/k_6/scenario.yaml --out data/output/solver_sweeps/k_6_sa.csv --iters 500 --seed 42 --kpi-mode basic`
+- `PYTHONPATH=/home/gep/projects/fhops/src /home/gep/projects/jaffray-masc-fhops-model/.venv/bin/python - <<'PY'
+from pathlib import Path
+import subprocess
+import sys
+import os
+
+base = Path('/home/gep/projects/jaffray-masc-fhops-model/data/input/scenarios')
+out_dir = Path('/home/gep/projects/jaffray-masc-fhops-model/data/output/solver_sweeps')
+out_dir.mkdir(parents=True, exist_ok=True)
+
+python = '/home/gep/projects/jaffray-masc-fhops-model/.venv/bin/python'
+module = 'fhops.cli.main'
+
+sizes_iters = {
+    '6': 500,
+    '18': 800,
+    '40': 400,
+}
+
+failures = []
+for scenario_path in sorted(base.glob('*/scenario.yaml')):
+    scenario_id = scenario_path.parent.name
+    size = scenario_id.split('_')[-1]
+    iters = sizes_iters.get(size, 500)
+    out_path = out_dir / f\"{scenario_id}_sa.csv\"
+    cmd = [
+        python, '-m', module, 'solve-heur',
+        str(scenario_path),
+        '--out', str(out_path),
+        '--iters', str(iters),
+        '--seed', '42',
+        '--kpi-mode', 'basic',
+    ]
+    print(f\"\\n=== {scenario_id} (iters={iters}) ===\")
+    result = subprocess.run(
+        cmd,
+        env={**os.environ, 'PYTHONPATH': '/home/gep/projects/fhops/src'},
+        cwd='/home/gep/projects/jaffray-masc-fhops-model',
+        text=True,
+        capture_output=True,
+    )
+    print(result.stdout)
+    if result.returncode != 0:
+        print(result.stderr)
+        failures.append((scenario_id, result.returncode))
+
+if failures:
+    sys.exit(f\"Failures: {failures}\")
+PY`
+- `PYTHONPATH=/home/gep/projects/fhops/src /home/gep/projects/jaffray-masc-fhops-model/.venv/bin/python - <<'PY'
+from pathlib import Path
+import subprocess
+import sys
+import os
+
+base = Path('/home/gep/projects/jaffray-masc-fhops-model/data/input/scenarios')
+out_dir = Path('/home/gep/projects/jaffray-masc-fhops-model/data/output/solver_sweeps')
+out_dir.mkdir(parents=True, exist_ok=True)
+
+python = '/home/gep/projects/jaffray-masc-fhops-model/.venv/bin/python'
+module = 'fhops.cli.main'
+
+sizes_iters = {
+    '6': 500,
+    '18': 800,
+    '40': 400,
+}
+
+failures = []
+for scenario_path in sorted(base.glob('*/scenario.yaml')):
+    scenario_id = scenario_path.parent.name
+    size = scenario_id.split('_')[-1]
+    iters = sizes_iters.get(size, 500)
+    out_path = out_dir / f\"{scenario_id}_sa.csv\"
+    if out_path.exists():
+        print(f\"Skipping {scenario_id}; output exists\")
+        continue
+    cmd = [
+        python, '-m', module, 'solve-heur',
+        str(scenario_path),
+        '--out', str(out_path),
+        '--iters', str(iters),
+        '--seed', '42',
+        '--kpi-mode', 'basic',
+    ]
+    print(f\"\\n=== {scenario_id} (iters={iters}) ===\")
+    result = subprocess.run(
+        cmd,
+        env={**os.environ, 'PYTHONPATH': '/home/gep/projects/fhops/src'},
+        cwd='/home/gep/projects/jaffray-masc-fhops-model',
+        text=True,
+        capture_output=True,
+    )
+    print(result.stdout)
+    if result.returncode != 0:
+        print(result.stderr)
+        failures.append((scenario_id, result.returncode))
+
+if failures:
+    sys.exit(f\"Failures: {failures}\")
+PY`
+- `PYTHONPATH=/home/gep/projects/fhops/src /home/gep/projects/jaffray-masc-fhops-model/.venv/bin/python -m fhops.cli.main solve-heur data/input/scenarios/k_40/scenario.yaml --out data/output/solver_sweeps/k_40_sa.csv --iters 200 --seed 42 --kpi-mode basic`
+- `PYTHONPATH=/home/gep/projects/fhops/src /home/gep/projects/jaffray-masc-fhops-model/.venv/bin/python -m fhops.cli.main solve-heur data/input/scenarios/k_40/scenario.yaml --out data/output/solver_sweeps/k_40_sa.csv --iters 50 --seed 42 --kpi-mode basic`
+- `PYTHONPATH=/home/gep/projects/fhops/src /home/gep/projects/jaffray-masc-fhops-model/.venv/bin/python -m fhops.cli.main solve-heur data/input/scenarios/ni_6/scenario.yaml --out data/output/solver_sweeps/ni_6_sa.csv --iters 500 --seed 42 --kpi-mode basic`
+- `PYTHONPATH=/home/gep/projects/fhops/src /home/gep/projects/jaffray-masc-fhops-model/.venv/bin/python -m fhops.cli.main solve-heur data/input/scenarios/ni_6/scenario.yaml --out data/output/solver_sweeps/ni_6_sa.csv --iters 100 --seed 42 --kpi-mode basic`
+- `PYTHONPATH=/home/gep/projects/fhops/src /home/gep/projects/jaffray-masc-fhops-model/.venv/bin/python -m fhops.cli.main solve-heur data/input/scenarios/pg_6/scenario.yaml --out data/output/solver_sweeps/pg_6_sa.csv --iters 100 --seed 42 --kpi-mode basic`
+- `PYTHONPATH=/home/gep/projects/fhops/src /home/gep/projects/jaffray-masc-fhops-model/.venv/bin/python -m fhops.cli.main solve-heur data/input/scenarios/ni_18/scenario.yaml --out data/output/solver_sweeps/ni_18_sa.csv --iters 200 --seed 42 --kpi-mode basic`
+- `PYTHONPATH=/home/gep/projects/fhops/src /home/gep/projects/jaffray-masc-fhops-model/.venv/bin/python -m fhops.cli.main solve-heur data/input/scenarios/ni_18/scenario.yaml --out data/output/solver_sweeps/ni_18_sa.csv --iters 50 --seed 42 --kpi-mode basic`
+- `PYTHONPATH=/home/gep/projects/fhops/src /home/gep/projects/jaffray-masc-fhops-model/.venv/bin/python -m fhops.cli.main solve-heur data/input/scenarios/pg_18/scenario.yaml --out data/output/solver_sweeps/pg_18_sa.csv --iters 50 --seed 42 --kpi-mode basic`
+- `PYTHONPATH=/home/gep/projects/fhops/src /home/gep/projects/jaffray-masc-fhops-model/.venv/bin/python -m fhops.cli.main solve-heur data/input/scenarios/k_40/scenario.yaml --out data/output/solver_sweeps/k_40_sa.csv --iters 20 --seed 42 --kpi-mode basic`
+- `PYTHONPATH=/home/gep/projects/fhops/src /home/gep/projects/jaffray-masc-fhops-model/.venv/bin/python -m fhops.cli.main solve-heur data/input/scenarios/ni_40/scenario.yaml --out data/output/solver_sweeps/ni_40_sa.csv --iters 20 --seed 42 --kpi-mode basic`
+- `PYTHONPATH=/home/gep/projects/fhops/src /home/gep/projects/jaffray-masc-fhops-model/.venv/bin/python -m fhops.cli.main solve-heur data/input/scenarios/ni_40/scenario.yaml --out data/output/solver_sweeps/ni_40_sa.csv --iters 10 --seed 42 --kpi-mode basic`
+- `PYTHONPATH=/home/gep/projects/fhops/src /home/gep/projects/jaffray-masc-fhops-model/.venv/bin/python -m fhops.cli.main solve-heur data/input/scenarios/pg_40/scenario.yaml --out data/output/solver_sweeps/pg_40_sa.csv --iters 10 --seed 42 --kpi-mode basic`
+- `ls /home/gep/projects/jaffray-masc-fhops-model/data/output/solver_sweeps`
 - `python scripts/generate_case_study_inputs.py --validate`

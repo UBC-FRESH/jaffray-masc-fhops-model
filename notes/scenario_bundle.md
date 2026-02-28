@@ -74,6 +74,16 @@
 - Missing slopes are replaced with the scenario median.
 - QA summaries are written per scenario (`qa_summary.yaml`) and bundled in `data/input/scenarios/qa_summary.yaml`.
 
+## Solver sweep smoke tests (2026-02-28)
+- SA runs executed with reduced iteration budgets to confirm solver execution; outputs stored in
+  `data/output/solver_sweeps/*_sa.csv`.
+- Iteration budgets used:
+  - Size 6: `k_6` (500 iters), `ni_6` (100), `pg_6` (100).
+  - Size 18: `k_18` (800), `ni_18` (50), `pg_18` (50).
+  - Size 40: `k_40` (20), `ni_40` (10), `pg_40` (10).
+- MIP smoke test on `k_6` failed with HiGHS (no feasible solution found within the 60s limit);
+  needs follow-up (driver/limits/feasibility checks).
+
 ## Assumptions to document in manifests
 - All nine scenarios are compiled with consistent input schemas and parameter
   defaults.
