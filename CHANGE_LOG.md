@@ -637,3 +637,4 @@ PY`
 - `git status -sb`
 - `head -n 5 data/input/scenarios/ka_6/scenario.yaml && echo '---' && head -n 5 data/input/scenarios/ka_40/scenario.yaml`
 - `git add CHANGE_LOG.md README.md ROADMAP.md notes/scenario_bundle.md`
+- `git commit -m "Rename Kamloops prefix to ka"`
