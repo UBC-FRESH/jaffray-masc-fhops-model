@@ -19,6 +19,9 @@ Commands:
 - `git commit -m "Add rolling experiment analysis scripts"`
 - `git add .gitignore`
 - `git commit -m "Ignore generated experiment outputs"`
+- `git add CHANGE_LOG.md`
+- `git commit -m "Update change log for cleanup"`
+- `git commit -m "Update change log commands"`
 
 ## 2026-02-27
 - Added MASc modelling paper execution contract and project roadmap.
