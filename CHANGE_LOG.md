@@ -26,6 +26,7 @@ Commands:
 - `git checkout main`
 - `git merge feature/repo-cleanup`
 - `git push origin main`
+  - Push failed: missing GitHub credentials on this environment.
 - `git add CHANGE_LOG.md`
 - `git commit -m "Update change log for cleanup"`
 - `git commit -m "Update change log commands"`
