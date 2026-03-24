@@ -51,3 +51,17 @@
   - [ ] Task 5.2 — Handoff package
     - [ ] Subtask 5.2.1 — Create a final manifest list for the nine scenarios
     - [ ] Subtask 5.2.2 — Summarize assumptions, limitations, and open questions
+
+- [ ] Phase 6 — Repo cleanup and commit hygiene
+  - [x] Task 6.1 — Audit working tree and classify artifacts
+    - [x] Subtask 6.1.1 — Inventory untracked outputs, scripts, and logs
+    - [x] Subtask 6.1.2 — Identify generated vs source files for commit grouping
+  - [ ] Task 6.2 — Normalize experiment tooling and paths
+    - [x] Subtask 6.2.1 — Replace absolute paths with repo-relative paths
+    - [x] Subtask 6.2.2 — Ensure scripts write outputs to canonical folders
+  - [ ] Task 6.3 — Repository hygiene
+    - [x] Subtask 6.3.1 — Define ignores for reproducible/generated outputs
+    - [ ] Subtask 6.3.2 — Decide which outputs belong in version control
+  - [ ] Task 6.4 — Commit sequencing and merge
+    - [ ] Subtask 6.4.1 — Chunk changes into related commits
+    - [ ] Subtask 6.4.2 — Merge cleanup branch back to main and push
