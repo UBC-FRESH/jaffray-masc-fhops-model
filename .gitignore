@@ -1,1 +1,13 @@
 .venv/
+tmp/
+
+# Experiment outputs (keep solver_sweeps tracked)
+data/output/*
+!data/output/solver_sweeps/
+!data/output/solver_sweeps/*.csv
+
+# Root-level generated artifacts
+/experiments_full.csv
+/experiments_short.csv
+/objective_solver_status_runtime.csv
+/rolling_summary_clean.csv
