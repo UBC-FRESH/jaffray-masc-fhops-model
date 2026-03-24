@@ -61,7 +61,7 @@
     - [x] Subtask 6.2.2 — Ensure scripts write outputs to canonical folders
   - [ ] Task 6.3 — Repository hygiene
     - [x] Subtask 6.3.1 — Define ignores for reproducible/generated outputs
-    - [ ] Subtask 6.3.2 — Decide which outputs belong in version control
+    - [x] Subtask 6.3.2 — Decide which outputs belong in version control
   - [ ] Task 6.4 — Commit sequencing and merge
-    - [ ] Subtask 6.4.1 — Chunk changes into related commits
+    - [x] Subtask 6.4.1 — Chunk changes into related commits
     - [ ] Subtask 6.4.2 — Merge cleanup branch back to main and push

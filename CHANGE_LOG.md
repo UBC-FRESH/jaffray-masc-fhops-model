@@ -23,6 +23,9 @@ Commands:
 - `apply_patch (remove experiment/output ignores from .gitignore)`
 - `git add -A`
 - `git commit -m "Commit experiment outputs and cleanup artifacts"`
+- `git checkout main`
+- `git merge feature/repo-cleanup`
+- `git push origin main`
 - `git add CHANGE_LOG.md`
 - `git commit -m "Update change log for cleanup"`
 - `git commit -m "Update change log commands"`
