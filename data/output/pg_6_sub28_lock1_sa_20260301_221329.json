@@ -1,0 +1,294 @@
+{
+  "iterations": [
+    {
+      "iteration_index": 0,
+      "start_day": 1,
+      "horizon_days": 28,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": 11413.260361999997,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 1,
+      "start_day": 2,
+      "horizon_days": 27,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": 7781.260361999997,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 2,
+      "start_day": 3,
+      "horizon_days": 26,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": 3400.4388199999885,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 3,
+      "start_day": 4,
+      "horizon_days": 25,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": 2768.4388199999958,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 4,
+      "start_day": 5,
+      "horizon_days": 24,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": 2136.4388199999958,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 5,
+      "start_day": 6,
+      "horizon_days": 23,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -495.56118000000424,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 6,
+      "start_day": 7,
+      "horizon_days": 22,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -4378.739638000006,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 7,
+      "start_day": 8,
+      "horizon_days": 21,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -6282.670106000001,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 8,
+      "start_day": 9,
+      "horizon_days": 20,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -9958.739638000006,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 9,
+      "start_day": 10,
+      "horizon_days": 19,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -12274.739638000006,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 10,
+      "start_day": 11,
+      "horizon_days": 18,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -15222.739638000006,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 11,
+      "start_day": 12,
+      "horizon_days": 17,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -18854.739638000006,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 12,
+      "start_day": 13,
+      "horizon_days": 16,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -21863.962900000006,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 13,
+      "start_day": 14,
+      "horizon_days": 15,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -25811.962900000006,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 14,
+      "start_day": 15,
+      "horizon_days": 14,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -27654.670106,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 15,
+      "start_day": 16,
+      "horizon_days": 13,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -30488.032432000004,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 16,
+      "start_day": 17,
+      "horizon_days": 12,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -35023.962900000006,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 17,
+      "start_day": 18,
+      "horizon_days": 11,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -39498.670106000005,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 18,
+      "start_day": 19,
+      "horizon_days": 10,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -42919.962900000006,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 19,
+      "start_day": 20,
+      "horizon_days": 9,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -45551.962900000006,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 20,
+      "start_day": 21,
+      "horizon_days": 8,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -49499.962900000006,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 21,
+      "start_day": 22,
+      "horizon_days": 7,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -52131.962900000006,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 22,
+      "start_day": 23,
+      "horizon_days": 6,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -56079.962900000006,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 23,
+      "start_day": 24,
+      "horizon_days": 5,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -60027.962900000006,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 24,
+      "start_day": 25,
+      "horizon_days": 4,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -63975.9629,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 25,
+      "start_day": 26,
+      "horizon_days": 3,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -67923.9629,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 26,
+      "start_day": 27,
+      "horizon_days": 2,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -67923.9629,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 27,
+      "start_day": 28,
+      "horizon_days": 1,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": -67923.9629,
+      "runtime_s": null,
+      "warnings": []
+    }
+  ],
+  "total_locked_assignments": 168,
+  "metadata": {
+    "scenario": "MASc PG 6 blocks",
+    "master_days": 28,
+    "subproblem_days": 28,
+    "lock_days": 1,
+    "start_day": 1,
+    "solver": "sa"
+  },
+  "warnings": []
+}

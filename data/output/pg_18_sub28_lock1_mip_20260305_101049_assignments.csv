@@ -1,0 +1,17 @@
+machine_id,block_id,day,assigned,scenario,solver,master_days,subproblem_days,lock_days,start_day
+fb_01,B53160,27,1,MASc PG 18 blocks,mip,28,28,1,1
+fb_01,B65573,27,1,MASc PG 18 blocks,mip,28,28,1,1
+fb_01,B65573,27,1,MASc PG 18 blocks,mip,28,28,1,1
+fb_02,B45231,27,1,MASc PG 18 blocks,mip,28,28,1,1
+fb_02,B45231,27,1,MASc PG 18 blocks,mip,28,28,1,1
+fb_03,B45231,27,1,MASc PG 18 blocks,mip,28,28,1,1
+fb_03,B65573,27,1,MASc PG 18 blocks,mip,28,28,1,1
+pr_01,B45231,27,1,MASc PG 18 blocks,mip,28,28,1,1
+pr_02,B45231,27,1,MASc PG 18 blocks,mip,28,28,1,1
+pr_03,B45231,27,1,MASc PG 18 blocks,mip,28,28,1,1
+sk_01,B45231,27,1,MASc PG 18 blocks,mip,28,28,1,1
+sk_01,B65573,27,1,MASc PG 18 blocks,mip,28,28,1,1
+sk_02,B65573,27,1,MASc PG 18 blocks,mip,28,28,1,1
+sk_02,B65573,27,1,MASc PG 18 blocks,mip,28,28,1,1
+sk_03,B45231,27,1,MASc PG 18 blocks,mip,28,28,1,1
+sk_03,B45231,27,1,MASc PG 18 blocks,mip,28,28,1,1

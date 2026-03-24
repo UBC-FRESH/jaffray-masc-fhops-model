@@ -1,0 +1,174 @@
+{
+  "iterations": [
+    {
+      "iteration_index": 0,
+      "start_day": 1,
+      "horizon_days": 112,
+      "lock_days": 7,
+      "locked_assignments": 332,
+      "objective": -1435629.794899,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 1,
+      "start_day": 8,
+      "horizon_days": 105,
+      "lock_days": 7,
+      "locked_assignments": 331,
+      "objective": -1550801.7948989999,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 2,
+      "start_day": 15,
+      "horizon_days": 98,
+      "lock_days": 7,
+      "locked_assignments": 325,
+      "objective": -1616501.7948989999,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 3,
+      "start_day": 22,
+      "horizon_days": 91,
+      "lock_days": 7,
+      "locked_assignments": 328,
+      "objective": -1428201.794899,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 4,
+      "start_day": 29,
+      "horizon_days": 84,
+      "lock_days": 7,
+      "locked_assignments": 329,
+      "objective": -1349442.644515,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 5,
+      "start_day": 36,
+      "horizon_days": 77,
+      "lock_days": 7,
+      "locked_assignments": 328,
+      "objective": -1106713.6994709999,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 6,
+      "start_day": 43,
+      "horizon_days": 70,
+      "lock_days": 7,
+      "locked_assignments": 319,
+      "objective": -698677.6994710001,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 7,
+      "start_day": 50,
+      "horizon_days": 63,
+      "lock_days": 7,
+      "locked_assignments": 316,
+      "objective": -726452.7510810001,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 8,
+      "start_day": 57,
+      "horizon_days": 56,
+      "lock_days": 7,
+      "locked_assignments": 324,
+      "objective": -750364.6464890001,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 9,
+      "start_day": 64,
+      "horizon_days": 49,
+      "lock_days": 7,
+      "locked_assignments": 313,
+      "objective": -727868.259971,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 10,
+      "start_day": 71,
+      "horizon_days": 42,
+      "lock_days": 7,
+      "locked_assignments": 311,
+      "objective": -782941.789773,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 11,
+      "start_day": 78,
+      "horizon_days": 35,
+      "lock_days": 7,
+      "locked_assignments": 322,
+      "objective": -863666.992231,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 12,
+      "start_day": 85,
+      "horizon_days": 28,
+      "lock_days": 7,
+      "locked_assignments": 317,
+      "objective": -944445.0449190001,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 13,
+      "start_day": 92,
+      "horizon_days": 21,
+      "lock_days": 7,
+      "locked_assignments": 321,
+      "objective": -1045278.992231,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 14,
+      "start_day": 99,
+      "horizon_days": 14,
+      "lock_days": 7,
+      "locked_assignments": 314,
+      "objective": -1169886.922699,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 15,
+      "start_day": 106,
+      "horizon_days": 7,
+      "lock_days": 7,
+      "locked_assignments": 327,
+      "objective": -1264383.401107,
+      "runtime_s": null,
+      "warnings": []
+    }
+  ],
+  "total_locked_assignments": 5157,
+  "metadata": {
+    "scenario": "MASc PG 40 blocks",
+    "master_days": 112,
+    "subproblem_days": 112,
+    "lock_days": 7,
+    "start_day": 1,
+    "solver": "sa"
+  },
+  "warnings": []
+}

@@ -1,0 +1,42 @@
+{
+  "iterations": [
+    {
+      "iteration_index": 0,
+      "start_day": 1,
+      "horizon_days": 14,
+      "lock_days": 7,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 1,
+      "start_day": 8,
+      "horizon_days": 7,
+      "lock_days": 7,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    }
+  ],
+  "total_locked_assignments": 0,
+  "metadata": {
+    "scenario": "MASc KA 18 blocks",
+    "master_days": 14,
+    "subproblem_days": 14,
+    "lock_days": 7,
+    "start_day": 1,
+    "solver": "mip",
+    "mip_solver": "highs",
+    "mip_time_limit": 1800
+  },
+  "warnings": []
+}

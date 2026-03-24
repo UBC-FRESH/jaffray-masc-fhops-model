@@ -1,0 +1,29 @@
+{
+  "iterations": [
+    {
+      "iteration_index": 0,
+      "start_day": 1,
+      "horizon_days": 14,
+      "lock_days": 14,
+      "locked_assignments": 164,
+      "objective": -271766.64370099996,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    }
+  ],
+  "total_locked_assignments": 164,
+  "metadata": {
+    "scenario": "MASc NI 6 blocks",
+    "master_days": 14,
+    "subproblem_days": 14,
+    "lock_days": 14,
+    "start_day": 1,
+    "solver": "mip",
+    "mip_solver": "highs",
+    "mip_time_limit": 1800
+  },
+  "warnings": []
+}

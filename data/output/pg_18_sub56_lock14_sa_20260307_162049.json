@@ -1,0 +1,54 @@
+{
+  "iterations": [
+    {
+      "iteration_index": 0,
+      "start_day": 1,
+      "horizon_days": 56,
+      "lock_days": 14,
+      "locked_assignments": 379,
+      "objective": -213898.51545000004,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 1,
+      "start_day": 15,
+      "horizon_days": 42,
+      "lock_days": 14,
+      "locked_assignments": 379,
+      "objective": -265243.336992,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 2,
+      "start_day": 29,
+      "horizon_days": 28,
+      "lock_days": 14,
+      "locked_assignments": 388,
+      "objective": -360643.851046,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 3,
+      "start_day": 43,
+      "horizon_days": 14,
+      "lock_days": 14,
+      "locked_assignments": 404,
+      "objective": -468484.983972,
+      "runtime_s": null,
+      "warnings": []
+    }
+  ],
+  "total_locked_assignments": 1550,
+  "metadata": {
+    "scenario": "MASc PG 18 blocks",
+    "master_days": 56,
+    "subproblem_days": 56,
+    "lock_days": 14,
+    "start_day": 1,
+    "solver": "sa"
+  },
+  "warnings": []
+}

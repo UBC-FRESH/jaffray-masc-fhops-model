@@ -1,0 +1,68 @@
+{
+  "iterations": [
+    {
+      "iteration_index": 0,
+      "start_day": 1,
+      "horizon_days": 56,
+      "lock_days": 14,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 1,
+      "start_day": 15,
+      "horizon_days": 42,
+      "lock_days": 14,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 2,
+      "start_day": 29,
+      "horizon_days": 28,
+      "lock_days": 14,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 3,
+      "start_day": 43,
+      "horizon_days": 14,
+      "lock_days": 14,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    }
+  ],
+  "total_locked_assignments": 0,
+  "metadata": {
+    "scenario": "MASc PG 6 blocks",
+    "master_days": 56,
+    "subproblem_days": 56,
+    "lock_days": 14,
+    "start_day": 1,
+    "solver": "mip",
+    "mip_solver": "highs",
+    "mip_time_limit": 600
+  },
+  "warnings": []
+}

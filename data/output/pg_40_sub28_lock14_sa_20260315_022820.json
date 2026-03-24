@@ -1,0 +1,34 @@
+{
+  "iterations": [
+    {
+      "iteration_index": 0,
+      "start_day": 1,
+      "horizon_days": 28,
+      "lock_days": 14,
+      "locked_assignments": 751,
+      "objective": -956813.0449190001,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 1,
+      "start_day": 15,
+      "horizon_days": 14,
+      "lock_days": 14,
+      "locked_assignments": 752,
+      "objective": -1176624.2154929999,
+      "runtime_s": null,
+      "warnings": []
+    }
+  ],
+  "total_locked_assignments": 1503,
+  "metadata": {
+    "scenario": "MASc PG 40 blocks",
+    "master_days": 28,
+    "subproblem_days": 28,
+    "lock_days": 14,
+    "start_day": 1,
+    "solver": "sa"
+  },
+  "warnings": []
+}

@@ -1,0 +1,54 @@
+{
+  "iterations": [
+    {
+      "iteration_index": 0,
+      "start_day": 1,
+      "horizon_days": 56,
+      "lock_days": 14,
+      "locked_assignments": 369,
+      "objective": -454314.04554800014,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 1,
+      "start_day": 15,
+      "horizon_days": 42,
+      "lock_days": 14,
+      "locked_assignments": 375,
+      "objective": -455204.4707940001,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 2,
+      "start_day": 29,
+      "horizon_days": 28,
+      "lock_days": 14,
+      "locked_assignments": 381,
+      "objective": -560148.5861739999,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 3,
+      "start_day": 43,
+      "horizon_days": 14,
+      "lock_days": 14,
+      "locked_assignments": 387,
+      "objective": -665064.5861739999,
+      "runtime_s": null,
+      "warnings": []
+    }
+  ],
+  "total_locked_assignments": 1512,
+  "metadata": {
+    "scenario": "MASc NI 18 blocks",
+    "master_days": 56,
+    "subproblem_days": 56,
+    "lock_days": 14,
+    "start_day": 1,
+    "solver": "sa"
+  },
+  "warnings": []
+}

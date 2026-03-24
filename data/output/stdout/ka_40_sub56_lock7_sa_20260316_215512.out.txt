@@ -1,0 +1,16 @@
+Rolling plan completed: 2775 locks
+Metadata: solver=sa master_days=56 sub_days=56 lock_days=7
+ - Iter 0: days 1-56, locked 349 assignments
+ - Iter 1: days 8-56, locked 347 assignments
+ - Iter 2: days 15-56, locked 350 assignments
+ - Iter 3: days 22-56, locked 348 assignments
+ - Iter 4: days 29-56, locked 347 assignments
+ - Iter 5: days 36-56, locked 347 assignments
+ - Iter 6: days 43-56, locked 343 assignments
+ - Iter 7: days 50-56, locked 344 assignments
+Wrote summary to 
+/home/rjaffray/projects/jaffray-masc-fhops-model/data/output/ka_40_sub56_lock7_s
+a_20260316_215512.json
+Wrote locked assignments to 
+/home/rjaffray/projects/jaffray-masc-fhops-model/data/output/ka_40_sub56_lock7_s
+a_20260316_215512_assignments.csv

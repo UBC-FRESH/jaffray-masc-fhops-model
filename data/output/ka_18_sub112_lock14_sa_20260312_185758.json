@@ -1,0 +1,94 @@
+{
+  "iterations": [
+    {
+      "iteration_index": 0,
+      "start_day": 1,
+      "horizon_days": 112,
+      "lock_days": 14,
+      "locked_assignments": 414,
+      "objective": -59613.865853000025,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 1,
+      "start_day": 15,
+      "horizon_days": 98,
+      "lock_days": 14,
+      "locked_assignments": 408,
+      "objective": -59613.865853000025,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 2,
+      "start_day": 29,
+      "horizon_days": 84,
+      "lock_days": 14,
+      "locked_assignments": 412,
+      "objective": -49613.86585300001,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 3,
+      "start_day": 43,
+      "horizon_days": 70,
+      "lock_days": 14,
+      "locked_assignments": 403,
+      "objective": -42613.86585300001,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 4,
+      "start_day": 57,
+      "horizon_days": 56,
+      "lock_days": 14,
+      "locked_assignments": 414,
+      "objective": -66613.86585300002,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 5,
+      "start_day": 71,
+      "horizon_days": 42,
+      "lock_days": 14,
+      "locked_assignments": 415,
+      "objective": -66613.86585300001,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 6,
+      "start_day": 85,
+      "horizon_days": 28,
+      "lock_days": 14,
+      "locked_assignments": 396,
+      "objective": -25613.865853000025,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 7,
+      "start_day": 99,
+      "horizon_days": 14,
+      "lock_days": 14,
+      "locked_assignments": 417,
+      "objective": -28381.405761000013,
+      "runtime_s": null,
+      "warnings": []
+    }
+  ],
+  "total_locked_assignments": 3279,
+  "metadata": {
+    "scenario": "MASc KA 18 blocks",
+    "master_days": 112,
+    "subproblem_days": 112,
+    "lock_days": 14,
+    "start_day": 1,
+    "solver": "sa"
+  },
+  "warnings": []
+}

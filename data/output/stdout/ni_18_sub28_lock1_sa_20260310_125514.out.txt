@@ -1,0 +1,31 @@
+Rolling plan completed: 252 locks
+Metadata: solver=sa master_days=28 sub_days=28 lock_days=1
+ - Iter 0: days 1-28, locked 9 assignments
+ - Iter 1: days 2-28, locked 9 assignments
+ - Iter 2: days 3-28, locked 9 assignments
+ - Iter 3: days 4-28, locked 9 assignments
+ - Iter 4: days 5-28, locked 9 assignments
+ - Iter 5: days 6-28, locked 9 assignments
+ - Iter 6: days 7-28, locked 9 assignments
+ - Iter 7: days 8-28, locked 9 assignments
+ - Iter 8: days 9-28, locked 9 assignments
+ - Iter 9: days 10-28, locked 9 assignments
+ - Iter 10: days 11-28, locked 9 assignments
+ - Iter 11: days 12-28, locked 9 assignments
+ - Iter 12: days 13-28, locked 9 assignments
+ - Iter 13: days 14-28, locked 9 assignments
+ - Iter 14: days 15-28, locked 9 assignments
+ - Iter 15: days 16-28, locked 9 assignments
+ - Iter 16: days 17-28, locked 9 assignments
+ - Iter 17: days 18-28, locked 9 assignments
+ - Iter 18: days 19-28, locked 9 assignments
+ - Iter 19: days 20-28, locked 9 assignments
+ - Iter 20: days 21-28, locked 9 assignments
+ - Iter 21: days 22-28, locked 9 assignments
+ - Iter 22: days 23-28, locked 9 assignments
+ - Iter 23: days 24-28, locked 9 assignments
+ - Iter 24: days 25-28, locked 9 assignments
+ - Iter 25: days 26-28, locked 9 assignments
+ - Iter 26: days 27-28, locked 9 assignments
+ - Iter 27: days 28-28, locked 9 assignments
+Wrote summary to /home/rjaffray/projects/jaffray-masc-fhops-model/data/output/ni_18_sub28_lock1_sa_20260310_125514.json

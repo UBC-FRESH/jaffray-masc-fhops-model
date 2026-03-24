@@ -3,8 +3,9 @@
 ## 2026-03-24
 - Added Phase 6 cleanup tasks to the roadmap and captured repo-cleanup notes.
 - Added rolling-horizon experiment and analysis scripts with repo-relative paths.
-- Defined ignore rules for generated experiment outputs (preserving solver sweep CSVs).
+- Removed ignore rules for experiment outputs to keep all generated artifacts tracked.
 - Set local git identity to enable cleanup commits.
+- Committed all experiment outputs and artifacts in a single cleanup commit.
 
 Commands:
 - `git checkout -b feature/repo-cleanup`
@@ -19,6 +20,9 @@ Commands:
 - `git commit -m "Add rolling experiment analysis scripts"`
 - `git add .gitignore`
 - `git commit -m "Ignore generated experiment outputs"`
+- `apply_patch (remove experiment/output ignores from .gitignore)`
+- `git add -A`
+- `git commit -m "Commit experiment outputs and cleanup artifacts"`
 - `git add CHANGE_LOG.md`
 - `git commit -m "Update change log for cleanup"`
 - `git commit -m "Update change log commands"`

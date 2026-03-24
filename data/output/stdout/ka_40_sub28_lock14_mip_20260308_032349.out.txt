@@ -1,0 +1,6 @@
+Rolling plan completed: 0 locks
+Metadata: solver=mip master_days=28 sub_days=28 lock_days=14
+MILP backend: solver=highs time_limit=600 options={}
+ - Iter 0: days 1-28, locked 0 assignments
+ - Iter 1: days 15-28, locked 0 assignments
+Wrote summary to /home/rjaffray/projects/jaffray-masc-fhops-model/data/output/ka_40_sub28_lock14_mip_20260308_032349.json

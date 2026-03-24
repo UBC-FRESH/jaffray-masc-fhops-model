@@ -1,0 +1,5 @@
+Rolling plan completed: 207 locks
+Metadata: solver=sa master_days=14 sub_days=14 lock_days=7
+ - Iter 0: days 1-14, locked 103 assignments
+ - Iter 1: days 8-14, locked 104 assignments
+Wrote summary to /home/rjaffray/projects/jaffray-masc-fhops-model/data/output/pg_6_sub14_lock7_sa_20260305_224512.json

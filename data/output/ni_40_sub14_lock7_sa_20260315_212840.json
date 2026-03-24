@@ -1,0 +1,34 @@
+{
+  "iterations": [
+    {
+      "iteration_index": 0,
+      "start_day": 1,
+      "horizon_days": 14,
+      "lock_days": 7,
+      "locked_assignments": 312,
+      "objective": -1448799.476543,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 1,
+      "start_day": 8,
+      "horizon_days": 7,
+      "lock_days": 7,
+      "locked_assignments": 316,
+      "objective": -1532819.476543,
+      "runtime_s": null,
+      "warnings": []
+    }
+  ],
+  "total_locked_assignments": 628,
+  "metadata": {
+    "scenario": "MASc NI 40 blocks",
+    "master_days": 14,
+    "subproblem_days": 14,
+    "lock_days": 7,
+    "start_day": 1,
+    "solver": "sa"
+  },
+  "warnings": []
+}

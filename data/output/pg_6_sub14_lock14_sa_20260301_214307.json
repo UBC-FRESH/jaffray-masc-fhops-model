@@ -1,0 +1,24 @@
+{
+  "iterations": [
+    {
+      "iteration_index": 0,
+      "start_day": 1,
+      "horizon_days": 14,
+      "lock_days": 14,
+      "locked_assignments": 220,
+      "objective": -27654.670106,
+      "runtime_s": null,
+      "warnings": []
+    }
+  ],
+  "total_locked_assignments": 220,
+  "metadata": {
+    "scenario": "MASc PG 6 blocks",
+    "master_days": 14,
+    "subproblem_days": 14,
+    "lock_days": 14,
+    "start_day": 1,
+    "solver": "sa"
+  },
+  "warnings": []
+}

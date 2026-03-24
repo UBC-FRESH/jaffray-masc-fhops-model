@@ -1,0 +1,744 @@
+{
+  "iterations": [
+    {
+      "iteration_index": 0,
+      "start_day": 1,
+      "horizon_days": 56,
+      "lock_days": 1,
+      "locked_assignments": 10,
+      "objective": 30913.355594999994,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 1,
+      "start_day": 2,
+      "horizon_days": 55,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": 30913.355594999997,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 2,
+      "start_day": 3,
+      "horizon_days": 54,
+      "lock_days": 1,
+      "locked_assignments": 9,
+      "objective": 30913.355594999997,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 3,
+      "start_day": 4,
+      "horizon_days": 53,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 4,
+      "start_day": 5,
+      "horizon_days": 52,
+      "lock_days": 1,
+      "locked_assignments": 8,
+      "objective": 30913.355594999823,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 5,
+      "start_day": 6,
+      "horizon_days": 51,
+      "lock_days": 1,
+      "locked_assignments": 8,
+      "objective": 30913.355594999994,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 6,
+      "start_day": 7,
+      "horizon_days": 50,
+      "lock_days": 1,
+      "locked_assignments": 7,
+      "objective": 30913.355594999997,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 7,
+      "start_day": 8,
+      "horizon_days": 49,
+      "lock_days": 1,
+      "locked_assignments": 5,
+      "objective": 30913.355594999997,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 8,
+      "start_day": 9,
+      "horizon_days": 48,
+      "lock_days": 1,
+      "locked_assignments": 9,
+      "objective": 30913.355595,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 9,
+      "start_day": 10,
+      "horizon_days": 47,
+      "lock_days": 1,
+      "locked_assignments": 11,
+      "objective": 30913.35559499997,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 10,
+      "start_day": 11,
+      "horizon_days": 46,
+      "lock_days": 1,
+      "locked_assignments": 10,
+      "objective": 30913.355595000052,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 11,
+      "start_day": 12,
+      "horizon_days": 45,
+      "lock_days": 1,
+      "locked_assignments": 5,
+      "objective": 30913.355594999997,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 12,
+      "start_day": 13,
+      "horizon_days": 44,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 13,
+      "start_day": 14,
+      "horizon_days": 43,
+      "lock_days": 1,
+      "locked_assignments": 6,
+      "objective": 30913.355594999997,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 14,
+      "start_day": 15,
+      "horizon_days": 42,
+      "lock_days": 1,
+      "locked_assignments": 10,
+      "objective": 30913.355594999917,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 15,
+      "start_day": 16,
+      "horizon_days": 41,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 16,
+      "start_day": 17,
+      "horizon_days": 40,
+      "lock_days": 1,
+      "locked_assignments": 11,
+      "objective": 30913.35559500002,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 17,
+      "start_day": 18,
+      "horizon_days": 39,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 18,
+      "start_day": 19,
+      "horizon_days": 38,
+      "lock_days": 1,
+      "locked_assignments": 7,
+      "objective": 30913.355595000205,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 19,
+      "start_day": 20,
+      "horizon_days": 37,
+      "lock_days": 1,
+      "locked_assignments": 10,
+      "objective": 30913.355594999994,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 20,
+      "start_day": 21,
+      "horizon_days": 36,
+      "lock_days": 1,
+      "locked_assignments": 8,
+      "objective": 30913.35559499997,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 21,
+      "start_day": 22,
+      "horizon_days": 35,
+      "lock_days": 1,
+      "locked_assignments": 11,
+      "objective": 30913.35559499998,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 22,
+      "start_day": 23,
+      "horizon_days": 34,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 23,
+      "start_day": 24,
+      "horizon_days": 33,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 24,
+      "start_day": 25,
+      "horizon_days": 32,
+      "lock_days": 1,
+      "locked_assignments": 10,
+      "objective": 30913.355594999997,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 25,
+      "start_day": 26,
+      "horizon_days": 31,
+      "lock_days": 1,
+      "locked_assignments": 10,
+      "objective": 30913.355595,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 26,
+      "start_day": 27,
+      "horizon_days": 30,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 27,
+      "start_day": 28,
+      "horizon_days": 29,
+      "lock_days": 1,
+      "locked_assignments": 11,
+      "objective": 30913.355594999917,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 28,
+      "start_day": 29,
+      "horizon_days": 28,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 29,
+      "start_day": 30,
+      "horizon_days": 27,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 30,
+      "start_day": 31,
+      "horizon_days": 26,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 31,
+      "start_day": 32,
+      "horizon_days": 25,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 32,
+      "start_day": 33,
+      "horizon_days": 24,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 33,
+      "start_day": 34,
+      "horizon_days": 23,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 34,
+      "start_day": 35,
+      "horizon_days": 22,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 35,
+      "start_day": 36,
+      "horizon_days": 21,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 36,
+      "start_day": 37,
+      "horizon_days": 20,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 37,
+      "start_day": 38,
+      "horizon_days": 19,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 38,
+      "start_day": 39,
+      "horizon_days": 18,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 39,
+      "start_day": 40,
+      "horizon_days": 17,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 40,
+      "start_day": 41,
+      "horizon_days": 16,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 41,
+      "start_day": 42,
+      "horizon_days": 15,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 42,
+      "start_day": 43,
+      "horizon_days": 14,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 43,
+      "start_day": 44,
+      "horizon_days": 13,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 44,
+      "start_day": 45,
+      "horizon_days": 12,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 45,
+      "start_day": 46,
+      "horizon_days": 11,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": null,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=aborted",
+        "termination_condition=maxTimeLimit"
+      ]
+    },
+    {
+      "iteration_index": 46,
+      "start_day": 47,
+      "horizon_days": 10,
+      "lock_days": 1,
+      "locked_assignments": 8,
+      "objective": 2049.0827910001044,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 47,
+      "start_day": 48,
+      "horizon_days": 9,
+      "lock_days": 1,
+      "locked_assignments": 8,
+      "objective": -485.85655499958193,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 48,
+      "start_day": 49,
+      "horizon_days": 8,
+      "lock_days": 1,
+      "locked_assignments": 8,
+      "objective": -3374.416247999925,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 49,
+      "start_day": 50,
+      "horizon_days": 7,
+      "lock_days": 1,
+      "locked_assignments": 7,
+      "objective": -7225.355594999995,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 50,
+      "start_day": 51,
+      "horizon_days": 6,
+      "lock_days": 1,
+      "locked_assignments": 8,
+      "objective": -11173.355595,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 51,
+      "start_day": 52,
+      "horizon_days": 5,
+      "lock_days": 1,
+      "locked_assignments": 7,
+      "objective": -15121.355595,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 52,
+      "start_day": 53,
+      "horizon_days": 4,
+      "lock_days": 1,
+      "locked_assignments": 9,
+      "objective": -19069.355595,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 53,
+      "start_day": 54,
+      "horizon_days": 3,
+      "lock_days": 1,
+      "locked_assignments": 7,
+      "objective": -23017.355595,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 54,
+      "start_day": 55,
+      "horizon_days": 2,
+      "lock_days": 1,
+      "locked_assignments": 7,
+      "objective": -26965.355595,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    },
+    {
+      "iteration_index": 55,
+      "start_day": 56,
+      "horizon_days": 1,
+      "lock_days": 1,
+      "locked_assignments": 0,
+      "objective": -30913.355595,
+      "runtime_s": null,
+      "warnings": [
+        "solver_status=ok",
+        "termination_condition=optimal"
+      ]
+    }
+  ],
+  "total_locked_assignments": 251,
+  "metadata": {
+    "scenario": "MASc KA 6 blocks",
+    "master_days": 56,
+    "subproblem_days": 56,
+    "lock_days": 1,
+    "start_day": 1,
+    "solver": "mip",
+    "mip_solver": "highs",
+    "mip_time_limit": 600
+  },
+  "warnings": []
+}

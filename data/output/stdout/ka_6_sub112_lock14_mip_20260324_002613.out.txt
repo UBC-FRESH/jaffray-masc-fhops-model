@@ -1,0 +1,17 @@
+Rolling plan completed: 824 locks
+Metadata: solver=mip master_days=112 sub_days=112 lock_days=14
+MILP backend: solver=highs time_limit=1800 options={}
+ - Iter 0: days 1-112, locked 65 assignments
+ - Iter 1: days 15-112, locked 64 assignments
+ - Iter 2: days 29-112, locked 95 assignments
+ - Iter 3: days 43-112, locked 99 assignments
+ - Iter 4: days 57-112, locked 101 assignments
+ - Iter 5: days 71-112, locked 177 assignments
+ - Iter 6: days 85-112, locked 223 assignments
+ - Iter 7: days 99-112, locked 0 assignments
+Wrote summary to 
+/home/rjaffray/projects/jaffray-masc-fhops-model/data/output/ka_6_sub112_lock14_
+mip_20260324_002613.json
+Wrote locked assignments to 
+/home/rjaffray/projects/jaffray-masc-fhops-model/data/output/ka_6_sub112_lock14_
+mip_20260324_002613_assignments.csv

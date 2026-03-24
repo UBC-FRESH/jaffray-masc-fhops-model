@@ -1,0 +1,24 @@
+{
+  "iterations": [
+    {
+      "iteration_index": 0,
+      "start_day": 1,
+      "horizon_days": 14,
+      "lock_days": 14,
+      "locked_assignments": 735,
+      "objective": -1449799.476543,
+      "runtime_s": null,
+      "warnings": []
+    }
+  ],
+  "total_locked_assignments": 735,
+  "metadata": {
+    "scenario": "MASc NI 40 blocks",
+    "master_days": 14,
+    "subproblem_days": 14,
+    "lock_days": 14,
+    "start_day": 1,
+    "solver": "sa"
+  },
+  "warnings": []
+}

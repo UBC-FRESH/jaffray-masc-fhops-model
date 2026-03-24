@@ -1,0 +1,34 @@
+{
+  "iterations": [
+    {
+      "iteration_index": 0,
+      "start_day": 1,
+      "horizon_days": 28,
+      "lock_days": 14,
+      "locked_assignments": 808,
+      "objective": -896333.363741,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 1,
+      "start_day": 15,
+      "horizon_days": 14,
+      "lock_days": 14,
+      "locked_assignments": 797,
+      "objective": -399703.805251,
+      "runtime_s": null,
+      "warnings": []
+    }
+  ],
+  "total_locked_assignments": 1605,
+  "metadata": {
+    "scenario": "MASc KA 40 blocks",
+    "master_days": 28,
+    "subproblem_days": 28,
+    "lock_days": 14,
+    "start_day": 1,
+    "solver": "sa"
+  },
+  "warnings": []
+}

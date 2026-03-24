@@ -1,0 +1,94 @@
+{
+  "iterations": [
+    {
+      "iteration_index": 0,
+      "start_day": 1,
+      "horizon_days": 56,
+      "lock_days": 7,
+      "locked_assignments": 308,
+      "objective": -893012.519225,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 1,
+      "start_day": 8,
+      "horizon_days": 49,
+      "lock_days": 7,
+      "locked_assignments": 304,
+      "objective": -969232.0606410002,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 2,
+      "start_day": 15,
+      "horizon_days": 42,
+      "lock_days": 7,
+      "locked_assignments": 312,
+      "objective": -1021312.872675,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 3,
+      "start_day": 22,
+      "horizon_days": 35,
+      "lock_days": 7,
+      "locked_assignments": 318,
+      "objective": -1319531.186255,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 4,
+      "start_day": 29,
+      "horizon_days": 28,
+      "lock_days": 7,
+      "locked_assignments": 306,
+      "objective": -1219763.476543,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 5,
+      "start_day": 36,
+      "horizon_days": 21,
+      "lock_days": 7,
+      "locked_assignments": 310,
+      "objective": -1345203.476543,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 6,
+      "start_day": 43,
+      "horizon_days": 14,
+      "lock_days": 7,
+      "locked_assignments": 312,
+      "objective": -1448799.476543,
+      "runtime_s": null,
+      "warnings": []
+    },
+    {
+      "iteration_index": 7,
+      "start_day": 50,
+      "horizon_days": 7,
+      "lock_days": 7,
+      "locked_assignments": 316,
+      "objective": -1532819.476543,
+      "runtime_s": null,
+      "warnings": []
+    }
+  ],
+  "total_locked_assignments": 2486,
+  "metadata": {
+    "scenario": "MASc NI 40 blocks",
+    "master_days": 56,
+    "subproblem_days": 56,
+    "lock_days": 7,
+    "start_day": 1,
+    "solver": "sa"
+  },
+  "warnings": []
+}
