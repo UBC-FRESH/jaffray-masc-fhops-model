@@ -1,5 +1,25 @@
 # Change Log
 
+## 2026-03-24
+- Added Phase 6 cleanup tasks to the roadmap and captured repo-cleanup notes.
+- Added rolling-horizon experiment and analysis scripts with repo-relative paths.
+- Defined ignore rules for generated experiment outputs (preserving solver sweep CSVs).
+- Set local git identity to enable cleanup commits.
+
+Commands:
+- `git checkout -b feature/repo-cleanup`
+- `rg -n "/home/rjaffray" scripts`
+- `rg -n "/home/" scripts`
+- `rg -n "to_csv\\(" scripts`
+- `git config --local user.name "gep"`
+- `git config --local user.email "gep@localhost"`
+- `git add ROADMAP.md notes/repo_cleanup.md`
+- `git commit -m "Add repo cleanup phase and notes"`
+- `git add scripts`
+- `git commit -m "Add rolling experiment analysis scripts"`
+- `git add .gitignore`
+- `git commit -m "Ignore generated experiment outputs"`
+
 ## 2026-02-27
 - Added MASc modelling paper execution contract and project roadmap.
 - Established planning notes folder and initial scenario-bundle note.
