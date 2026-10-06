@@ -197,6 +197,7 @@ def run_one(spec: RunSpec, runs_dir: str) -> tuple[str, str]:
                 "spec": asdict(spec),
                 "provenance": fhops_provenance(),
                 "wall_time_s": wall,
+                "n_locked_assignments": int(len(assignments)),
                 "plan_summary": _jsonable(summarize_plan(result)),
                 "kpis": _jsonable(dict(kpis)),
                 "objective_weights": _jsonable(
@@ -224,6 +225,9 @@ def summarize(out_root: Path) -> Path:
         row.update(data.get("provenance", {}))
         iterations = data["plan_summary"].get("iterations", [])
         row["n_iterations"] = len(iterations)
+        row["n_locked_assignments"] = data.get("n_locked_assignments")
+        row["empty_plan"] = data.get("n_locked_assignments") == 0
+        row["n_iteration_warnings"] = sum(len(it.get("warnings") or []) for it in iterations)
         row["last_window_objective"] = iterations[-1].get("objective") if iterations else None
         for key, value in data["kpis"].items():
             if isinstance(value, (int, float)) or value is None:

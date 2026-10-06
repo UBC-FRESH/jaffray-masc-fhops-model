@@ -24,6 +24,16 @@ scored runs by the **last window's objective**, which is not the value of the st
 - SA lock7 delivers 13506 m3 vs 30380 m3 baseline.
 This indicates the Ch. 4 lock-span effect is at least partly an artifact of the missing carry-forward.
 
+## Caveats found while preparing the re-run (2026-10-06)
+- The "MIP baseline delivers 30913 m3" smoke value above is itself an artifact: HiGHS found no
+  28-day ka_6 solution within 30 s, and FHOPS 1.0.0 `compute_kpis` reports full delivery for an
+  empty plan (UBC-FRESH/fhops#108). The old 7896 m3 rolling MIP value came from the last window
+  only (earlier windows hit the time limit and their incumbents were discarded; fixed by fhops#99).
+- MILP plans replay with sequencing violations under playback (UBC-FRESH/fhops#109), which
+  understates MILP plan quality; the re-run must wait for that fix.
+- The runner now records `n_locked_assignments` and flags `empty_plan` / iteration warnings so
+  failed solves cannot be mistaken for good plans.
+
 ## Status
 - [x] Runner written and smoke-tested on FHOPS 1.0.0 (pipeline only).
 - [ ] Re-run full grid on FHOPS 1.0.1 (after fhops#91/#92 merge).
