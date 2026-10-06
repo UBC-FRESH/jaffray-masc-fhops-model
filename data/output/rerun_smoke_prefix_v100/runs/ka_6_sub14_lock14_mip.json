@@ -1,0 +1,88 @@
+{
+  "run_id": "ka_6_sub14_lock14_mip",
+  "spec": {
+    "context": "ka",
+    "size": "6",
+    "solver": "mip",
+    "master_days": 28,
+    "sub_days": 14,
+    "lock_days": 14,
+    "theta_weeks": 2,
+    "baseline": false,
+    "sa_iters": 50,
+    "mip_time_limit": 30
+  },
+  "provenance": {
+    "fhops_version": "1.0.0",
+    "fhops_commit": "f60b638d753010b2cff8792303d9e523b7b0418c",
+    "fhops_path": "/home/gep/projects/fhops-v101/src/fhops"
+  },
+  "wall_time_s": 65.08529853820801,
+  "plan_summary": {
+    "iterations": [
+      {
+        "iteration_index": 0,
+        "start_day": 1,
+        "horizon_days": 14,
+        "lock_days": 14,
+        "locked_assignments": 0,
+        "objective": null,
+        "runtime_s": null,
+        "warnings": [
+          "solver_status=aborted",
+          "termination_condition=maxTimeLimit"
+        ]
+      },
+      {
+        "iteration_index": 1,
+        "start_day": 15,
+        "horizon_days": 14,
+        "lock_days": 14,
+        "locked_assignments": 0,
+        "objective": null,
+        "runtime_s": null,
+        "warnings": [
+          "solver_status=aborted",
+          "termination_condition=maxTimeLimit"
+        ]
+      }
+    ],
+    "total_locked_assignments": 0,
+    "metadata": {
+      "scenario": "MASc KA 6 blocks",
+      "master_days": 28,
+      "subproblem_days": 14,
+      "lock_days": 14,
+      "start_day": 1,
+      "solver": "mip",
+      "mip_solver": "highs",
+      "mip_time_limit": 30,
+      "mip_solver_options": {
+        "threads": 1
+      }
+    },
+    "warnings": []
+  },
+  "kpis": {
+    "total_production": 30913.355595,
+    "completed_blocks": 0.0,
+    "staged_production": 0.0,
+    "remaining_work_total": 0.0,
+    "sequencing_violation_count": 0,
+    "sequencing_violation_blocks": 0,
+    "sequencing_violation_days": 0,
+    "sequencing_clean_blocks": 6,
+    "sequencing_violation_breakdown": "none",
+    "utilisation_ratio_mean_day": 0.0,
+    "utilisation_ratio_weighted_day": 0.0,
+    "makespan_day": 0,
+    "makespan_shift": "N/A"
+  },
+  "objective_weights": {
+    "production": 1.0,
+    "mobilisation": 0.5,
+    "transitions": 0.0,
+    "landing_surplus": 0.0
+  },
+  "status": "ok"
+}

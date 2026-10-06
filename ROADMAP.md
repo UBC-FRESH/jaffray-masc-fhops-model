@@ -65,3 +65,8 @@
   - [ ] Task 6.4 — Commit sequencing and merge
     - [x] Subtask 6.4.1 — Chunk changes into related commits
     - [ ] Subtask 6.4.2 — Merge cleanup branch back to main and push
+
+- [ ] Phase 7 — Rolling-horizon re-run on FHOPS 1.0.1 (issue #1, branch `feature/rolling-rerun-v101`)
+  - [x] Runner `scripts/rolling_rerun_v101.py` with stitched-plan evaluation; smoke-tested on 1.0.0
+  - [ ] Full grid (216 runs + 18 baselines) on FHOPS 1.0.1
+  - [ ] Analysis vs Ch. 4 conclusions; note `notes/rolling_rerun_v101.md`

@@ -1,5 +1,14 @@
 # Change Log
 
+## 2026-10-06
+- Opened issue #1 and branch `feature/rolling-rerun-v101`: Ch. 4 rolling-horizon results were produced by FHOPS without inter-window state carry-forward (UBC-FRESH/fhops#90, #92).
+- Added `scripts/rolling_rerun_v101.py` (same grid as Ch. 4 plus full-horizon baselines; stitched-plan KPI evaluation; resumable, parallel) and `notes/rolling_rerun_v101.md`; added roadmap Phase 7.
+- Smoke-tested the pipeline on FHOPS 1.0.0 (pre-fix); outputs kept as evidence in `data/output/rerun_smoke_prefix_v100/`.
+
+Commands:
+- `/tmp/opencode/fhops-v101-venv/bin/python scripts/rolling_rerun_v101.py --dry-run` (234 specs)
+- `/tmp/opencode/fhops-v101-venv/bin/python scripts/rolling_rerun_v101.py --smoke --workers 8` (10/10 ok; FHOPS 1.0.0 @ f60b638)
+
 ## 2026-03-24
 - Added Phase 6 cleanup tasks to the roadmap and captured repo-cleanup notes.
 - Added rolling-horizon experiment and analysis scripts with repo-relative paths.

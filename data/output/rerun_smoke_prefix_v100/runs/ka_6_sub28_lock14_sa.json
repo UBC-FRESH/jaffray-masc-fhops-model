@@ -1,0 +1,81 @@
+{
+  "run_id": "ka_6_sub28_lock14_sa",
+  "spec": {
+    "context": "ka",
+    "size": "6",
+    "solver": "sa",
+    "master_days": 28,
+    "sub_days": 28,
+    "lock_days": 14,
+    "theta_weeks": 4,
+    "baseline": false,
+    "sa_iters": 50,
+    "mip_time_limit": 30
+  },
+  "provenance": {
+    "fhops_version": "1.0.0",
+    "fhops_commit": "f60b638d753010b2cff8792303d9e523b7b0418c",
+    "fhops_path": "/home/gep/projects/fhops-v101/src/fhops"
+  },
+  "wall_time_s": 5.311562538146973,
+  "plan_summary": {
+    "iterations": [
+      {
+        "iteration_index": 0,
+        "start_day": 1,
+        "horizon_days": 28,
+        "lock_days": 14,
+        "locked_assignments": 195,
+        "objective": -7152.402169000012,
+        "runtime_s": null,
+        "warnings": []
+      },
+      {
+        "iteration_index": 1,
+        "start_day": 15,
+        "horizon_days": 14,
+        "lock_days": 14,
+        "locked_assignments": 195,
+        "objective": -26688.460943000002,
+        "runtime_s": null,
+        "warnings": []
+      }
+    ],
+    "total_locked_assignments": 390,
+    "metadata": {
+      "scenario": "MASc KA 6 blocks",
+      "master_days": 28,
+      "subproblem_days": 28,
+      "lock_days": 14,
+      "start_day": 1,
+      "solver": "sa"
+    },
+    "warnings": []
+  },
+  "kpis": {
+    "total_production": 19241.837467999998,
+    "completed_blocks": 2.0,
+    "staged_production": 11671.518127000003,
+    "remaining_work_total": 11671.518127000003,
+    "sequencing_violation_count": 0,
+    "sequencing_violation_blocks": 0,
+    "sequencing_violation_days": 0,
+    "sequencing_clean_blocks": 6,
+    "sequencing_violation_breakdown": "none",
+    "utilisation_ratio_mean_shift": 2.5324675324675323,
+    "utilisation_ratio_weighted_shift": 2.5324675324675323,
+    "utilisation_ratio_by_machine": "{\"fb_01\": 3.0, \"fb_02\": 3.0, \"ld_01\": 2.5455, \"pr_01\": 3.0, \"sk_01\": 1.8846, \"sk_02\": 1.7308}",
+    "utilisation_ratio_by_role": "{\"feller_buncher\": 3.0, \"grapple_skidder\": 1.8077, \"loader\": 2.5455, \"processor\": 3.0}",
+    "utilisation_ratio_mean_day": 0.19345238095238093,
+    "utilisation_ratio_weighted_day": 0.19345238095238096,
+    "makespan_day": 28,
+    "makespan_shift": "S1"
+  },
+  "objective_weights": {
+    "production": 1.0,
+    "mobilisation": 0.5,
+    "transitions": 0.0,
+    "landing_surplus": 0.0
+  },
+  "status": "ok"
+}
