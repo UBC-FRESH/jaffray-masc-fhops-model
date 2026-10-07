@@ -34,6 +34,15 @@ This indicates the Ch. 4 lock-span effect is at least partly an artifact of the 
 - The runner now records `n_locked_assignments` and flags `empty_plan` / iteration warnings so
   failed solves cannot be mistaken for good plans.
 
+## Design decision (2026-10-07, G. Paradis)
+- MIP arm is **like-for-like** with Ch. 4 (option a): cold-start HiGHS, 1800 s per window, no SA seeding.
+- FHOPS 1.0.1 rolling MILP windows use the earliness tie-break (two-stage: stage 2 maximises early
+  production subject to the stage-1 objective; reported objective unchanged). Stage 2 is capped at
+  `--mip-earliness-time-limit` (default 300 s) so a window cannot take 2 × 1800 s.
+- Memory guard: size-40 MIP runs execute in a separate pool (`--large-mip-workers`, default 6).
+- Runs are scored on the stitched plan; window statuses (`no_solution`, `skipped`, `empty`) are
+  recorded per run so time-limited empty windows are visible, not hidden in totals.
+
 ## Status
 - [x] Runner written and smoke-tested on FHOPS 1.0.0 (pipeline only).
 - [ ] Re-run full grid on FHOPS 1.0.1 (after fhops#91/#92 merge).

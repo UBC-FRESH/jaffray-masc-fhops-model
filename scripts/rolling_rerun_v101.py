@@ -76,6 +76,7 @@ class RunSpec:
     baseline: bool
     sa_iters: int
     mip_time_limit: int
+    mip_earliness_time_limit: int = 300
 
     @property
     def scenario_id(self) -> str:
@@ -109,6 +110,7 @@ def build_specs(args: argparse.Namespace) -> list[RunSpec]:
     specs: list[RunSpec] = []
     sa_iters = 50 if args.smoke else SA_ITERS
     mip_limit = 30 if args.smoke else MIP_TIME_LIMIT
+    early_limit = min(args.mip_earliness_time_limit, mip_limit)
     contexts = args.contexts or (["ka"] if args.smoke else CONTEXTS)
     sizes = args.sizes or (["6"] if args.smoke else SIZES)
     thetas = [2, 4] if args.smoke else THETA_WEEKS
@@ -123,7 +125,7 @@ def build_specs(args: argparse.Namespace) -> list[RunSpec]:
             master = 28 if args.smoke else days
             for solver in args.solvers or SOLVERS:
                 specs.append(
-                    RunSpec(context, size, solver, master, master, master, None, True, sa_iters, mip_limit)
+                    RunSpec(context, size, solver, master, master, master, None, True, sa_iters, mip_limit, early_limit)
                 )
                 if args.only_baselines:
                     continue
@@ -133,7 +135,7 @@ def build_specs(args: argparse.Namespace) -> list[RunSpec]:
                         if lock > sub:
                             continue
                         specs.append(
-                            RunSpec(context, size, solver, master, sub, lock, theta, False, sa_iters, mip_limit)
+                            RunSpec(context, size, solver, master, sub, lock, theta, False, sa_iters, mip_limit, early_limit)
                         )
     return specs
 
@@ -187,6 +189,8 @@ def run_one(spec: RunSpec, runs_dir: str) -> tuple[str, str]:
                 mip_solver=MIP_SOLVER,
                 mip_time_limit=spec.mip_time_limit,
                 mip_solver_options={"threads": 1},
+                mip_earliness=True,
+                mip_earliness_time_limit=spec.mip_earliness_time_limit,
             )
             wall = time.time() - start
             assignments = rolling_assignments_dataframe(result)
@@ -228,6 +232,10 @@ def summarize(out_root: Path) -> Path:
         row["n_locked_assignments"] = data.get("n_locked_assignments")
         row["empty_plan"] = data.get("n_locked_assignments") == 0
         row["n_iteration_warnings"] = sum(len(it.get("warnings") or []) for it in iterations)
+        statuses = [it.get("status") for it in iterations]
+        row["n_no_solution_windows"] = sum(1 for st in statuses if st == "no_solution")
+        row["n_skipped_windows"] = sum(1 for st in statuses if st == "skipped")
+        row["n_empty_windows"] = sum(1 for it in iterations if it.get("empty"))
         row["last_window_objective"] = iterations[-1].get("objective") if iterations else None
         for key, value in data["kpis"].items():
             if isinstance(value, (int, float)) or value is None:
@@ -248,6 +256,18 @@ def main() -> int:
     parser.add_argument("--sizes", nargs="*")
     parser.add_argument("--solvers", nargs="*", choices=SOLVERS)
     parser.add_argument("--only-baselines", action="store_true")
+    parser.add_argument(
+        "--mip-earliness-time-limit",
+        type=int,
+        default=300,
+        help="time limit (s) for the MILP earliness stage-2 solve in rolling windows (FHOPS 1.0.1)",
+    )
+    parser.add_argument(
+        "--large-mip-workers",
+        type=int,
+        default=6,
+        help="max concurrent MIP runs on size-40 scenarios (memory guard; large MILP builds use tens of GB)",
+    )
     parser.add_argument("--smoke", action="store_true", help="tiny grid with short limits (pipeline check)")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--summarize", action="store_true", help="only rebuild summary.csv")
@@ -276,8 +296,16 @@ def main() -> int:
         json.dumps({"provenance": prov, "specs": [asdict(s) for s in specs]}, indent=2), encoding="utf-8"
     )
     failures = 0
-    with ProcessPoolExecutor(max_workers=args.workers, max_tasks_per_child=1) as pool:
-        futures = {pool.submit(run_one, spec, str(runs_dir)): spec for spec in pending}
+    large = [s for s in pending if s.solver == "mip" and s.size == "40"]
+    other = [s for s in pending if not (s.solver == "mip" and s.size == "40")]
+    large_workers = max(1, min(args.large_mip_workers, args.workers))
+    other_workers = max(1, args.workers - large_workers) if large else args.workers
+    print(f"pools: large-MIP {len(large)} specs x {large_workers} workers; other {len(other)} x {other_workers}")
+    with ProcessPoolExecutor(max_workers=large_workers, max_tasks_per_child=1) as large_pool, ProcessPoolExecutor(
+        max_workers=other_workers, max_tasks_per_child=1
+    ) as other_pool:
+        futures = {large_pool.submit(run_one, spec, str(runs_dir)): spec for spec in large}
+        futures.update({other_pool.submit(run_one, spec, str(runs_dir)): spec for spec in other})
         for done, future in enumerate(as_completed(futures), start=1):
             run_id, status = future.result()
             failures += status != "ok"

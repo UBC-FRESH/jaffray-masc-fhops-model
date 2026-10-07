@@ -1,5 +1,11 @@
 # Change Log
 
+## 2026-10-07
+- `scripts/rolling_rerun_v101.py` updated for FHOPS 1.0.1: explicit earliness stage-2 limit (`--mip-earliness-time-limit`, default 300 s), separate memory-guarded pool for size-40 MIP runs (`--large-mip-workers`, default 6), per-run window status counts (`n_no_solution_windows`, `n_skipped_windows`, `n_empty_windows`). Design decision recorded in `notes/rolling_rerun_v101.md` (MIP arm like-for-like).
+
+Commands:
+- `/tmp/opencode/fhops-v101-venv/bin/python scripts/rolling_rerun_v101.py --dry-run` (234 specs; FHOPS 1.0.1 @ a0b2799)
+
 ## 2026-10-06
 - Opened issue #1 and branch `feature/rolling-rerun-v101`: Ch. 4 rolling-horizon results were produced by FHOPS without inter-window state carry-forward (UBC-FRESH/fhops#90, #92).
 - Added `scripts/rolling_rerun_v101.py` (same grid as Ch. 4 plus full-horizon baselines; stitched-plan KPI evaluation; resumable, parallel) and `notes/rolling_rerun_v101.md`; added roadmap Phase 7.
