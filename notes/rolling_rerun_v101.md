@@ -43,6 +43,33 @@ This indicates the Ch. 4 lock-span effect is at least partly an artifact of the 
 - Runs are scored on the stitched plan; window statuses (`no_solution`, `skipped`, `empty`) are
   recorded per run so time-limited empty windows are visible, not hidden in totals.
 
+## Feasibility check on FHOPS 1.0.1 (2026-10-09)
+Environment: fresh venv `/tmp/opencode/venv-fhops101`, `fhops==1.0.1` from PyPI, highspy 1.15.1,
+Pyomo 6.10.1, Python 3.12.3 (`data/output/rerun_v101_probe/environment.txt`). Host: 72 cores,
+754 GB RAM, load ~2-3.
+- Smoke (`data/output/rerun_v101_smoke/`, 10/10 ok, 3 min 22 s): ka_6 sub14/lock7 MIP now delivers
+  30913 m3 with 0 sequencing violations (pre-fix: 7896 m3, 13 violations); all SA runs deliver the
+  full 30913 m3. At the 30 s smoke limit the MIP baseline and sub28 MIP runs under-deliver
+  (309.9 / 18617 / 27126 m3) because HiGHS is time-limited; expected, not a pipeline fault.
+- Probe (`scripts/probe_mip_window_v101.py`, first window only, 1800 s + 300 s earliness, 1 thread;
+  `data/output/rerun_v101_probe/`):
+
+  | window | wall (s) | peak RSS (GB) | first window result |
+  |---|---|---|---|
+  | ka_40 sub14/lock7 | 2123 | 2.4 | **empty** incumbent (0 m3 planned) |
+  | ni_40 sub14/lock7 | 2120 | 2.1 | 129777 m3 planned, 52471 m3 locked |
+  | pg_40 sub14/lock7 | 2127 | 1.9 | 115023 m3 planned, 44714 m3 locked |
+  | ni_40 sub112/lock7 | 2263 | 4.7 | **empty** incumbent (0 m3 planned) |
+
+  Every size-40 window hits the time limit in both stages. Cold HiGHS returns empty plans on some
+  14-day and on 112-day size-40 windows even at 1800 s (FHOPS 1.0.1 known limitation, now
+  confirmed at 1800 s). Memory is not a constraint on this host (≤ 4.7 GB per run).
+- Worst-case per-run MIP wall time (all windows time-limited, ~2120 s each): lock 1 = 112 windows
+  ≈ 66 h; lock 7 = 16 ≈ 9.4 h; lock 14 = 8 ≈ 4–4.7 h; baseline ≈ 0.6 h. Critical path = the 36
+  lock-1 MIP runs. With `--workers 70 --large-mip-workers 39` all 36 start at once, so the grid
+  needs ≈ 66–70 h (≈ 3 days) in the worst case; with the default 6 large workers the size-40 MIP
+  pool alone needs ≈ 6.5 days.
+
 ## Status
 - [x] Runner written and smoke-tested on FHOPS 1.0.0 (pipeline only).
 - [ ] Re-run full grid on FHOPS 1.0.1 (after fhops#91/#92 merge).

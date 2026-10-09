@@ -1,0 +1,139 @@
+{
+  "provenance": {
+    "fhops_version": "1.0.1",
+    "fhops_commit": null,
+    "fhops_path": "/tmp/opencode/venv-fhops101/lib/python3.12/site-packages/fhops"
+  },
+  "specs": [
+    {
+      "context": "ka",
+      "size": "6",
+      "solver": "sa",
+      "master_days": 28,
+      "sub_days": 28,
+      "lock_days": 28,
+      "theta_weeks": null,
+      "baseline": true,
+      "sa_iters": 50,
+      "mip_time_limit": 30,
+      "mip_earliness_time_limit": 30
+    },
+    {
+      "context": "ka",
+      "size": "6",
+      "solver": "sa",
+      "master_days": 28,
+      "sub_days": 14,
+      "lock_days": 7,
+      "theta_weeks": 2,
+      "baseline": false,
+      "sa_iters": 50,
+      "mip_time_limit": 30,
+      "mip_earliness_time_limit": 30
+    },
+    {
+      "context": "ka",
+      "size": "6",
+      "solver": "sa",
+      "master_days": 28,
+      "sub_days": 14,
+      "lock_days": 14,
+      "theta_weeks": 2,
+      "baseline": false,
+      "sa_iters": 50,
+      "mip_time_limit": 30,
+      "mip_earliness_time_limit": 30
+    },
+    {
+      "context": "ka",
+      "size": "6",
+      "solver": "sa",
+      "master_days": 28,
+      "sub_days": 28,
+      "lock_days": 7,
+      "theta_weeks": 4,
+      "baseline": false,
+      "sa_iters": 50,
+      "mip_time_limit": 30,
+      "mip_earliness_time_limit": 30
+    },
+    {
+      "context": "ka",
+      "size": "6",
+      "solver": "sa",
+      "master_days": 28,
+      "sub_days": 28,
+      "lock_days": 14,
+      "theta_weeks": 4,
+      "baseline": false,
+      "sa_iters": 50,
+      "mip_time_limit": 30,
+      "mip_earliness_time_limit": 30
+    },
+    {
+      "context": "ka",
+      "size": "6",
+      "solver": "mip",
+      "master_days": 28,
+      "sub_days": 28,
+      "lock_days": 28,
+      "theta_weeks": null,
+      "baseline": true,
+      "sa_iters": 50,
+      "mip_time_limit": 30,
+      "mip_earliness_time_limit": 30
+    },
+    {
+      "context": "ka",
+      "size": "6",
+      "solver": "mip",
+      "master_days": 28,
+      "sub_days": 14,
+      "lock_days": 7,
+      "theta_weeks": 2,
+      "baseline": false,
+      "sa_iters": 50,
+      "mip_time_limit": 30,
+      "mip_earliness_time_limit": 30
+    },
+    {
+      "context": "ka",
+      "size": "6",
+      "solver": "mip",
+      "master_days": 28,
+      "sub_days": 14,
+      "lock_days": 14,
+      "theta_weeks": 2,
+      "baseline": false,
+      "sa_iters": 50,
+      "mip_time_limit": 30,
+      "mip_earliness_time_limit": 30
+    },
+    {
+      "context": "ka",
+      "size": "6",
+      "solver": "mip",
+      "master_days": 28,
+      "sub_days": 28,
+      "lock_days": 7,
+      "theta_weeks": 4,
+      "baseline": false,
+      "sa_iters": 50,
+      "mip_time_limit": 30,
+      "mip_earliness_time_limit": 30
+    },
+    {
+      "context": "ka",
+      "size": "6",
+      "solver": "mip",
+      "master_days": 28,
+      "sub_days": 28,
+      "lock_days": 14,
+      "theta_weeks": 4,
+      "baseline": false,
+      "sa_iters": 50,
+      "mip_time_limit": 30,
+      "mip_earliness_time_limit": 30
+    }
+  ]
+}

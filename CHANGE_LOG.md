@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-10-09
+- Feasibility check for the FHOPS 1.0.1 re-run (#1): fresh venv with `fhops==1.0.1` (PyPI),
+  harness smoke test, and a one-window size-40 MIP probe. Added `scripts/probe_mip_window_v101.py`
+  (first rolling window only, same solver settings as the harness). Evidence in
+  `data/output/rerun_v101_smoke/` and `data/output/rerun_v101_probe/`; results and grid wall-clock
+  estimate in `notes/rolling_rerun_v101.md` ("Feasibility check"). Manuscript work moves to
+  `UBC-FRESH/fhops-cjfr-rolling-horizon`.
+
+Commands:
+- `python3 -m venv /tmp/opencode/venv-fhops101 && /tmp/opencode/venv-fhops101/bin/pip install fhops==1.0.1`
+- `/usr/bin/time -v /tmp/opencode/venv-fhops101/bin/python scripts/rolling_rerun_v101.py --smoke --workers 16` (10/10 ok, 3:21, 0.25 GB)
+- `/usr/bin/time -v /tmp/opencode/venv-fhops101/bin/python scripts/probe_mip_window_v101.py {ka,ni,pg} 40 --sub 14 --lock 7 --out data/output/rerun_v101_probe/<ctx>_40_sub14_lock7.json`
+- `/usr/bin/time -v /tmp/opencode/venv-fhops101/bin/python scripts/probe_mip_window_v101.py ni 40 --sub 112 --lock 7 --out data/output/rerun_v101_probe/ni_40_sub112_lock7.json`
+- `/tmp/opencode/venv-fhops101/bin/pip freeze > data/output/rerun_v101_probe/environment.txt`
+
 ## 2026-10-07
 - `scripts/rolling_rerun_v101.py` updated for FHOPS 1.0.1: explicit earliness stage-2 limit (`--mip-earliness-time-limit`, default 300 s), separate memory-guarded pool for size-40 MIP runs (`--large-mip-workers`, default 6), per-run window status counts (`n_no_solution_windows`, `n_skipped_windows`, `n_empty_windows`). Design decision recorded in `notes/rolling_rerun_v101.md` (MIP arm like-for-like).
 
