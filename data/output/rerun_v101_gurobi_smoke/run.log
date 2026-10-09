@@ -1,0 +1,14 @@
+FHOPS 1.0.1 @ None (/tmp/opencode/venv-fhops101-grb/lib/python3.12/site-packages/fhops)
+10 specs, 10 pending, workers=16
+pools: large-MIP 0 specs x 6 workers; other 10 x 16
+[1/10] ka_6_baseline_mip: ok
+[2/10] ka_6_sub14_lock14_sa: ok
+[3/10] ka_6_baseline_sa: ok
+[4/10] ka_6_sub28_lock14_sa: ok
+[5/10] ka_6_sub14_lock7_sa: ok
+[6/10] ka_6_sub28_lock7_sa: ok
+[7/10] ka_6_sub14_lock14_mip: ok
+[8/10] ka_6_sub28_lock14_mip: ok
+[9/10] ka_6_sub28_lock7_mip: ok
+[10/10] ka_6_sub14_lock7_mip: ok
+Wrote /home/gep/projects/jaffray-masc-fhops-model/data/output/rerun_v101_gurobi_smoke/summary.csv (10 runs)

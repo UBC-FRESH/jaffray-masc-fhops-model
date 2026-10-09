@@ -1,0 +1,28 @@
+WARNING: Loading a SolverResults object with an 'aborted' status, but
+containing a solution
+WARNING: Loading a SolverResults object with an 'aborted' status, but
+containing a solution
+{"fhops_version": "1.0.1", "context": "ni", "size": "40", "sub_days": 112, "lock_days": 7, "solver": "gurobi", "threads": 1, "time_limit_s": 1800, "earliness_time_limit_s": 300, "wall_time_s": 2174.0349810123444}
+	Command being timed: "/tmp/opencode/venv-fhops101-grb/bin/python scripts/probe_mip_window_v101.py ni 40 --sub 112 --lock 7 --solver gurobi --out data/output/rerun_v101_probe/gurobi/ni_40_sub112_lock7.json"
+	User time (seconds): 2154.85
+	System time (seconds): 13.90
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 36:17.27
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3146168
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 6
+	Minor (reclaiming a frame) page faults: 12310046
+	Voluntary context switches: 23433
+	Involuntary context switches: 125631
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 293571
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

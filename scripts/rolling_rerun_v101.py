@@ -13,7 +13,8 @@ for each scenario as the baseline (``master = sub = lock = num_days``).
 Grid (identical to ``scripts/rolling_experiments.py``)
 ------------------------------------------------------
 contexts {pg, ka, ni} x sizes {6, 18, 40} x theta {2, 4, 8, 16} weeks x lock {1, 7, 14} days x
-solvers {sa (500 iters, seed 42), mip (HiGHS, 1800 s per window)} = 216 runs + 18 baselines.
+solvers {sa (500 iters, seed 42), mip (HiGHS or Gurobi via ``--mip-solver``, 1800 s per window)}
+= 216 runs + 18 baselines.
 
 Outputs (``--out-root``, default ``data/output/rerun_v101``)
 ------------------------------------------------------------
@@ -77,6 +78,7 @@ class RunSpec:
     sa_iters: int
     mip_time_limit: int
     mip_earliness_time_limit: int = 300
+    mip_solver: str = MIP_SOLVER
 
     @property
     def scenario_id(self) -> str:
@@ -125,7 +127,10 @@ def build_specs(args: argparse.Namespace) -> list[RunSpec]:
             master = 28 if args.smoke else days
             for solver in args.solvers or SOLVERS:
                 specs.append(
-                    RunSpec(context, size, solver, master, master, master, None, True, sa_iters, mip_limit, early_limit)
+                    RunSpec(
+                        context, size, solver, master, master, master, None, True, sa_iters, mip_limit, early_limit,
+                        args.mip_solver,
+                    )
                 )
                 if args.only_baselines:
                     continue
@@ -135,7 +140,10 @@ def build_specs(args: argparse.Namespace) -> list[RunSpec]:
                         if lock > sub:
                             continue
                         specs.append(
-                            RunSpec(context, size, solver, master, sub, lock, theta, False, sa_iters, mip_limit, early_limit)
+                            RunSpec(
+                                context, size, solver, master, sub, lock, theta, False, sa_iters, mip_limit,
+                                early_limit, args.mip_solver,
+                            )
                         )
     return specs
 
@@ -186,7 +194,7 @@ def run_one(spec: RunSpec, runs_dir: str) -> tuple[str, str]:
                 solver=spec.solver,
                 sa_iters=spec.sa_iters,
                 sa_seed=SA_SEED,
-                mip_solver=MIP_SOLVER,
+                mip_solver=spec.mip_solver,
                 mip_time_limit=spec.mip_time_limit,
                 mip_solver_options={"threads": 1},
                 mip_earliness=True,
@@ -250,7 +258,13 @@ def summarize(out_root: Path) -> Path:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--out-root", type=Path, default=PROJECT_ROOT / "data" / "output" / "rerun_v101")
+    parser.add_argument("--out-root", type=Path, default=None, help="default data/output/rerun_v101[_<mip-solver>]")
+    parser.add_argument(
+        "--mip-solver",
+        default=MIP_SOLVER,
+        choices=["highs", "gurobi"],
+        help="MILP backend for the MIP arm (gurobi needs gurobipy and a full licence)",
+    )
     parser.add_argument("--workers", type=int, default=max(1, (os.cpu_count() or 2) - 2))
     parser.add_argument("--contexts", nargs="*")
     parser.add_argument("--sizes", nargs="*")
@@ -273,8 +287,9 @@ def main() -> int:
     parser.add_argument("--summarize", action="store_true", help="only rebuild summary.csv")
     args = parser.parse_args()
 
-    if args.smoke and args.out_root == PROJECT_ROOT / "data" / "output" / "rerun_v101":
-        args.out_root = PROJECT_ROOT / "data" / "output" / "rerun_v101_smoke"
+    if args.out_root is None:
+        suffix = "" if args.mip_solver == "highs" else f"_{args.mip_solver}"
+        args.out_root = PROJECT_ROOT / "data" / "output" / (f"rerun_v101{suffix}" + ("_smoke" if args.smoke else ""))
     runs_dir = args.out_root / "runs"
     runs_dir.mkdir(parents=True, exist_ok=True)
     if args.summarize:

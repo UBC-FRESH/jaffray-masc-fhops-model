@@ -6,6 +6,9 @@ settings as ``rolling_rerun_v101.py`` (cold HiGHS, 1 thread, earliness stage on)
 small JSON with wall time, window status and locked/planned delivery. Wrap it in
 ``/usr/bin/time -v`` to record peak memory.
 
+``--solver gurobi`` needs ``gurobipy`` and a full Gurobi licence (the pip-bundled licence is
+size-limited).
+
 Usage
 -----
     /usr/bin/time -v python scripts/probe_mip_window_v101.py ka 40 --sub 14 --lock 7 \
@@ -30,6 +33,8 @@ def main() -> int:
     parser.add_argument("--lock", type=int, default=7)
     parser.add_argument("--time-limit", type=int, default=1800)
     parser.add_argument("--earliness-time-limit", type=int, default=300)
+    parser.add_argument("--solver", default="highs", help="MILP backend passed to FHOPS (highs or gurobi)")
+    parser.add_argument("--threads", type=int, default=1)
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
 
@@ -46,9 +51,9 @@ def main() -> int:
         subproblem_days=args.sub,
         lock_days=args.lock,
         solver="mip",
-        mip_solver="highs",
+        mip_solver=args.solver,
         mip_time_limit=args.time_limit,
-        mip_solver_options={"threads": 1},
+        mip_solver_options={"threads": args.threads},
         mip_earliness=True,
         mip_earliness_time_limit=args.earliness_time_limit,
         max_iterations=1,
@@ -61,6 +66,8 @@ def main() -> int:
         "size": args.size,
         "sub_days": args.sub,
         "lock_days": args.lock,
+        "solver": args.solver,
+        "threads": args.threads,
         "time_limit_s": args.time_limit,
         "earliness_time_limit_s": args.earliness_time_limit,
         "wall_time_s": wall,

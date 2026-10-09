@@ -1,0 +1,62 @@
+{
+  "fhops_version": "1.0.1",
+  "context": "ka",
+  "size": "40",
+  "sub_days": 14,
+  "lock_days": 7,
+  "solver": "gurobi",
+  "threads": 1,
+  "time_limit_s": 1800,
+  "earliness_time_limit_s": 300,
+  "wall_time_s": 2109.0296592712402,
+  "summary": {
+    "iterations": [
+      {
+        "iteration_index": 0,
+        "start_day": 1,
+        "horizon_days": 14,
+        "lock_days": 7,
+        "locked_assignments": 433,
+        "objective": -172940.18630687793,
+        "runtime_s": 2108.8542482154444,
+        "warnings": [
+          "solver_status=aborted",
+          "termination_condition=maxTimeLimit",
+          "earliness=applied value=238339.08236988104 stage1_value=222968.59832656686 termination_condition=maxTimeLimit"
+        ],
+        "remaining_work_start": 393614.222773,
+        "status": "solved",
+        "has_solution": true,
+        "planned_delivered": 110337.01823300068,
+        "locked_delivered": 40210.8211720002,
+        "locked_production": 229631.37865100984,
+        "empty": false,
+        "error": null
+      }
+    ],
+    "total_locked_assignments": 433,
+    "empty_windows": 0,
+    "no_solution_windows": 0,
+    "skipped_windows": 0,
+    "empty_window_indices": [],
+    "no_solution_window_indices": [],
+    "metadata": {
+      "scenario": "MASc KA 40 blocks",
+      "master_days": 112,
+      "subproblem_days": 14,
+      "lock_days": 7,
+      "start_day": 1,
+      "solver": "mip",
+      "fail_on_empty_window": false,
+      "fail_on_no_solution": false,
+      "mip_solver": "gurobi",
+      "mip_time_limit": 1800,
+      "mip_solver_options": {
+        "threads": 1
+      },
+      "mip_earliness": true,
+      "mip_earliness_time_limit": 300
+    },
+    "warnings": []
+  }
+}

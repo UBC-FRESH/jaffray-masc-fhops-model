@@ -1,0 +1,62 @@
+{
+  "fhops_version": "1.0.1",
+  "context": "pg",
+  "size": "40",
+  "sub_days": 14,
+  "lock_days": 7,
+  "solver": "gurobi",
+  "threads": 1,
+  "time_limit_s": 1800,
+  "earliness_time_limit_s": 300,
+  "wall_time_s": 2109.0355200767517,
+  "summary": {
+    "iterations": [
+      {
+        "iteration_index": 0,
+        "start_day": 1,
+        "horizon_days": 14,
+        "lock_days": 7,
+        "locked_assignments": 425,
+        "objective": -1063315.551076574,
+        "runtime_s": 2108.862644461915,
+        "warnings": [
+          "solver_status=aborted",
+          "termination_condition=maxTimeLimit",
+          "earliness=applied value=266581.33344260306 stage1_value=266581.33344260306 termination_condition=maxTimeLimit"
+        ],
+        "remaining_work_start": 1309443.401107,
+        "status": "solved",
+        "has_solution": true,
+        "planned_delivered": 123063.9248919998,
+        "locked_delivered": 43219.94911219436,
+        "locked_production": 262257.94644038996,
+        "empty": false,
+        "error": null
+      }
+    ],
+    "total_locked_assignments": 425,
+    "empty_windows": 0,
+    "no_solution_windows": 0,
+    "skipped_windows": 0,
+    "empty_window_indices": [],
+    "no_solution_window_indices": [],
+    "metadata": {
+      "scenario": "MASc PG 40 blocks",
+      "master_days": 112,
+      "subproblem_days": 14,
+      "lock_days": 7,
+      "start_day": 1,
+      "solver": "mip",
+      "fail_on_empty_window": false,
+      "fail_on_no_solution": false,
+      "mip_solver": "gurobi",
+      "mip_time_limit": 1800,
+      "mip_solver_options": {
+        "threads": 1
+      },
+      "mip_earliness": true,
+      "mip_earliness_time_limit": 300
+    },
+    "warnings": []
+  }
+}

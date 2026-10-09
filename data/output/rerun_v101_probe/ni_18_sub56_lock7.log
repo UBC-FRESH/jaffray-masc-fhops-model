@@ -1,0 +1,28 @@
+WARNING: Loading a SolverResults object with an 'aborted' status, but
+containing a solution
+/tmp/opencode/venv-fhops101/lib/python3.12/site-packages/fhops/planning/rolling.py:1808: UserWarning: Iteration 0 (days 1-56): empty window: locked 0 assignment(s) producing 0.000 m³ and the window plan delivers 0.000 m³ while 755749.635 m³ remain in the window's blocks
+  return run_rolling_horizon(
+{"fhops_version": "1.0.1", "context": "ni", "size": "18", "sub_days": 56, "lock_days": 7, "solver": "highs", "threads": 1, "time_limit_s": 1800, "earliness_time_limit_s": 300, "wall_time_s": 2123.740646839142}
+	Command being timed: "/tmp/opencode/venv-fhops101/bin/python scripts/probe_mip_window_v101.py ni 18 --sub 56 --lock 7 --out data/output/rerun_v101_probe/ni_18_sub56_lock7.json"
+	User time (seconds): 2114.23
+	System time (seconds): 4.54
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 35:25.94
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1675088
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3329675
+	Voluntary context switches: 22327
+	Involuntary context switches: 108101
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 5
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

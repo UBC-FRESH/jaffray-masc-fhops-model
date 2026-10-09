@@ -1,5 +1,22 @@
 # Change Log
 
+## 2026-10-09 (b)
+- Gurobi comparison (#1): academic licence installed to `~/gurobi.lic` (`grbgetkey`, not in repo).
+  Six probe windows (size 18 and 40) on both backends, plus a Gurobi smoke run. Gurobi avoids the
+  empty HiGHS incumbents (3/6 windows) at equal wall time. Table in `notes/rolling_rerun_v101.md`
+  ("Gurobi vs HiGHS").
+- `scripts/rolling_rerun_v101.py`: new `--mip-solver {highs,gurobi}` stored in `RunSpec.mip_solver`.
+  The default out-root gets a `_<solver>` suffix for non-HiGHS backends. `--out-root` default is
+  now resolved after parsing.
+- `scripts/probe_mip_window_v101.py`: new `--solver` and `--threads` options.
+- Tiny-production replay violations with Gurobi reported on UBC-FRESH/fhops#157.
+
+Commands:
+- `python3 -m venv /tmp/opencode/venv-fhops101-grb && /tmp/opencode/venv-fhops101-grb/bin/pip install fhops==1.0.1 gurobipy` (gurobipy 13.0.3)
+- `/usr/bin/time -v <venv>/bin/python scripts/probe_mip_window_v101.py <ctx> <size> --sub <14|56|112> --lock 7 [--solver gurobi] --out ...` (ka/ni/pg_40 sub14, ni_40 sub112, ni_18 sub14/sub56)
+- `/tmp/opencode/venv-fhops101-grb/bin/python scripts/rolling_rerun_v101.py --smoke --mip-solver gurobi --workers 16` (10/10 ok)
+- `scripts/rolling_rerun_v101.py --dry-run` and `--mip-solver gurobi --dry-run` (234 specs each)
+
 ## 2026-10-09
 - Feasibility check for the FHOPS 1.0.1 re-run (#1): fresh venv with `fhops==1.0.1` (PyPI),
   harness smoke test, and a one-window size-40 MIP probe. Added `scripts/probe_mip_window_v101.py`

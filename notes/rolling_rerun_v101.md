@@ -70,6 +70,35 @@ Pyomo 6.10.1, Python 3.12.3 (`data/output/rerun_v101_probe/environment.txt`). Ho
   needs ≈ 66–70 h (≈ 3 days) in the worst case; with the default 6 large workers the size-40 MIP
   pool alone needs ≈ 6.5 days.
 
+### Gurobi vs HiGHS (2026-10-09)
+Gurobi 13.0.3 (gurobipy, academic named-user licence on jupyterhub03, expires 2027-10-09), venv
+`/tmp/opencode/venv-fhops101-grb` (`data/output/rerun_v101_probe/gurobi/environment.txt`). Same
+probe and settings (1 thread, 1800 s + 300 s earliness). Planned / locked = m3 delivered in the
+window plan / in its lock span (7 d).
+
+| window | HiGHS planned / locked | Gurobi planned / locked | HiGHS RSS | Gurobi RSS |
+|---|---|---|---|---|
+| ni_18 sub14 | 73473 / 32291 | 75820 / 34616 | 1.0 GB | 0.4 GB |
+| ni_18 sub56 | **0 / 0 (empty)** | 247612 / 8811 | 1.7 GB | 1.1 GB |
+| ka_40 sub14 | **0 / 0 (empty)** | 110337 / 40211 | 2.4 GB | 0.7 GB |
+| ni_40 sub14 | 129777 / 52471 | 133996 / 55842 | 2.1 GB | 0.9 GB |
+| pg_40 sub14 | 115023 / 44714 | 123064 / 43220 | 1.9 GB | 0.7 GB |
+| ni_40 sub112 | **0 / 0 (empty)** | 870778 / 1341 | 4.7 GB | 3.1 GB |
+
+- Both solvers hit the time limit in both stages on every probed window, so the wall time per window
+  is the same (~2100 s) and the grid estimate does not change.
+- Gurobi finds a non-empty incumbent on all 6 windows; HiGHS returns empty plans on 3 of 6. Where both
+  have incumbents, Gurobi's objective is 0.8–1.5 % better.
+- ni_40 sub112 on Gurobi plans 870778 m3 but locks only 1341 m3 in the first week. Stage 2
+  (earliness) is time-limited, so work is deferred past the lock span. Expect long-window,
+  short-lock runs to under-deliver for solver-time reasons.
+- Smoke on Gurobi (`data/output/rerun_v101_gurobi_smoke/`): every ka_6 MIP run delivers 30913 m3 at
+  30 s/window (HiGHS: 310–30913 m3). Two runs replay with 1 `missing_prereq` violation caused by
+  tiny-production rows (≤ 1.7e-4 m3). Reported on UBC-FRESH/fhops#157 (MINOR-N2 also occurs in stage
+  1 with Gurobi).
+- The harness now takes `--mip-solver {highs,gurobi}`. A non-HiGHS backend writes to
+  `data/output/rerun_v101_<solver>/`, and the backend is recorded per run (`mip_solver`).
+
 ## Status
 - [x] Runner written and smoke-tested on FHOPS 1.0.0 (pipeline only).
 - [ ] Re-run full grid on FHOPS 1.0.1 (after fhops#91/#92 merge).
