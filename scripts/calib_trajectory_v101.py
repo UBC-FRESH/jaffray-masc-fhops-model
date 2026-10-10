@@ -7,7 +7,8 @@ For every stage it reports the incumbent, best bound and gap at fixed checkpoint
 shortfall of the incumbent against the stage's final incumbent, and the work units per second
 (from the final "Explored ... in S seconds (W work units)" line).
 
-Outputs ``<out>/trajectory_checkpoints.csv`` and ``<out>/stage_totals.csv``.
+Outputs ``<out>/trajectory_checkpoints.csv``, ``<out>/stage_totals.csv`` and ``<out>/model_sizes.csv``
+(rows, columns, binaries of the stage-1 model as reported by Gurobi before presolve).
 
 Usage
 -----
@@ -106,6 +107,17 @@ def main() -> int:
                         else math.nan,
                     }
                 )
+    sizes = []
+    model_re = re.compile(r"Optimize a model with (\d+) rows, (\d+) columns and (\d+) nonzeros")
+    bin_re = re.compile(r"Variable types: (\d+) continuous, (\d+) integer \((\d+) binary\)")
+    for log in sorted(args.out.glob("*.gurobi.log")):
+        text = log.read_text(encoding="utf-8", errors="replace")
+        m, b = model_re.search(text), bin_re.search(text)
+        if m:
+            sizes.append({"window": log.name.removesuffix(".gurobi.log"), "rows": int(m.group(1)),
+                          "columns": int(m.group(2)), "nonzeros": int(m.group(3)),
+                          "binaries": int(b.group(3)) if b else None})
+    pd.DataFrame(sizes).to_csv(args.out / "model_sizes.csv", index=False)
     cp = pd.DataFrame(rows)
     tot = pd.DataFrame(total_rows)
     if not tot.empty and "work_units" in tot:
