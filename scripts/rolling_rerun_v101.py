@@ -25,13 +25,16 @@ Outputs (``--out-root``, default ``data/output/rerun_v101``)
 - ``summary.csv``: one row per completed run (rebuilt with ``--summarize``).
 
 Runs are resumable: a run whose JSON exists is skipped. Each worker is a fresh process and HiGHS
-is limited to one thread, so ``--workers`` maps to physical cores.
+is limited to one thread. MIP and SA runs use separate pools: time-limited MIP solves get at most one
+process per physical core (``--mip-workers``, default 36 on the 36-core host), and iteration-bounded
+SA runs use the remaining logical cores (``--sa-workers``).
 
 Usage
 -----
     python scripts/rolling_rerun_v101.py --dry-run
-    python scripts/rolling_rerun_v101.py --smoke --workers 8          # quick pipeline check
-    nohup python scripts/rolling_rerun_v101.py --workers 70 > rerun.log 2>&1 &
+    python scripts/rolling_rerun_v101.py --smoke --mip-workers 8 --sa-workers 8   # quick pipeline check
+    nohup python scripts/rolling_rerun_v101.py --mip-solver gurobi --mip-earliness-time-limit 900 \
+        --mip-workers 36 --sa-workers 34 > rerun.log 2>&1 &
     python scripts/rolling_rerun_v101.py --summarize
 """
 
@@ -270,7 +273,18 @@ def main() -> int:
         choices=["highs", "gurobi"],
         help="MILP backend for the MIP arm (gurobi needs gurobipy and a full licence)",
     )
-    parser.add_argument("--workers", type=int, default=max(1, (os.cpu_count() or 2) - 2))
+    parser.add_argument(
+        "--mip-workers",
+        type=int,
+        default=36,
+        help="concurrent MIP runs; keep <= physical cores so time-limited solves get a full core each",
+    )
+    parser.add_argument(
+        "--sa-workers",
+        type=int,
+        default=max(1, (os.cpu_count() or 2) - 38),
+        help="concurrent SA runs (iteration-bounded, so they can use the remaining logical cores)",
+    )
     parser.add_argument("--contexts", nargs="*")
     parser.add_argument("--sizes", nargs="*")
     parser.add_argument("--solvers", nargs="*", choices=SOLVERS)
@@ -280,12 +294,6 @@ def main() -> int:
         type=int,
         default=300,
         help="time limit (s) for the MILP earliness stage-2 solve in rolling windows (FHOPS 1.0.1)",
-    )
-    parser.add_argument(
-        "--large-mip-workers",
-        type=int,
-        default=6,
-        help="max concurrent MIP runs on size-40 scenarios (memory guard; large MILP builds use tens of GB)",
     )
     parser.add_argument("--smoke", action="store_true", help="tiny grid with short limits (pipeline check)")
     parser.add_argument("--dry-run", action="store_true")
@@ -306,7 +314,7 @@ def main() -> int:
     specs = build_specs(args)
     pending = [s for s in specs if not (runs_dir / f"{s.run_id}.json").exists()]
     pending.sort(key=lambda s: s.cost_rank, reverse=True)
-    print(f"{len(specs)} specs, {len(pending)} pending, workers={args.workers}")
+    print(f"{len(specs)} specs, {len(pending)} pending, mip_workers={args.mip_workers}, sa_workers={args.sa_workers}")
     if args.dry_run:
         for spec in pending:
             print(spec.run_id)
@@ -316,16 +324,14 @@ def main() -> int:
         json.dumps({"provenance": prov, "specs": [asdict(s) for s in specs]}, indent=2), encoding="utf-8"
     )
     failures = 0
-    large = [s for s in pending if s.solver == "mip" and s.size == "40"]
-    other = [s for s in pending if not (s.solver == "mip" and s.size == "40")]
-    large_workers = max(1, min(args.large_mip_workers, args.workers))
-    other_workers = max(1, args.workers - large_workers) if large else args.workers
-    print(f"pools: large-MIP {len(large)} specs x {large_workers} workers; other {len(other)} x {other_workers}")
-    with ProcessPoolExecutor(max_workers=large_workers, max_tasks_per_child=1) as large_pool, ProcessPoolExecutor(
-        max_workers=other_workers, max_tasks_per_child=1
-    ) as other_pool:
-        futures = {large_pool.submit(run_one, spec, str(runs_dir)): spec for spec in large}
-        futures.update({other_pool.submit(run_one, spec, str(runs_dir)): spec for spec in other})
+    mip = [s for s in pending if s.solver == "mip"]
+    sa = [s for s in pending if s.solver != "mip"]
+    print(f"pools: MIP {len(mip)} specs x {args.mip_workers} workers; SA {len(sa)} specs x {args.sa_workers} workers")
+    with ProcessPoolExecutor(max_workers=max(1, args.mip_workers), max_tasks_per_child=1) as mip_pool, ProcessPoolExecutor(
+        max_workers=max(1, args.sa_workers), max_tasks_per_child=1
+    ) as sa_pool:
+        futures = {mip_pool.submit(run_one, spec, str(runs_dir)): spec for spec in mip}
+        futures.update({sa_pool.submit(run_one, spec, str(runs_dir)): spec for spec in sa})
         for done, future in enumerate(as_completed(futures), start=1):
             run_id, status = future.result()
             failures += status != "ok"

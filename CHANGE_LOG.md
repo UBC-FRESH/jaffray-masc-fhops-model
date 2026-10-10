@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-10-10 (b)
+- Decision (G. Paradis): option B. Gurobi, 1800 s stage 1, 900 s earliness, 36 MIP + 34 SA workers.
+  Recorded in `notes/rolling_rerun_v101.md`.
+- `scripts/rolling_rerun_v101.py`: separate MIP and SA pools (`--mip-workers`, default 36;
+  `--sa-workers`). These replace `--workers` and `--large-mip-workers`; the memory guard is no
+  longer needed (≤ 4.7 GB per run).
+- Grid launched (see command below).
+
+Commands:
+- `scripts/rolling_rerun_v101.py --mip-solver gurobi --mip-earliness-time-limit 900 --dry-run` (234 specs; the first 36 pending are the lock-1 MIP runs)
+- `scripts/rolling_rerun_v101.py --smoke --mip-solver gurobi --mip-earliness-time-limit 900 --mip-workers 6 --sa-workers 6 --out-root /tmp/opencode/grbtest/psmoke` (10/10 ok)
+- `mkdir -p data/output/rerun_v101_gurobi && /tmp/opencode/venv-fhops101-grb/bin/pip freeze > data/output/rerun_v101_gurobi/environment.txt && nohup /tmp/opencode/venv-fhops101-grb/bin/python scripts/rolling_rerun_v101.py --mip-solver gurobi --mip-earliness-time-limit 900 --mip-workers 36 --sa-workers 34 > data/output/rerun_v101_gurobi/run.log 2>&1 &`
+
 ## 2026-10-10
 - Time-limit calibration (#1): 8 first-window probes on Gurobi with stage 1 at 7200 s and stage 2 at
   1800 s, plus Gurobi logs. New `scripts/calib_trajectory_v101.py` parses the incumbent, bound, gap

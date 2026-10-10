@@ -138,7 +138,19 @@ Stage 1: shortfall of the incumbent at time t versus the 7200 s incumbent (%), a
   (candidate for 1.0.2).
 - The harness now writes `runs/<run_id>.gurobi.log` for Gurobi MIP runs.
 
+## Design decision (2026-10-10, G. Paradis): option B
+This supersedes the 2026-10-07 MIP settings.
+- **MIP arm:** Gurobi 13.0.3, cold start, 1 thread, stage 1 limited to 1800 s per window, earliness
+  stage 2 limited to **900 s**. The reasons are in the calibration above: Gurobi avoids empty
+  incumbents, 1800 s sits on the stage-1 plateau, and 300 s understates what long windows lock early.
+- **Concurrency:** 36 MIP workers (one per physical core) and 34 SA workers in a separate pool on the
+  remaining logical cores. SA is iteration-bounded, so load does not change its result.
+- Worst-case wall time is about 4.5 days. All 36 lock-1 MIP runs start first, and each is at most
+  112 × 2700 s ≈ 85 h.
+- Output: `data/output/rerun_v101_gurobi/`. The HiGHS probe results remain the open-source
+  reference.
+
 ## Status
 - [x] Runner written and smoke-tested on FHOPS 1.0.0 (pipeline only).
-- [ ] Re-run full grid on FHOPS 1.0.1 (after fhops#91/#92 merge).
+- [ ] Re-run full grid on FHOPS 1.0.1 (launched 2026-10-10, option B).
 - [ ] Analysis: compare conclusions with Ch. 4; report to fhops-manuscript#20.
