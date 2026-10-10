@@ -1,5 +1,15 @@
 # Change Log
 
+## 2026-10-10 (d)
+- Grid restarted MIP-only after hyperthread contention halved the Gurobi work rate (details in
+  `notes/rolling_rerun_v101.md`, "Hyperthread contention and restart"). Harness: per-solver
+  manifest name.
+
+Commands:
+- `kill -TERM -- -<pgid>` of the first launch; removed artefacts of unfinished runs (`runs/*.log`, `*.gurobi.log`, `*_assignments.csv`, `*.json.tmp` without a JSON)
+- `nohup /tmp/opencode/venv-fhops101-grb/bin/python scripts/rolling_rerun_v101.py --mip-solver gurobi --mip-earliness-time-limit 900 --solvers mip --mip-workers 36 --sa-workers 1 > data/output/rerun_v101_gurobi/run_mip.log 2>&1 &`
+- Next, after the MIP phase: `scripts/rolling_rerun_v101.py --mip-solver gurobi --mip-earliness-time-limit 900 --solvers sa --sa-workers 70 > data/output/rerun_v101_gurobi/run_sa.log 2>&1`
+
 ## 2026-10-10 (c)
 - README: added a "Rolling-horizon re-run on FHOPS 1.0.1" section with the exact commands.
 - ROADMAP Phase 7: feasibility, decision and launch recorded. Analysis moves to the manuscript repo.

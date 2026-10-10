@@ -150,6 +150,23 @@ This supersedes the 2026-10-07 MIP settings.
 - Output: `data/output/rerun_v101_gurobi/`. The HiGHS probe results remain the open-source
   reference.
 
+### Hyperthread contention and restart (2026-10-10)
+- In the first launch (17:27 UTC; 36 MIP + 34 SA processes on 36 physical cores), the first 50
+  Gurobi solves longer than 100 s ran at a median of 0.46 work units/s (0.30–0.61), against 0.9–1.2
+  in the calibration. SA processes on the sibling hyperthreads halved MIP throughput.
+- With G. Paradis's approval, the job was killed at 18:10 UTC. Partial artefacts of unfinished runs
+  were removed. The 3 completed SA runs were kept: SA is seeded and iteration-bounded, so load does
+  not affect its results. `run.log` was renamed `run_attempt1_contended.log`.
+- Relaunched 18:12 UTC with MIP only (`--solvers mip --mip-workers 36`; log `run_mip.log`). SA runs
+  go after the MIP phase (`--solvers sa`, many workers).
+- With 36 MIP solves alone, the first 13 solves longer than 100 s ran at 0.62–0.90 work units/s
+  (median 0.74–0.77). This is still below the calibration, which ran 8 solves at once; likely
+  shared memory bandwidth and lower all-core clock. Accepted: it gives about 1300–1400 work units per
+  1800 s window, above the about 860 units the largest window needed for a first non-empty plan.
+  The paper reports the measured rate (`analyze_rerun.py` → `gurobi_work_rates.csv`).
+- The harness now writes `manifest_<solvers>.json` when `--solvers` is given, so the MIP and SA
+  phases do not overwrite each other's manifest.
+
 ## Status
 - [x] Runner written and smoke-tested on FHOPS 1.0.0 (pipeline only).
 - [ ] Re-run full grid on FHOPS 1.0.1 (launched 2026-10-10, option B).

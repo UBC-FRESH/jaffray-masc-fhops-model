@@ -320,7 +320,8 @@ def main() -> int:
             print(spec.run_id)
         return 0
 
-    (args.out_root / "manifest.json").write_text(
+    manifest_name = "manifest.json" if not args.solvers else f"manifest_{'-'.join(args.solvers)}.json"
+    (args.out_root / manifest_name).write_text(
         json.dumps({"provenance": prov, "specs": [asdict(s) for s in specs]}, indent=2), encoding="utf-8"
     )
     failures = 0
