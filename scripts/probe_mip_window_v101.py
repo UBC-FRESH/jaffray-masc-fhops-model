@@ -35,6 +35,7 @@ def main() -> int:
     parser.add_argument("--earliness-time-limit", type=int, default=300)
     parser.add_argument("--solver", default="highs", help="MILP backend passed to FHOPS (highs or gurobi)")
     parser.add_argument("--threads", type=int, default=1)
+    parser.add_argument("--log-file", type=Path, help="solver log file (Gurobi LogFile; both stages append)")
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
 
@@ -44,6 +45,10 @@ def main() -> int:
 
     path = PROJECT_ROOT / "data" / "input" / "scenarios" / f"{args.context}_{args.size}" / "scenario.yaml"
     scenario = load_scenario(str(path))
+    solver_options: dict[str, object] = {"threads": args.threads}
+    if args.log_file is not None:
+        args.log_file.parent.mkdir(parents=True, exist_ok=True)
+        solver_options["LogFile"] = str(args.log_file.resolve())
     start = time.time()
     result = solve_rolling_plan(
         scenario,
@@ -53,7 +58,7 @@ def main() -> int:
         solver="mip",
         mip_solver=args.solver,
         mip_time_limit=args.time_limit,
-        mip_solver_options={"threads": args.threads},
+        mip_solver_options=solver_options,
         mip_earliness=True,
         mip_earliness_time_limit=args.earliness_time_limit,
         max_iterations=1,

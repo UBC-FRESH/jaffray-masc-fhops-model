@@ -1,0 +1,63 @@
+{
+  "fhops_version": "1.0.1",
+  "context": "pg",
+  "size": "40",
+  "sub_days": 14,
+  "lock_days": 7,
+  "solver": "gurobi",
+  "threads": 1,
+  "time_limit_s": 7200,
+  "earliness_time_limit_s": 1800,
+  "wall_time_s": 9009.031809091568,
+  "summary": {
+    "iterations": [
+      {
+        "iteration_index": 0,
+        "start_day": 1,
+        "horizon_days": 14,
+        "lock_days": 7,
+        "locked_assignments": 429,
+        "objective": -1063315.5513221978,
+        "runtime_s": 9008.856872698292,
+        "warnings": [
+          "solver_status=aborted",
+          "termination_condition=maxTimeLimit",
+          "earliness=applied value=346487.00004556595 stage1_value=266581.33344260306 termination_condition=maxTimeLimit"
+        ],
+        "remaining_work_start": 1309443.401107,
+        "status": "solved",
+        "has_solution": true,
+        "planned_delivered": 123063.92489199524,
+        "locked_delivered": 44903.488040999044,
+        "locked_production": 336477.96209599345,
+        "empty": false,
+        "error": null
+      }
+    ],
+    "total_locked_assignments": 429,
+    "empty_windows": 0,
+    "no_solution_windows": 0,
+    "skipped_windows": 0,
+    "empty_window_indices": [],
+    "no_solution_window_indices": [],
+    "metadata": {
+      "scenario": "MASc PG 40 blocks",
+      "master_days": 112,
+      "subproblem_days": 14,
+      "lock_days": 7,
+      "start_day": 1,
+      "solver": "mip",
+      "fail_on_empty_window": false,
+      "fail_on_no_solution": false,
+      "mip_solver": "gurobi",
+      "mip_time_limit": 7200,
+      "mip_solver_options": {
+        "threads": 1,
+        "LogFile": "/home/gep/projects/jaffray-masc-fhops-model/data/output/rerun_v101_calib/pg_40_sub14_lock7.gurobi.log"
+      },
+      "mip_earliness": true,
+      "mip_earliness_time_limit": 1800
+    },
+    "warnings": []
+  }
+}

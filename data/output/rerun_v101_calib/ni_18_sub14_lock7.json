@@ -1,0 +1,63 @@
+{
+  "fhops_version": "1.0.1",
+  "context": "ni",
+  "size": "18",
+  "sub_days": 14,
+  "lock_days": 7,
+  "solver": "gurobi",
+  "threads": 1,
+  "time_limit_s": 7200,
+  "earliness_time_limit_s": 1800,
+  "wall_time_s": 9002.546454906464,
+  "summary": {
+    "iterations": [
+      {
+        "iteration_index": 0,
+        "start_day": 1,
+        "horizon_days": 14,
+        "lock_days": 7,
+        "locked_assignments": 233,
+        "objective": -603380.05499,
+        "runtime_s": 9002.442720793188,
+        "warnings": [
+          "solver_status=aborted",
+          "termination_condition=maxTimeLimit",
+          "earliness=applied value=236038.3646727383 stage1_value=180431.09379620044 termination_condition=maxTimeLimit"
+        ],
+        "remaining_work_start": 755749.635378,
+        "status": "solved",
+        "has_solution": true,
+        "planned_delivered": 76184.79019399993,
+        "locked_delivered": 34784.28775499994,
+        "locked_production": 222915.8079370001,
+        "empty": false,
+        "error": null
+      }
+    ],
+    "total_locked_assignments": 233,
+    "empty_windows": 0,
+    "no_solution_windows": 0,
+    "skipped_windows": 0,
+    "empty_window_indices": [],
+    "no_solution_window_indices": [],
+    "metadata": {
+      "scenario": "MASc NI 18 blocks",
+      "master_days": 112,
+      "subproblem_days": 14,
+      "lock_days": 7,
+      "start_day": 1,
+      "solver": "mip",
+      "fail_on_empty_window": false,
+      "fail_on_no_solution": false,
+      "mip_solver": "gurobi",
+      "mip_time_limit": 7200,
+      "mip_solver_options": {
+        "threads": 1,
+        "LogFile": "/home/gep/projects/jaffray-masc-fhops-model/data/output/rerun_v101_calib/ni_18_sub14_lock7.gurobi.log"
+      },
+      "mip_earliness": true,
+      "mip_earliness_time_limit": 1800
+    },
+    "warnings": []
+  }
+}

@@ -1,5 +1,17 @@
 # Change Log
 
+## 2026-10-10
+- Time-limit calibration (#1): 8 first-window probes on Gurobi with stage 1 at 7200 s and stage 2 at
+  1800 s, plus Gurobi logs. New `scripts/calib_trajectory_v101.py` parses the incumbent, bound, gap
+  and work units at checkpoints. New `--log-file` option in `scripts/probe_mip_window_v101.py`.
+  Findings in `notes/rolling_rerun_v101.md` ("Time-limit calibration").
+- `scripts/rolling_rerun_v101.py`: Gurobi MIP runs write `runs/<run_id>.gurobi.log`.
+
+Commands:
+- `/usr/bin/time -v /tmp/opencode/venv-fhops101-grb/bin/python scripts/probe_mip_window_v101.py <ctx> <size> --sub <d> --lock 7 --solver gurobi --time-limit 7200 --earliness-time-limit 1800 --log-file data/output/rerun_v101_calib/<w>.gurobi.log --out data/output/rerun_v101_calib/<w>.json` for ka/ni/pg_40 sub14, ni_40 sub112, ni_18 sub14/sub56, pg_18 sub28, ka_6 sub112
+- `/tmp/opencode/venv-fhops101-grb/bin/python scripts/calib_trajectory_v101.py data/output/rerun_v101_calib`
+- `/tmp/opencode/venv-fhops101-grb/bin/python scripts/rolling_rerun_v101.py --smoke --mip-solver gurobi --solvers mip --contexts ka --sizes 6 --only-baselines --out-root /tmp/opencode/grbtest/hsmoke --workers 2` (log written)
+
 ## 2026-10-09 (b)
 - Gurobi comparison (#1): academic licence installed to `~/gurobi.lic` (`grbgetkey`, not in repo).
   Six probe windows (size 18 and 40) on both backends, plus a Gurobi smoke run. Gurobi avoids the

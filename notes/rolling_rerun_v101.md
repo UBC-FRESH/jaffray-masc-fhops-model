@@ -99,6 +99,45 @@ window plan / in its lock span (7 d).
 - The harness now takes `--mip-solver {highs,gurobi}`. A non-HiGHS backend writes to
   `data/output/rerun_v101_<solver>/`, and the backend is recorded per run (`mip_solver`).
 
+### Time-limit calibration (2026-10-10)
+Gurobi 13.0.3, 1 thread, first window only, stage 1 limit 7200 s and stage 2 (earliness) limit
+1800 s, 8 windows run concurrently. Logs and parsed trajectories are in `data/output/rerun_v101_calib/`
+(`scripts/calib_trajectory_v101.py` → `trajectory_checkpoints.csv`, `stage_totals.csv`).
+
+Stage 1: shortfall of the incumbent at time t versus the 7200 s incumbent (%), and the gap at 1800 s.
+
+| window | 300 s | 900 s | 1800 s | 3600 s | gap @1800 s | gap @7200 s |
+|---|---|---|---|---|---|---|
+| ka_40 sub14 | 1.37 | 0.89 | 0.39 | 0.09 | 5.19 | 4.82 |
+| ni_40 sub14 | 0.18 | 0.01 | 0.01 | 0.01 | 0.58 | 0.57 |
+| pg_40 sub14 | 0.12 | 0.00 | 0.00 | 0.00 | 0.80 | 0.79 |
+| ni_40 sub112 | none | none | 1.11 | 0.05 | 3.30 | 2.16 |
+| ni_18 sub14 | 0.31 | 0.28 | 0.12 | 0.03 | 0.39 | 0.27 |
+| ni_18 sub56 | 0.01 | 0.00 | 0.00 | 0.00 | 0.82 | 0.82 |
+| pg_18 sub28 | 0.48 | 0.20 | 0.10 | 0.01 | 1.33 | 1.23 |
+| ka_6 sub112 | optimal in 2.8 s | | | | 0 | 0 |
+
+- At 1800 s stage 1 is on a plateau: the incumbent is within 0.4 % of the 7200 s value except on the
+  112-day size-40 window (1.1 %). The remaining gap (0.4–5 %) comes from the bound and barely
+  closes by 7200 s.
+- 1800 s is close to the minimum for the largest windows. On ni_40 sub112 the root LP takes 646 s
+  (470 work units) and the first non-empty incumbent appears at 1354 s; before that only the empty
+  plan exists.
+- Work rate: 0.9–1.2 work units/s (0.63 on ni_40 sub112) with 8 concurrent jobs on 36 physical
+  cores. With 70 workers (hyperthreads) the rate per process will be lower, and the 112-day size-40
+  windows risk returning empty plans again. Recommendation: at most about 36 concurrent MIP
+  workers.
+- Stage 2 (earliness) is far from converged: the gap at 1800 s is 10–85 %. The shortfall versus the
+  1800 s value is 0–23 % at 300 s and 0–3 % at 900 s (pg_40 sub14: 14.5 %). Locked volume in the first
+  week, stage 2 at 300 s (2026-10-09 probe, stage 1 at 1800 s) versus 1800 s (this run, stage 1 at
+  7200 s; confounded): ni_40 sub112 1341 → 12658 m3; ni_18 sub56 8811 → 18892 m3. Sub14 windows
+  change by about 5 % or less. A 300 s earliness limit therefore understates what long windows lock
+  in their first days.
+- FHOPS passes the same `solver_options` to both stages, so a Gurobi `WorkLimit` cannot be set per
+  stage without an FHOPS change. A per-stage deterministic limit would need an FHOPS extension
+  (candidate for 1.0.2).
+- The harness now writes `runs/<run_id>.gurobi.log` for Gurobi MIP runs.
+
 ## Status
 - [x] Runner written and smoke-tested on FHOPS 1.0.0 (pipeline only).
 - [ ] Re-run full grid on FHOPS 1.0.1 (after fhops#91/#92 merge).

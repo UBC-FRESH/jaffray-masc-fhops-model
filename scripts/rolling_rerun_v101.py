@@ -21,6 +21,7 @@ Outputs (``--out-root``, default ``data/output/rerun_v101``)
 - ``runs/<run_id>.json``: config, FHOPS version/commit, wall time, iteration summaries, KPIs.
 - ``runs/<run_id>_assignments.csv``: stitched locked assignments.
 - ``runs/<run_id>.log``: captured stdout/stderr of the worker.
+- ``runs/<run_id>.gurobi.log``: Gurobi solver log (MIP runs with ``--mip-solver gurobi``).
 - ``summary.csv``: one row per completed run (rebuilt with ``--summarize``).
 
 Runs are resumable: a run whose JSON exists is skipped. Each worker is a fresh process and HiGHS
@@ -185,6 +186,10 @@ def run_one(spec: RunSpec, runs_dir: str) -> tuple[str, str]:
             from fhops.scenario.io import load_scenario
 
             scenario = load_scenario(str(scenario_path(spec.context, spec.size)))
+            solver_options: dict[str, object] = {"threads": 1}
+            if spec.solver == "mip" and spec.mip_solver == "gurobi":
+                # Per-run Gurobi log (both stages of every window append): incumbent/bound/work units.
+                solver_options["LogFile"] = str((runs / f"{spec.run_id}.gurobi.log").resolve())
             start = time.time()
             result = solve_rolling_plan(
                 scenario,
@@ -196,7 +201,7 @@ def run_one(spec: RunSpec, runs_dir: str) -> tuple[str, str]:
                 sa_seed=SA_SEED,
                 mip_solver=spec.mip_solver,
                 mip_time_limit=spec.mip_time_limit,
-                mip_solver_options={"threads": 1},
+                mip_solver_options=solver_options,
                 mip_earliness=True,
                 mip_earliness_time_limit=spec.mip_earliness_time_limit,
             )
