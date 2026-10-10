@@ -1,5 +1,9 @@
 # Change Log
 
+## 2026-10-10 (c)
+- README: added a "Rolling-horizon re-run on FHOPS 1.0.1" section with the exact commands.
+- ROADMAP Phase 7: feasibility, decision and launch recorded. Analysis moves to the manuscript repo.
+
 ## 2026-10-10 (b)
 - Decision (G. Paradis): option B. Gurobi, 1800 s stage 1, 900 s earliness, 36 MIP + 34 SA workers.
   Recorded in `notes/rolling_rerun_v101.md`.

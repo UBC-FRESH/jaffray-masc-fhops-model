@@ -68,5 +68,9 @@
 
 - [ ] Phase 7 — Rolling-horizon re-run on FHOPS 1.0.1 (issue #1, branch `feature/rolling-rerun-v101`)
   - [x] Runner `scripts/rolling_rerun_v101.py` with stitched-plan evaluation; smoke-tested on 1.0.0
-  - [ ] Full grid (216 runs + 18 baselines) on FHOPS 1.0.1
-  - [ ] Analysis vs Ch. 4 conclusions; note `notes/rolling_rerun_v101.md`
+  - [x] Feasibility on FHOPS 1.0.1: smoke, HiGHS vs Gurobi probes, time-limit calibration (2026-10-09/10)
+  - [x] Design decision (option B): Gurobi, 1800 s + 900 s earliness, 36 MIP + 34 SA workers
+  - [ ] Full grid (216 runs + 18 baselines) on FHOPS 1.0.1. Launched 2026-10-10 17:27 UTC into
+        `data/output/rerun_v101_gurobi/`
+  - [ ] Analysis vs Ch. 4 conclusions. Done in `UBC-FRESH/fhops-cjfr-rolling-horizon`
+        (`scripts/analyze_rerun.py`); note `notes/rolling_rerun_v101.md`

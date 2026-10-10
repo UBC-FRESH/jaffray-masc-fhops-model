@@ -32,3 +32,22 @@ Each scenario bundle contains (paths shown relative to the repo root):
 - `data/input/scenarios/<area>_<size>/qa_summary.yaml` — QA summary (counts, metric ranges, rate stats).
 
 See `notes/scenario_bundle.md` for assumptions and modelling decisions.
+
+## Rolling-horizon re-run on FHOPS 1.0.1 (issue #1)
+
+Chapter 4 of the thesis was run on FHOPS 1.0.0a2, which carried no state between rolling-horizon
+windows, and scored each run by its last window. Those numbers are superseded by the re-run below.
+Background, decisions and evidence are in `notes/rolling_rerun_v101.md`; the manuscript lives in
+`UBC-FRESH/fhops-cjfr-rolling-horizon`.
+
+```
+python3 -m venv .venv && .venv/bin/pip install fhops==1.0.1 gurobipy   # Gurobi needs a full licence
+.venv/bin/python scripts/rolling_rerun_v101.py --mip-solver gurobi --mip-earliness-time-limit 900 --dry-run
+nohup .venv/bin/python scripts/rolling_rerun_v101.py --mip-solver gurobi --mip-earliness-time-limit 900 \
+    --mip-workers 36 --sa-workers 34 > data/output/rerun_v101_gurobi/run.log 2>&1 &
+.venv/bin/python scripts/rolling_rerun_v101.py --mip-solver gurobi --summarize   # rebuild summary.csv
+```
+
+Supporting scripts:
+- `scripts/probe_mip_window_v101.py`: time a single first window (`--solver`, `--log-file`).
+- `scripts/calib_trajectory_v101.py`: parse Gurobi logs into incumbent, bound and gap checkpoints.
