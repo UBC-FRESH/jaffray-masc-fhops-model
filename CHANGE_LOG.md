@@ -1,5 +1,14 @@
 # Change Log
 
+## 2026-10-13 (b)
+- Decision (G. Paradis): all three 40-block full-horizon MIP baselines use a 7200 s limit for symmetry.
+- Launched the Kamloops and Prince George 40-block baselines at 7200 s into
+  `data/output/rerun_v101_gurobi_sensitivity_size40_baselines_7200s/` (the NI run is in its own folder).
+  Expected finish ~01:15 UTC 14 October.
+
+Commands:
+- `mkdir -p data/output/rerun_v101_gurobi_sensitivity_size40_baselines_7200s && /tmp/opencode/venv-fhops101-grb/bin/pip freeze > .../environment.txt && nohup /tmp/opencode/venv-fhops101-grb/bin/python scripts/rolling_rerun_v101.py --mip-solver gurobi --contexts ka pg --sizes 40 --solvers mip --only-baselines --mip-time-limit 7200 --mip-earliness-time-limit 900 --out-root data/output/rerun_v101_gurobi_sensitivity_size40_baselines_7200s > .../run.log 2>&1 &`
+
 ## 2026-10-13
 - `scripts/rolling_rerun_v101.py`: new `--mip-time-limit` option (default 1800, unchanged).
 - Re-ran the empty North Island 40-block full-horizon MIP baseline with a 7200 s limit, into

@@ -182,6 +182,15 @@ This supersedes the 2026-10-07 MIP settings.
   reference unequal to the others; it is reported as a sensitivity run until G. Paradis decides.
 - Harness: new `--mip-time-limit` option (default 1800, unchanged for the grid).
 
+### Size-40 full-horizon baselines at 7200 s (decided 2026-10-13, G. Paradis)
+- For symmetry across study areas, the three 40-block full-horizon MIP baselines use a 7200 s limit in
+  the paper: ni (`rerun_v101_gurobi_sensitivity_ni40_baseline_7200s/`, delivered 871 675 m3), and ka and pg
+  (`rerun_v101_gurobi_sensitivity_size40_baselines_7200s/`, started 2026-10-13 23:10 UTC, expected ~01:15 UTC
+  14 October).
+- The 1800 s grid records (`rerun_v101_gurobi/`: ka 361 177 m3, ni 0 m3, pg 848 360 m3) are kept as recorded
+  and reported as a supplementary comparison. Smaller baselines (6 and 18 blocks) stay at 1800 s; they
+  solve well inside the limit (no time-limit hits at 6 blocks).
+
 ## Status
 - [x] Runner written and smoke-tested on FHOPS 1.0.0 (pipeline only).
 - [ ] Re-run full grid on FHOPS 1.0.1 (launched 2026-10-10, option B).
