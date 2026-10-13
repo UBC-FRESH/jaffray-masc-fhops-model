@@ -115,7 +115,7 @@ def num_days_of(path: Path) -> int:
 def build_specs(args: argparse.Namespace) -> list[RunSpec]:
     specs: list[RunSpec] = []
     sa_iters = 50 if args.smoke else SA_ITERS
-    mip_limit = 30 if args.smoke else MIP_TIME_LIMIT
+    mip_limit = 30 if args.smoke else (args.mip_time_limit or MIP_TIME_LIMIT)
     early_limit = min(args.mip_earliness_time_limit, mip_limit)
     contexts = args.contexts or (["ka"] if args.smoke else CONTEXTS)
     sizes = args.sizes or (["6"] if args.smoke else SIZES)
@@ -289,6 +289,12 @@ def main() -> int:
     parser.add_argument("--sizes", nargs="*")
     parser.add_argument("--solvers", nargs="*", choices=SOLVERS)
     parser.add_argument("--only-baselines", action="store_true")
+    parser.add_argument(
+        "--mip-time-limit",
+        type=int,
+        default=None,
+        help="per-window MIP time limit (s) for the grid; default 1800 (used for sensitivity re-runs only)",
+    )
     parser.add_argument(
         "--mip-earliness-time-limit",
         type=int,

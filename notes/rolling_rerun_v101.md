@@ -167,6 +167,21 @@ This supersedes the 2026-10-07 MIP settings.
 - The harness now writes `manifest_<solvers>.json` when `--solvers` is given, so the MIP and SA
   phases do not overwrite each other's manifest.
 
+### Re-run of the North Island 40-block full-horizon baseline (2026-10-13)
+- The grid's `ni_40_baseline_mip` (1800 s) returned an empty plan (0 m3 delivered). Gurobi's
+  heuristic found only the unharvested start solution (objective -1 578 930.5), and branch-and-bound
+  found no better incumbent before the limit (log: "Time limit reached ... gap 110.6 %"). This is the
+  same 625 198-row model as the calibration window `ni_40_sub112_lock7`, which first produced a
+  non-empty incumbent at 1354 s on an uncontended host. At the current ~0.5 work units/s it would need
+  about 2 600 s.
+- Re-run with `--mip-time-limit 7200` (earliness stage not used: the lock span covers the window),
+  written to `data/output/rerun_v101_gurobi_sensitivity_ni40_baseline_7200s/`. The grid's 1800 s record
+  is kept unchanged in `data/output/rerun_v101_gurobi/`.
+- Like-for-like: this changes one reference plan. The other two 40-block baselines stay at 1800 s
+  (ka 361 177 m3, pg 848 360 m3). Reporting the 7200 s result as the NI baseline would make that
+  reference unequal to the others; it is reported as a sensitivity run until G. Paradis decides.
+- Harness: new `--mip-time-limit` option (default 1800, unchanged for the grid).
+
 ## Status
 - [x] Runner written and smoke-tested on FHOPS 1.0.0 (pipeline only).
 - [ ] Re-run full grid on FHOPS 1.0.1 (launched 2026-10-10, option B).

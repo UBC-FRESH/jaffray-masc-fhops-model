@@ -1,5 +1,15 @@
 # Change Log
 
+## 2026-10-13
+- `scripts/rolling_rerun_v101.py`: new `--mip-time-limit` option (default 1800, unchanged).
+- Re-ran the empty North Island 40-block full-horizon MIP baseline with a 7200 s limit, into
+  `data/output/rerun_v101_gurobi_sensitivity_ni40_baseline_7200s/` (the grid record is unchanged).
+  Reasons and the like-for-like caveat are in `notes/rolling_rerun_v101.md`.
+
+Commands:
+- `python3 -m py_compile scripts/rolling_rerun_v101.py`
+- `/tmp/opencode/venv-fhops101-grb/bin/python scripts/rolling_rerun_v101.py --mip-solver gurobi --contexts ni --sizes 40 --solvers mip --only-baselines --mip-time-limit 7200 --mip-earliness-time-limit 900 --out-root data/output/rerun_v101_gurobi_sensitivity_ni40_baseline_7200s`
+
 ## 2026-10-10 (d)
 - Grid restarted MIP-only after hyperthread contention halved the Gurobi work rate (details in
   `notes/rolling_rerun_v101.md`, "Hyperthread contention and restart"). Harness: per-solver
