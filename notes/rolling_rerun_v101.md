@@ -191,6 +191,11 @@ This supersedes the 2026-10-07 MIP settings.
   and reported as a supplementary comparison. Smaller baselines (6 and 18 blocks) stay at 1800 s; they
   solve well inside the limit (no time-limit hits at 6 blocks).
 
+### Host restart and SA resume (2026-10-15)
+- The host restarted at 22:49 UTC on 15 October. This cleared `/tmp`, including the venvs used for the run and the GitHub helper script. The four still-running size-40 SA runs (ni/pg, 56- and 112-day windows, 1-day lock) were lost after about 28 h; 113 of 117 SA runs had finished.
+- Recreated the environment in `~/venvs/fhops101-grb` (fhops 1.0.1, gurobipy 13.0.3, matplotlib 3.11.2). Gurobi licence `~/gurobi.lic` was unaffected.
+- Relaunched the harness with `--solvers sa --sa-workers 4` (resumable; only the four missing specs run). Log: `run_sa_resume.log`.
+
 ## Status
 - [x] Runner written and smoke-tested on FHOPS 1.0.0 (pipeline only).
 - [ ] Re-run full grid on FHOPS 1.0.1 (launched 2026-10-10, option B).

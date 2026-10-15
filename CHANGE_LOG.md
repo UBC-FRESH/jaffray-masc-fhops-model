@@ -1,5 +1,9 @@
 # Change Log
 
+## 2026-10-15
+- Host restart at 22:49 UTC cleared `/tmp`. The four unfinished SA runs (ni/pg 40-block 56- and 112-day, 1-day lock) were lost; the rest were complete.
+- Recreated the FHOPS 1.0.1 environment under `~/venvs/fhops101-grb` (fhops==1.0.1, gurobipy==13.0.3, matplotlib). Resumed the SA phase: `scripts/rolling_rerun_v101.py --mip-solver gurobi --mip-earliness-time-limit 900 --solvers sa --sa-workers 4`.
+
 ## 2026-10-13 (b)
 - Decision (G. Paradis): all three 40-block full-horizon MIP baselines use a 7200 s limit for symmetry.
 - Launched the Kamloops and Prince George 40-block baselines at 7200 s into
