@@ -1,0 +1,101 @@
+{
+  "run_id": "ni_40_baseline_mip",
+  "spec": {
+    "context": "ni",
+    "size": "40",
+    "solver": "mip",
+    "master_days": 112,
+    "sub_days": 112,
+    "lock_days": 112,
+    "theta_weeks": null,
+    "baseline": true,
+    "sa_iters": 500,
+    "mip_time_limit": 1800,
+    "mip_earliness_time_limit": 900,
+    "mip_solver": "gurobi"
+  },
+  "provenance": {
+    "fhops_version": "1.0.1",
+    "fhops_commit": null,
+    "fhops_path": "/tmp/opencode/venv-fhops101-grb/lib/python3.12/site-packages/fhops"
+  },
+  "wall_time_s": 1865.957505941391,
+  "n_locked_assignments": 0,
+  "plan_summary": {
+    "iterations": [
+      {
+        "iteration_index": 0,
+        "start_day": 1,
+        "horizon_days": 112,
+        "lock_days": 112,
+        "locked_assignments": 0,
+        "objective": -1578930.499671,
+        "runtime_s": 1865.9202261129394,
+        "warnings": [
+          "solver_status=aborted",
+          "termination_condition=maxTimeLimit",
+          "Iteration 0 (days 1-112): empty window: locked 0 assignment(s) producing 0.000 m\u00b3 and the window plan delivers 0.000 m\u00b3 while 1578930.500 m\u00b3 remain in the window's blocks"
+        ],
+        "remaining_work_start": 1578930.499671,
+        "status": "solved",
+        "has_solution": true,
+        "planned_delivered": 0.0,
+        "locked_delivered": 0.0,
+        "locked_production": 0.0,
+        "empty": true,
+        "error": null
+      }
+    ],
+    "total_locked_assignments": 0,
+    "empty_windows": 1,
+    "no_solution_windows": 0,
+    "skipped_windows": 0,
+    "empty_window_indices": [
+      0
+    ],
+    "no_solution_window_indices": [],
+    "metadata": {
+      "scenario": "MASc NI 40 blocks",
+      "master_days": 112,
+      "subproblem_days": 112,
+      "lock_days": 112,
+      "start_day": 1,
+      "solver": "mip",
+      "fail_on_empty_window": false,
+      "fail_on_no_solution": false,
+      "mip_solver": "gurobi",
+      "mip_time_limit": 1800,
+      "mip_solver_options": {
+        "threads": 1,
+        "LogFile": "/home/gep/projects/jaffray-masc-fhops-model/data/output/rerun_v101_gurobi/runs/ni_40_baseline_mip.gurobi.log"
+      },
+      "mip_earliness": true,
+      "mip_earliness_time_limit": 900
+    },
+    "warnings": [
+      "Iteration 0 (days 1-112): empty window: locked 0 assignment(s) producing 0.000 m\u00b3 and the window plan delivers 0.000 m\u00b3 while 1578930.500 m\u00b3 remain in the window's blocks"
+    ]
+  },
+  "kpis": {
+    "total_production": 0.0,
+    "completed_blocks": 0.0,
+    "staged_production": 1578930.499671,
+    "remaining_work_total": 1578930.499671,
+    "sequencing_violation_count": 0,
+    "sequencing_violation_blocks": 0,
+    "sequencing_violation_days": 0,
+    "sequencing_clean_blocks": 40,
+    "sequencing_violation_breakdown": "none",
+    "utilisation_ratio_mean_day": 0.0,
+    "utilisation_ratio_weighted_day": 0.0,
+    "makespan_day": 0,
+    "makespan_shift": "N/A"
+  },
+  "objective_weights": {
+    "production": 1.0,
+    "mobilisation": 0.5,
+    "transitions": 0.0,
+    "landing_surplus": 0.0
+  },
+  "status": "ok"
+}

@@ -1,0 +1,254 @@
+{
+  "run_id": "ka_40_sub56_lock14_mip",
+  "spec": {
+    "context": "ka",
+    "size": "40",
+    "solver": "mip",
+    "master_days": 112,
+    "sub_days": 56,
+    "lock_days": 14,
+    "theta_weeks": 8,
+    "baseline": false,
+    "sa_iters": 500,
+    "mip_time_limit": 1800,
+    "mip_earliness_time_limit": 900,
+    "mip_solver": "gurobi"
+  },
+  "provenance": {
+    "fhops_version": "1.0.1",
+    "fhops_commit": null,
+    "fhops_path": "/tmp/opencode/venv-fhops101-grb/lib/python3.12/site-packages/fhops"
+  },
+  "wall_time_s": 21048.7674407959,
+  "n_locked_assignments": 4736,
+  "plan_summary": {
+    "iterations": [
+      {
+        "iteration_index": 0,
+        "start_day": 1,
+        "horizon_days": 56,
+        "lock_days": 14,
+        "locked_assignments": 733,
+        "objective": 179200.1894290474,
+        "runtime_s": 2777.4706621486694,
+        "warnings": [
+          "solver_status=aborted",
+          "termination_condition=maxTimeLimit",
+          "earliness=applied value=435259.6501467784 stage1_value=435259.6501467747 termination_condition=maxTimeLimit"
+        ],
+        "remaining_work_start": 393614.222773,
+        "status": "solved",
+        "has_solution": true,
+        "planned_delivered": 286407.206100982,
+        "locked_delivered": 7352.911233999999,
+        "locked_production": 126947.16101578694,
+        "empty": false,
+        "error": null
+      },
+      {
+        "iteration_index": 1,
+        "start_day": 15,
+        "horizon_days": 56,
+        "lock_days": 14,
+        "locked_assignments": 827,
+        "objective": 213379.20319905496,
+        "runtime_s": 2762.2839796906337,
+        "warnings": [
+          "solver_status=aborted",
+          "termination_condition=maxTimeLimit",
+          "earliness=applied value=585207.9550275141 stage1_value=487131.5296642149 termination_condition=maxTimeLimit"
+        ],
+        "remaining_work_start": 386261.311539,
+        "status": "solved",
+        "has_solution": true,
+        "planned_delivered": 299820.2573689989,
+        "locked_delivered": 46432.29699699953,
+        "locked_production": 300422.58742999996,
+        "empty": false,
+        "error": null
+      },
+      {
+        "iteration_index": 2,
+        "start_day": 29,
+        "horizon_days": 56,
+        "lock_days": 14,
+        "locked_assignments": 960,
+        "objective": 207614.55867999568,
+        "runtime_s": 2750.272854678333,
+        "warnings": [
+          "solver_status=aborted",
+          "termination_condition=maxTimeLimit",
+          "earliness=applied value=578862.3471598895 stage1_value=419337.1587125231 termination_condition=maxTimeLimit"
+        ],
+        "remaining_work_start": 339829.0145420005,
+        "status": "solved",
+        "has_solution": true,
+        "planned_delivered": 273721.7866109843,
+        "locked_delivered": 117011.0470230052,
+        "locked_production": 405118.4957332348,
+        "empty": false,
+        "error": null
+      },
+      {
+        "iteration_index": 3,
+        "start_day": 43,
+        "horizon_days": 56,
+        "lock_days": 14,
+        "locked_assignments": 873,
+        "objective": 131267.956376998,
+        "runtime_s": 2747.0692518679425,
+        "warnings": [
+          "solver_status=aborted",
+          "termination_condition=maxTimeLimit",
+          "earliness=applied value=370651.24363434233 stage1_value=281511.8590213824 termination_condition=maxTimeLimit"
+        ],
+        "remaining_work_start": 222817.96751899528,
+        "status": "solved",
+        "has_solution": true,
+        "planned_delivered": 177042.96194799314,
+        "locked_delivered": 97228.84767200204,
+        "locked_production": 297020.28726498515,
+        "empty": false,
+        "error": null
+      },
+      {
+        "iteration_index": 4,
+        "start_day": 57,
+        "horizon_days": 56,
+        "lock_days": 14,
+        "locked_assignments": 619,
+        "objective": 60680.72069299391,
+        "runtime_s": 2746.0650873072445,
+        "warnings": [
+          "solver_status=aborted",
+          "termination_condition=maxTimeLimit",
+          "earliness=applied value=176404.03644526209 stage1_value=154901.52426720143 termination_condition=maxTimeLimit"
+        ],
+        "remaining_work_start": 125589.11984699324,
+        "status": "solved",
+        "has_solution": true,
+        "planned_delivered": 93134.9202699931,
+        "locked_delivered": 29629.96192599325,
+        "locked_production": 98706.69107799404,
+        "empty": false,
+        "error": null
+      },
+      {
+        "iteration_index": 5,
+        "start_day": 71,
+        "horizon_days": 42,
+        "lock_days": 14,
+        "locked_assignments": 252,
+        "objective": 31050.758767001545,
+        "runtime_s": 2730.9321686122566,
+        "warnings": [
+          "solver_status=aborted",
+          "termination_condition=maxTimeLimit",
+          "earliness=applied value=119806.0861286745 stage1_value=107691.77248121511 termination_condition=maxTimeLimit"
+        ],
+        "remaining_work_start": 95959.15792099999,
+        "status": "solved",
+        "has_solution": true,
+        "planned_delivered": 63504.958344000646,
+        "locked_delivered": 19715.890995000213,
+        "locked_production": 82644.03730500027,
+        "empty": false,
+        "error": null
+      },
+      {
+        "iteration_index": 6,
+        "start_day": 85,
+        "horizon_days": 28,
+        "lock_days": 14,
+        "locked_assignments": 252,
+        "objective": 11334.86777200142,
+        "runtime_s": 2721.682468932122,
+        "warnings": [
+          "solver_status=aborted",
+          "termination_condition=maxTimeLimit",
+          "earliness=applied value=76288.8681010478 stage1_value=69639.03243818834 termination_condition=maxTimeLimit"
+        ],
+        "remaining_work_start": 76243.26692599978,
+        "status": "solved",
+        "has_solution": true,
+        "planned_delivered": 43789.067349000325,
+        "locked_delivered": 23678.284470000777,
+        "locked_production": 80663.74312700014,
+        "empty": false,
+        "error": null
+      },
+      {
+        "iteration_index": 7,
+        "start_day": 99,
+        "horizon_days": 14,
+        "lock_days": 14,
+        "locked_assignments": 220,
+        "objective": -12343.415660816467,
+        "runtime_s": 1806.7201376724988,
+        "warnings": [
+          "solver_status=aborted",
+          "termination_condition=maxTimeLimit"
+        ],
+        "remaining_work_start": 52564.982455999,
+        "status": "solved",
+        "has_solution": true,
+        "planned_delivered": 20110.78287899912,
+        "locked_delivered": 20110.78287899928,
+        "locked_production": 53117.09086712456,
+        "empty": false,
+        "error": null
+      }
+    ],
+    "total_locked_assignments": 4736,
+    "empty_windows": 0,
+    "no_solution_windows": 0,
+    "skipped_windows": 0,
+    "empty_window_indices": [],
+    "no_solution_window_indices": [],
+    "metadata": {
+      "scenario": "MASc KA 40 blocks",
+      "master_days": 112,
+      "subproblem_days": 56,
+      "lock_days": 14,
+      "start_day": 1,
+      "solver": "mip",
+      "fail_on_empty_window": false,
+      "fail_on_no_solution": false,
+      "mip_solver": "gurobi",
+      "mip_time_limit": 1800,
+      "mip_solver_options": {
+        "threads": 1,
+        "LogFile": "/home/gep/projects/jaffray-masc-fhops-model/data/output/rerun_v101_gurobi/runs/ka_40_sub56_lock14_mip.gurobi.log"
+      },
+      "mip_earliness": true,
+      "mip_earliness_time_limit": 900
+    },
+    "warnings": []
+  },
+  "kpis": {
+    "total_production": 361160.0231959998,
+    "completed_blocks": 38.0,
+    "staged_production": 32454.199577000225,
+    "remaining_work_total": 32454.199577000225,
+    "sequencing_violation_count": 1,
+    "sequencing_violation_blocks": 1,
+    "sequencing_violation_days": 1,
+    "sequencing_clean_blocks": 39,
+    "sequencing_violation_breakdown": "missing_prereq=1",
+    "utilisation_ratio_mean_shift": 1.0,
+    "utilisation_ratio_weighted_shift": 1.0,
+    "utilisation_ratio_by_machine": "{\"fb_01\": 1.0, \"fb_02\": 1.0, \"fb_03\": 1.0, \"fb_04\": 1.0, \"fb_05\": 1.0, \"fb_06\": 1.0, \"ld_01\": 1.0, \"ld_02\": 1.0, \"ld_03\": 1.0, \"ld_04\": 1.0, \"ld_05\": 1.0, \"ld_06\": 1.0, \"pr_01\": 1.0, \"pr_02\": 1.0, \"pr_03\": 1.0, \"pr_04\": 1.0, \"pr_05\": 1.0, \"pr_06\": 1.0, \"sk_01\": 1.0, \"sk_02\": 1.0, \"sk_03\": 1.0, \"sk_04\": 1.0, \"sk_05\": 1.0, \"sk_06\": 1.0}",
+    "utilisation_ratio_by_role": "{\"feller_buncher\": 1.0, \"grapple_skidder\": 1.0, \"loader\": 1.0, \"processor\": 1.0}",
+    "utilisation_ratio_mean_day": 0.5873015873015872,
+    "utilisation_ratio_weighted_day": 0.5873015873015873,
+    "makespan_day": 112,
+    "makespan_shift": "S3"
+  },
+  "objective_weights": {
+    "production": 1.0,
+    "mobilisation": 0.5,
+    "transitions": 0.0,
+    "landing_surplus": 0.0
+  },
+  "status": "ok"
+}

@@ -1,0 +1,6 @@
+FHOPS 1.0.1 @ None (/home/gep/venvs/fhops101-grb/lib/python3.12/site-packages/fhops)
+117 specs, 4 pending, mip_workers=36, sa_workers=4
+pools: MIP 0 specs x 36 workers; SA 4 specs x 4 workers
+[1/4] pg_40_sub56_lock1_sa: ok
+[2/4] ni_40_sub56_lock1_sa: ok
+[3/4] pg_40_sub112_lock1_sa: ok

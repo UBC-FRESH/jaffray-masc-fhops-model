@@ -1,0 +1,271 @@
+{
+  "run_id": "ka_18_sub56_lock14_mip",
+  "spec": {
+    "context": "ka",
+    "size": "18",
+    "solver": "mip",
+    "master_days": 112,
+    "sub_days": 56,
+    "lock_days": 14,
+    "theta_weeks": 8,
+    "baseline": false,
+    "sa_iters": 500,
+    "mip_time_limit": 1800,
+    "mip_earliness_time_limit": 900,
+    "mip_solver": "gurobi"
+  },
+  "provenance": {
+    "fhops_version": "1.0.1",
+    "fhops_commit": null,
+    "fhops_path": "/tmp/opencode/venv-fhops101-grb/lib/python3.12/site-packages/fhops"
+  },
+  "wall_time_s": 1916.5836472511292,
+  "n_locked_assignments": 755,
+  "plan_summary": {
+    "iterations": [
+      {
+        "iteration_index": 0,
+        "start_day": 1,
+        "horizon_days": 56,
+        "lock_days": 14,
+        "locked_assignments": 460,
+        "objective": 71386.13414700059,
+        "runtime_s": 945.8993073981255,
+        "warnings": [
+          "solver_status=ok",
+          "termination_condition=optimal",
+          "earliness=applied value=240651.02874815016 stage1_value=82028.13286166576 termination_condition=maxTimeLimit"
+        ],
+        "remaining_work_start": 71386.134147,
+        "status": "solved",
+        "has_solution": true,
+        "planned_delivered": 71386.1341469936,
+        "locked_delivered": 51816.422161999115,
+        "locked_production": 227477.79512199905,
+        "empty": false,
+        "error": null
+      },
+      {
+        "iteration_index": 1,
+        "start_day": 15,
+        "horizon_days": 56,
+        "lock_days": 14,
+        "locked_assignments": 291,
+        "objective": 19569.711985000074,
+        "runtime_s": 918.3954795310274,
+        "warnings": [
+          "solver_status=ok",
+          "termination_condition=optimal",
+          "earliness=applied value=54243.417285749114 stage1_value=17726.07320101284 termination_condition=maxTimeLimit"
+        ],
+        "remaining_work_start": 19569.71198500089,
+        "status": "solved",
+        "has_solution": true,
+        "planned_delivered": 19569.711790497666,
+        "locked_delivered": 19569.711790497742,
+        "locked_production": 58066.74117453674,
+        "empty": false,
+        "error": null
+      },
+      {
+        "iteration_index": 2,
+        "start_day": 29,
+        "horizon_days": 56,
+        "lock_days": 14,
+        "locked_assignments": 4,
+        "objective": 0.00019230076617304803,
+        "runtime_s": 11.70173592865467,
+        "warnings": [
+          "solver_status=ok",
+          "termination_condition=optimal",
+          "earliness=applied value=0.0002869600400958104 stage1_value=0.00012071472301112776 termination_condition=optimal"
+        ],
+        "remaining_work_start": 0.00019450314658797652,
+        "status": "solved",
+        "has_solution": true,
+        "planned_delivered": 0.00019317789201522828,
+        "locked_delivered": 0.00019340195638051227,
+        "locked_production": 0.0002878911789139238,
+        "empty": false,
+        "error": null
+      },
+      {
+        "iteration_index": 3,
+        "start_day": 43,
+        "horizon_days": 56,
+        "lock_days": 14,
+        "locked_assignments": 0,
+        "objective": -1.1011902074642421e-06,
+        "runtime_s": 11.662391197867692,
+        "warnings": [
+          "solver_status=ok",
+          "termination_condition=optimal",
+          "earliness=applied value=0.0 stage1_value=0.0 termination_condition=optimal",
+          "Iteration 3 (days 43-98): empty window: locked 0 assignment(s) producing 0.000 m\u00b3 and the window plan delivers 0.000 m\u00b3 while 0.000 m\u00b3 remain in the window's blocks"
+        ],
+        "remaining_work_start": 1.1011902074642421e-06,
+        "status": "solved",
+        "has_solution": true,
+        "planned_delivered": 0.0,
+        "locked_delivered": 0.0,
+        "locked_production": 0.0,
+        "empty": true,
+        "error": null
+      },
+      {
+        "iteration_index": 4,
+        "start_day": 57,
+        "horizon_days": 56,
+        "lock_days": 14,
+        "locked_assignments": 0,
+        "objective": -1.1011902074642421e-06,
+        "runtime_s": 11.751948306336999,
+        "warnings": [
+          "solver_status=ok",
+          "termination_condition=optimal",
+          "earliness=applied value=0.0 stage1_value=0.0 termination_condition=optimal",
+          "Iteration 4 (days 57-112): empty window: locked 0 assignment(s) producing 0.000 m\u00b3 and the window plan delivers 0.000 m\u00b3 while 0.000 m\u00b3 remain in the window's blocks"
+        ],
+        "remaining_work_start": 1.1011902074642421e-06,
+        "status": "solved",
+        "has_solution": true,
+        "planned_delivered": 0.0,
+        "locked_delivered": 0.0,
+        "locked_production": 0.0,
+        "empty": true,
+        "error": null
+      },
+      {
+        "iteration_index": 5,
+        "start_day": 71,
+        "horizon_days": 42,
+        "lock_days": 14,
+        "locked_assignments": 0,
+        "objective": -1.1011902074642421e-06,
+        "runtime_s": 8.8468735255301,
+        "warnings": [
+          "solver_status=ok",
+          "termination_condition=optimal",
+          "earliness=applied value=0.0 stage1_value=0.0 termination_condition=optimal",
+          "Iteration 5 (days 71-112): empty window: locked 0 assignment(s) producing 0.000 m\u00b3 and the window plan delivers 0.000 m\u00b3 while 0.000 m\u00b3 remain in the window's blocks"
+        ],
+        "remaining_work_start": 1.1011902074642421e-06,
+        "status": "solved",
+        "has_solution": true,
+        "planned_delivered": 0.0,
+        "locked_delivered": 0.0,
+        "locked_production": 0.0,
+        "empty": true,
+        "error": null
+      },
+      {
+        "iteration_index": 6,
+        "start_day": 85,
+        "horizon_days": 28,
+        "lock_days": 14,
+        "locked_assignments": 0,
+        "objective": -1.1011902074642421e-06,
+        "runtime_s": 5.197713044472039,
+        "warnings": [
+          "solver_status=ok",
+          "termination_condition=optimal",
+          "earliness=applied value=0.0 stage1_value=0.0 termination_condition=optimal",
+          "Iteration 6 (days 85-112): empty window: locked 0 assignment(s) producing 0.000 m\u00b3 and the window plan delivers 0.000 m\u00b3 while 0.000 m\u00b3 remain in the window's blocks"
+        ],
+        "remaining_work_start": 1.1011902074642421e-06,
+        "status": "solved",
+        "has_solution": true,
+        "planned_delivered": 0.0,
+        "locked_delivered": 0.0,
+        "locked_production": 0.0,
+        "empty": true,
+        "error": null
+      },
+      {
+        "iteration_index": 7,
+        "start_day": 99,
+        "horizon_days": 14,
+        "lock_days": 14,
+        "locked_assignments": 0,
+        "objective": -1.1011902074642421e-06,
+        "runtime_s": 1.74772815592587,
+        "warnings": [
+          "solver_status=ok",
+          "termination_condition=optimal",
+          "Iteration 7 (days 99-112): empty window: locked 0 assignment(s) producing 0.000 m\u00b3 and the window plan delivers 0.000 m\u00b3 while 0.000 m\u00b3 remain in the window's blocks"
+        ],
+        "remaining_work_start": 1.1011902074642421e-06,
+        "status": "solved",
+        "has_solution": true,
+        "planned_delivered": 0.0,
+        "locked_delivered": 0.0,
+        "locked_production": 0.0,
+        "empty": true,
+        "error": null
+      }
+    ],
+    "total_locked_assignments": 755,
+    "empty_windows": 5,
+    "no_solution_windows": 0,
+    "skipped_windows": 0,
+    "empty_window_indices": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "no_solution_window_indices": [],
+    "metadata": {
+      "scenario": "MASc KA 18 blocks",
+      "master_days": 112,
+      "subproblem_days": 56,
+      "lock_days": 14,
+      "start_day": 1,
+      "solver": "mip",
+      "fail_on_empty_window": false,
+      "fail_on_no_solution": false,
+      "mip_solver": "gurobi",
+      "mip_time_limit": 1800,
+      "mip_solver_options": {
+        "threads": 1,
+        "LogFile": "/home/gep/projects/jaffray-masc-fhops-model/data/output/rerun_v101_gurobi/runs/ka_18_sub56_lock14_mip.gurobi.log"
+      },
+      "mip_earliness": true,
+      "mip_earliness_time_limit": 900
+    },
+    "warnings": [
+      "Iteration 3 (days 43-98): empty window: locked 0 assignment(s) producing 0.000 m\u00b3 and the window plan delivers 0.000 m\u00b3 while 0.000 m\u00b3 remain in the window's blocks",
+      "Iteration 4 (days 57-112): empty window: locked 0 assignment(s) producing 0.000 m\u00b3 and the window plan delivers 0.000 m\u00b3 while 0.000 m\u00b3 remain in the window's blocks",
+      "Iteration 5 (days 71-112): empty window: locked 0 assignment(s) producing 0.000 m\u00b3 and the window plan delivers 0.000 m\u00b3 while 0.000 m\u00b3 remain in the window's blocks",
+      "Iteration 6 (days 85-112): empty window: locked 0 assignment(s) producing 0.000 m\u00b3 and the window plan delivers 0.000 m\u00b3 while 0.000 m\u00b3 remain in the window's blocks",
+      "Iteration 7 (days 99-112): empty window: locked 0 assignment(s) producing 0.000 m\u00b3 and the window plan delivers 0.000 m\u00b3 while 0.000 m\u00b3 remain in the window's blocks"
+    ]
+  },
+  "kpis": {
+    "total_production": 71386.13414567463,
+    "completed_blocks": 17.0,
+    "staged_production": 1.3253738870844245e-06,
+    "remaining_work_total": 1.3253738870844245e-06,
+    "sequencing_violation_count": 3,
+    "sequencing_violation_blocks": 2,
+    "sequencing_violation_days": 3,
+    "sequencing_clean_blocks": 16,
+    "sequencing_violation_breakdown": "missing_prereq=3",
+    "utilisation_ratio_mean_shift": 1.0,
+    "utilisation_ratio_weighted_shift": 1.0,
+    "utilisation_ratio_by_machine": "{\"fb_01\": 1.0, \"fb_02\": 1.0, \"fb_03\": 1.0, \"ld_01\": 1.0, \"ld_02\": 1.0, \"ld_03\": 1.0, \"pr_01\": 1.0, \"pr_02\": 1.0, \"pr_03\": 1.0, \"sk_01\": 1.0, \"sk_02\": 1.0, \"sk_03\": 1.0}",
+    "utilisation_ratio_by_role": "{\"feller_buncher\": 1.0, \"grapple_skidder\": 1.0, \"loader\": 1.0, \"processor\": 1.0}",
+    "utilisation_ratio_mean_day": 0.18725198412698413,
+    "utilisation_ratio_weighted_day": 0.18725198412698413,
+    "makespan_day": 29,
+    "makespan_shift": "S2"
+  },
+  "objective_weights": {
+    "production": 1.0,
+    "mobilisation": 0.5,
+    "transitions": 0.0,
+    "landing_surplus": 0.0
+  },
+  "status": "ok"
+}

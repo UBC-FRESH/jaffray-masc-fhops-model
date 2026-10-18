@@ -1,0 +1,8 @@
+FHOPS 1.0.1 @ None (/tmp/opencode/venv-fhops101-grb/lib/python3.12/site-packages/fhops)
+234 specs, 234 pending, mip_workers=36, sa_workers=34
+pools: MIP 117 specs x 36 workers; SA 117 specs x 34 workers
+[1/234] ka_6_sub14_lock1_sa: ok
+[2/234] pg_6_sub14_lock1_sa: ok
+[3/234] ka_6_sub28_lock1_sa: ok
+/usr/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 80 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
