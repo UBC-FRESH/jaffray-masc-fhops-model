@@ -3,3 +3,5 @@ tmp/
 
 # Working symlink view used to merge the SA grid with the M7 MIP re-run for analysis.
 data/output/rerun_v101_m7/
+
+__pycache__/
