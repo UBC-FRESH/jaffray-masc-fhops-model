@@ -1,0 +1,23 @@
+{
+  "provenance": {
+    "fhops_version": "1.0.1",
+    "fhops_commit": null,
+    "fhops_path": "/tmp/opencode/venv-fhops101-grb/lib/python3.12/site-packages/fhops"
+  },
+  "specs": [
+    {
+      "context": "ni",
+      "size": "40",
+      "solver": "mip",
+      "master_days": 112,
+      "sub_days": 112,
+      "lock_days": 112,
+      "theta_weeks": null,
+      "baseline": true,
+      "sa_iters": 500,
+      "mip_time_limit": 7200,
+      "mip_earliness_time_limit": 900,
+      "mip_solver": "gurobi"
+    }
+  ]
+}

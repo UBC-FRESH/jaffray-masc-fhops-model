@@ -4,3 +4,5 @@ pools: MIP 0 specs x 36 workers; SA 4 specs x 4 workers
 [1/4] pg_40_sub56_lock1_sa: ok
 [2/4] ni_40_sub56_lock1_sa: ok
 [3/4] pg_40_sub112_lock1_sa: ok
+[4/4] ni_40_sub112_lock1_sa: ok
+Wrote /home/gep/projects/jaffray-masc-fhops-model/data/output/rerun_v101_gurobi/summary.csv (234 runs)

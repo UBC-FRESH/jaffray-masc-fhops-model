@@ -1,0 +1,944 @@
+
+Gurobi 13.0.3 (linux64) logging started Mon Oct 19 18:37:14 2026
+
+Set parameter LogFile to value "/home/gep/projects/jaffray-masc-fhops-model/data/output/rerun_v101_gurobi_alone/runs/ka_18_sub112_lock14_mip.gurobi.log"
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (linux64 - "Ubuntu 24.04.3 LTS")
+
+CPU model: Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 36 physical cores, 72 logical processors, using up to 1 threads
+
+Non-default parameters:
+TimeLimit  1800
+Threads  1
+
+Optimize a model with 209598 rows, 223748 columns and 707094 nonzeros (Max)
+Model fingerprint: 0xda46e62a
+Model has 6066 linear objective coefficients
+Variable types: 139122 continuous, 84626 integer (84626 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+04]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+04]
+
+Found heuristic solution: objective -71386.13415
+Presolve removed 33703 rows and 33750 columns
+Presolve time: 4.36s
+Presolved: 175895 rows, 189998 columns, 655275 nonzeros
+Variable types: 106014 continuous, 83984 integer (83984 binary)
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    7.1386134e+04   7.263267e+06   0.000000e+00      6s
+   12225    7.1384179e+04   1.190033e+06   0.000000e+00     10s
+   15877    7.1384168e+04   4.864411e+05   0.000000e+00     15s
+   18907    7.1384164e+04   1.665647e+04   0.000000e+00     20s
+   20140    7.1386134e+04   0.000000e+00   0.000000e+00     24s
+   20140    7.1386134e+04   0.000000e+00   0.000000e+00     24s
+
+Use crossover to convert LP symmetric solution to basic solution...
+
+Root crossover log...
+
+       8 DPushes remaining with DInf 0.0000000e+00                24s
+       0 DPushes remaining with DInf 0.0000000e+00                24s
+
+    5753 PPushes remaining with PInf 0.0000000e+00                24s
+       0 PPushes remaining with PInf 0.0000000e+00                25s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 1.6875390e-13     25s
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   25900    7.1386134e+04   0.000000e+00   0.000000e+00     25s
+Crossover time: 0.57 seconds (0.16 work units)
+
+Root relaxation: objective 7.138613e+04, 25900 iterations, 20.05 seconds (9.23 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 71386.1341    0  117 -71386.134 71386.1341   200%     -   55s
+H    0     0                    62249.578122 71386.1341  14.7%     -   62s
+H    0     0                    63376.647134 71386.1341  12.6%     -   64s
+     0     0 71386.1341    0  119 63376.6471 71386.1341  12.6%     -   71s
+H    0     0                    68409.269705 71386.1341  4.35%     -   77s
+H    0     0                    71386.134147 71386.1341  0.00%     -   83s
+     0     0 71386.1341    0  116 71386.1341 71386.1341  0.00%     -   83s
+
+Cutting planes:
+  Gomory: 1
+  Cover: 5
+  Implied bound: 5
+  MIR: 44
+  Flow cover: 52
+
+Explored 1 nodes (116291 simplex iterations) in 83.84 seconds (40.33 work units)
+Thread count was 1 (of 72 available processors)
+
+Solution count 6: 71386.1 71386.1 68409.3 ... -71386.1
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.138613414700e+04, best bound 7.138613414700e+04, gap 0.0000%
+
+Gurobi 13.0.3 (linux64) logging started Mon Oct 19 18:38:49 2026
+
+Set parameter LogFile to value "/home/gep/projects/jaffray-masc-fhops-model/data/output/rerun_v101_gurobi_alone/runs/ka_18_sub112_lock14_mip.gurobi.log"
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (linux64 - "Ubuntu 24.04.3 LTS")
+
+CPU model: Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 36 physical cores, 72 logical processors, using up to 1 threads
+
+Non-default parameters:
+TimeLimit  900
+Threads  1
+
+Optimize a model with 209599 rows, 223748 columns and 713160 nonzeros (Max)
+Model fingerprint: 0xc180e21d
+Model has 72576 linear objective coefficients
+Variable types: 139122 continuous, 84626 integer (84626 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+04]
+  Objective range  [3e-03, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 7e+04]
+
+Loaded user MIP start with objective 70786.4
+
+Presolve removed 33413 rows and 33322 columns
+Presolve time: 4.15s
+Presolved: 176186 rows, 190426 columns, 656636 nonzeros
+Variable types: 106241 continuous, 84185 integer (84185 binary)
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4783486e+06   9.017474e+07   0.000000e+00      6s
+   13050    2.6539520e+05   9.808629e+05   0.000000e+00     10s
+   17335    2.6526268e+05   1.096507e+05   0.000000e+00     15s
+   18501    2.6524867e+05   0.000000e+00   0.000000e+00     17s
+   23127    2.6525455e+05   0.000000e+00   9.349007e+03     20s
+   23926    2.6524867e+05   0.000000e+00   0.000000e+00     21s
+
+Extra simplex iterations after uncrush: 5425
+
+Use crossover to convert LP symmetric solution to basic solution...
+
+Root crossover log...
+
+    7624 DPushes remaining with DInf 0.0000000e+00                21s
+       0 DPushes remaining with DInf 0.0000000e+00                21s
+
+    2434 PPushes remaining with PInf 0.0000000e+00                21s
+       0 PPushes remaining with PInf 0.0000000e+00                22s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 2.2902235e-12     22s
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   32340    2.6524867e+05   0.000000e+00   0.000000e+00     22s
+Crossover time: 0.85 seconds (0.38 work units)
+
+Root relaxation: objective 2.652487e+05, 32340 iterations, 17.09 seconds (9.48 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 265248.667    0 1353 70786.4109 265248.667   275%     -   24s
+H    0     0                    75434.440260 265248.667   252%     -   32s
+H    0     0                    139447.97105 265248.667  90.2%     -   51s
+     0     0 265240.183    0 1634 139447.971 265240.183  90.2%     -   66s
+     0     0 265240.183    0 1634 139447.971 265240.183  90.2%     -   98s
+     0     0 265238.036    0 2024 139447.971 265238.036  90.2%     -  113s
+     0     0 265238.017    0 2367 139447.971 265238.017  90.2%     -  149s
+     0     0 265237.829    0 2459 139447.971 265237.829  90.2%     -  157s
+     0     0 265237.825    0 2441 139447.971 265237.825  90.2%     -  192s
+     0     0 265237.718    0 2506 139447.971 265237.718  90.2%     -  200s
+     0     0 265237.666    0 2473 139447.971 265237.666  90.2%     -  227s
+     0     0 265237.508    0 2448 139447.971 265237.508  90.2%     -  229s
+     0     0 265237.417    0 2413 139447.971 265237.417  90.2%     -  231s
+     0     0 265237.417    0 2766 139447.971 265237.417  90.2%     -  232s
+     0     0 265236.842    0 2790 139447.971 265236.842  90.2%     -  241s
+H    0     0                    139550.74726 265236.842  90.1%     -  275s
+H    0     0                    143240.36209 265236.842  85.2%     -  275s
+H    0     0                    236512.51118 265236.842  12.1%     -  276s
+     0     0 265236.166    0 2392 236512.511 265236.166  12.1%     -  283s
+     0     0 265235.973    0 2395 236512.511 265235.973  12.1%     -  287s
+     0     0 265235.963    0 2382 236512.511 265235.963  12.1%     -  288s
+     0     0 265235.724    0 2456 236512.511 265235.724  12.1%     -  294s
+     0     0 265235.668    0 2438 236512.511 265235.668  12.1%     -  327s
+     0     0 265235.615    0 2422 236512.511 265235.615  12.1%     -  328s
+     0     0 265235.602    0 2424 236512.511 265235.602  12.1%     -  330s
+     0     0 265235.440    0 2454 236512.511 265235.440  12.1%     -  333s
+H    0     0                    236644.25034 265235.440  12.1%     -  368s
+H    0     0                    237096.46529 265235.440  11.9%     -  368s
+H    0     0                    251148.80428 265235.440  5.61%     -  369s
+H    0     0                    251149.33999 265235.440  5.61%     -  369s
+     0     0 265235.428    0 2456 251149.340 265235.428  5.61%     -  371s
+     0     0 265235.034    0 2451 251149.340 265235.034  5.61%     -  377s
+H    0     0                    258238.23604 265235.034  2.71%     -  418s
+H    0     0                    258265.48616 265235.034  2.70%     -  418s
+H    0     0                    259058.34518 265235.034  2.38%     -  419s
+H    0     0                    259058.62124 265235.034  2.38%     -  419s
+H    0     0                    259076.20045 265235.034  2.38%     -  420s
+H    0     0                    259076.22961 265235.034  2.38%     -  420s
+H    0     0                    259076.47653 265235.034  2.38%     -  420s
+H    0     0                    259076.50569 265235.034  2.38%     -  420s
+     0     0 265234.892    0 2449 259076.506 265234.892  2.38%     -  422s
+     0     0 265234.892    0 2461 259076.506 265234.892  2.38%     -  423s
+     0     0 265234.625    0 2496 259076.506 265234.625  2.38%     -  428s
+     0     0 265234.621    0 2787 259076.506 265234.621  2.38%     -  453s
+     0     0 265234.118    0 2403 259076.506 265234.118  2.38%     -  459s
+     0     0 265234.118    0 2396 259076.506 265234.118  2.38%     -  462s
+     0     0 265234.118    0 2394 259076.506 265234.118  2.38%     -  462s
+     0     0 265234.118    0 1627 259076.506 265234.118  2.38%     -  469s
+H    0     0                    259091.15374 265234.118  2.37%     -  499s
+H    0     0                    259148.87070 265234.118  2.35%     -  506s
+H    0     0                    259301.32384 265234.118  2.29%     -  511s
+H    0     0                    259335.90736 265234.118  2.27%     -  516s
+H    0     0                    259489.43952 265234.118  2.21%     -  521s
+H    0     0                    259557.28711 265234.118  2.19%     -  528s
+H    0     0                    259668.02218 265234.118  2.14%     -  529s
+H    0     0                    259758.34631 265234.118  2.11%     -  530s
+H    0     0                    260580.75543 265234.118  1.79%     -  531s
+H    0     0                    260751.32881 265234.118  1.72%     -  534s
+H    0     0                    260795.06878 265234.118  1.70%     -  535s
+H    0     0                    261060.81403 265234.118  1.60%     -  536s
+H    0     0                    261088.52299 265234.118  1.59%     -  539s
+H    0     0                    261156.58430 265234.118  1.56%     -  541s
+H    0     0                    261204.62960 265234.118  1.54%     -  542s
+H    0     0                    261264.24664 265234.118  1.52%     -  543s
+H    0     0                    261475.48386 265234.118  1.44%     -  545s
+H    0     0                    261545.21628 265234.118  1.41%     -  548s
+H    0     0                    261594.29945 265234.118  1.39%     -  548s
+H    0     0                    261699.34639 265234.118  1.35%     -  554s
+H    0     0                    261814.36246 265234.118  1.31%     -  555s
+H    0     0                    261814.36253 265234.118  1.31%     -  557s
+H    0     0                    261857.23732 265234.118  1.29%     -  558s
+H    0     0                    262020.14506 265234.118  1.23%     -  560s
+H    0     0                    262140.48013 265234.118  1.18%     -  561s
+H    0     0                    262170.03281 265234.118  1.17%     -  562s
+H    0     0                    262319.25860 265234.118  1.11%     -  564s
+H    0     0                    262361.61866 265234.118  1.09%     -  575s
+H    0     0                    262420.65176 265234.118  1.07%     -  575s
+H    0     0                    262570.52638 265234.118  1.01%     -  584s
+H    0     0                    262585.47711 265234.118  1.01%     -  587s
+H    0     0                    262587.43545 265234.118  1.01%     -  599s
+H    0     0                    262631.61535 265234.118  0.99%     -  606s
+H    0     0                    262722.54912 265234.118  0.96%     -  621s
+H    0     0                    262727.49458 265234.118  0.95%     -  624s
+     0     2 265234.084    0 1590 262727.495 265234.084  0.95%     -  844s
+     1     3 265230.722    1 1888 262727.495 265234.084  0.95%  2496  852s
+     3     5 265219.688    2 1602 262727.495 265234.084  0.95%  2516  864s
+     4     6 265234.061    2 1590 262727.495 265234.061  0.95%  1944  865s
+     5     7 265210.173    3 1923 262727.495 265234.061  0.95%  3544  887s
+
+Cutting planes:
+  Gomory: 2
+  Cover: 38
+  Implied bound: 10
+  MIR: 118
+  Flow cover: 162
+  Zero half: 1
+  RLT: 2
+  BQP: 3
+
+Explored 7 nodes (83190 simplex iterations) in 900.09 seconds (566.75 work units)
+Thread count was 1 (of 72 available processors)
+
+Solution count 10: 262727 262727 262723 ... 262319
+
+Time limit reached
+Best objective 2.627274945518e+05, best bound 2.652340611710e+05, gap 0.9541%
+
+Gurobi 13.0.3 (linux64) logging started Mon Oct 19 18:54:07 2026
+
+Set parameter LogFile to value "/home/gep/projects/jaffray-masc-fhops-model/data/output/rerun_v101_gurobi_alone/runs/ka_18_sub112_lock14_mip.gurobi.log"
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (linux64 - "Ubuntu 24.04.3 LTS")
+
+CPU model: Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 36 physical cores, 72 logical processors, using up to 1 threads
+
+Non-default parameters:
+TimeLimit  1800
+Threads  1
+
+Optimize a model with 181108 rows, 194917 columns and 611797 nonzeros (Max)
+Model fingerprint: 0x4ff954a5
+Model has 5310 linear objective coefficients
+Variable types: 121440 continuous, 73477 integer (73477 binary)
+Coefficient statistics:
+  Matrix range     [4e-11, 5e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+03]
+Warning: Model contains large matrix coefficient range
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+
+Presolve removed 52145 rows and 59819 columns
+Presolve time: 4.10s
+Presolved: 128963 rows, 135098 columns, 472978 nonzeros
+Variable types: 74644 continuous, 60454 integer (60454 binary)
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.9715465e+04   2.665082e+06   0.000000e+00      6s
+    7007    1.9715465e+04   0.000000e+00   0.000000e+00      7s
+    7007    1.9715465e+04   0.000000e+00   0.000000e+00      7s
+
+Use crossover to convert LP symmetric solution to basic solution...
+
+Root crossover log...
+
+       0 DPushes remaining with DInf 0.0000000e+00                 7s
+
+    3313 PPushes remaining with PInf 0.0000000e+00                 7s
+       0 PPushes remaining with PInf 0.0000000e+00                 7s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 0.0000000e+00      7s
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   10327    1.9715465e+04   0.000000e+00   0.000000e+00      7s
+Crossover time: 0.30 seconds (0.10 work units)
+
+Root relaxation: objective 1.971546e+04, 10327 iterations, 2.19 seconds (1.19 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 19715.4646    0    7          - 19715.4646      -     -   13s
+H    0     0                    19715.464566 19715.4646  0.00%     -   15s
+     0     0 19715.4646    0    7 19715.4646 19715.4646  0.00%     -   15s
+
+Explored 1 nodes (40769 simplex iterations) in 15.46 seconds (8.01 work units)
+Thread count was 1 (of 72 available processors)
+
+Solution count 2: 19715.5 19715.5 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.971546456600e+04, best bound 1.971546456600e+04, gap 0.0000%
+
+Gurobi 13.0.3 (linux64) logging started Mon Oct 19 18:54:34 2026
+
+Set parameter LogFile to value "/home/gep/projects/jaffray-masc-fhops-model/data/output/rerun_v101_gurobi_alone/runs/ka_18_sub112_lock14_mip.gurobi.log"
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (linux64 - "Ubuntu 24.04.3 LTS")
+
+CPU model: Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 36 physical cores, 72 logical processors, using up to 1 threads
+
+Non-default parameters:
+TimeLimit  900
+Threads  1
+
+Optimize a model with 181109 rows, 194917 columns and 617107 nonzeros (Max)
+Model fingerprint: 0xe6847ef6
+Model has 63504 linear objective coefficients
+Variable types: 121440 continuous, 73477 integer (73477 binary)
+Coefficient statistics:
+  Matrix range     [4e-11, 5e+03]
+  Objective range  [3e-03, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+04]
+Warning: Model contains large matrix coefficient range
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+
+Loaded user MIP start with objective 11492.2
+
+Presolve removed 51798 rows and 59422 columns
+Presolve time: 4.09s
+Presolved: 129311 rows, 135495 columns, 474436 nonzeros
+Variable types: 74853 continuous, 60642 integer (60642 binary)
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    5.8752564e+05   2.905421e+07   0.000000e+00      6s
+   14574    5.6948790e+04   0.000000e+00   0.000000e+00      8s
+   20183    5.6948790e+04   0.000000e+00   0.000000e+00      9s
+
+Extra simplex iterations after uncrush: 5609
+
+Use crossover to convert LP symmetric solution to basic solution...
+
+Root crossover log...
+
+       0 DPushes remaining with DInf 0.0000000e+00                 9s
+
+    1129 PPushes remaining with PInf 0.0000000e+00                 9s
+       0 PPushes remaining with PInf 0.0000000e+00                 9s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 4.7482157e-13      9s
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   25554    5.6948790e+04   0.000000e+00   0.000000e+00      9s
+Crossover time: 0.23 seconds (0.11 work units)
+
+Root relaxation: objective 5.694879e+04, 25554 iterations, 4.67 seconds (2.60 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 56948.7902    0  454 11492.2296 56948.7902   396%     -   10s
+H    0     0                    14665.702671 56948.7902   288%     -   15s
+H    0     0                    31742.370932 56948.7902  79.4%     -   17s
+     0     0 56945.8758    0  577 31742.3709 56945.8758  79.4%     -   20s
+     0     0 56945.8473    0  566 31742.3709 56945.8473  79.4%     -   26s
+     0     0 56945.8473    0  572 31742.3709 56945.8473  79.4%     -   26s
+     0     0 56944.9678    0  648 31742.3709 56944.9678  79.4%     -   29s
+     0     0 56943.5515    0  706 31742.3709 56943.5515  79.4%     -   31s
+     0     0 56943.5347    0 1004 31742.3709 56943.5347  79.4%     -   32s
+     0     0 56943.5347    0  996 31742.3709 56943.5347  79.4%     -   32s
+     0     0 56942.3355    0  978 31742.3709 56942.3355  79.4%     -   35s
+     0     0 56942.1152    0  983 31742.3709 56942.1152  79.4%     -   39s
+     0     0 56942.0586    0  999 31742.3709 56942.0586  79.4%     -   39s
+     0     0 56942.0397    0  991 31742.3709 56942.0397  79.4%     -   40s
+     0     0 56942.0290    0  988 31742.3709 56942.0290  79.4%     -   40s
+     0     0 56942.0290    0  985 31742.3709 56942.0290  79.4%     -   41s
+     0     0 56941.6163    0  994 31742.3709 56941.6163  79.4%     -   43s
+     0     0 56941.5966    0 1004 31742.3709 56941.5966  79.4%     -   45s
+     0     0 56941.3456    0 1278 31742.3709 56941.3456  79.4%     -   46s
+     0     0 56941.3329    0 1279 31742.3709 56941.3329  79.4%     -   46s
+     0     0 56941.3329    0 1273 31742.3709 56941.3329  79.4%     -   47s
+     0     0 56940.9304    0 1235 31742.3709 56940.9304  79.4%     -   49s
+     0     0 56940.8745    0 1243 31742.3709 56940.8745  79.4%     -   52s
+     0     0 56940.8614    0 1232 31742.3709 56940.8614  79.4%     -   53s
+     0     0 56940.8614    0 1239 31742.3709 56940.8614  79.4%     -   53s
+     0     0 56940.5354    0 1276 31742.3709 56940.5354  79.4%     -   55s
+     0     0 56940.4242    0 1264 31742.3709 56940.4242  79.4%     -   56s
+     0     0 56940.3068    0 1262 31742.3709 56940.3068  79.4%     -   56s
+     0     0 56940.3068    0 1261 31742.3709 56940.3068  79.4%     -   57s
+     0     0 56940.0429    0 1258 31742.3709 56940.0429  79.4%     -   58s
+H    0     0                    32368.970372 56940.0429  75.9%     -   61s
+H    0     0                    47010.707463 56940.0429  21.1%     -   61s
+H    0     0                    47400.931002 56940.0429  20.1%     -   61s
+H    0     0                    47550.837586 56940.0429  19.7%     -   61s
+     0     0 56939.9073    0 1266 47550.8376 56939.9073  19.7%     -   61s
+     0     0 56939.8461    0 1259 47550.8376 56939.8461  19.7%     -   62s
+     0     0 56939.8461    0 1260 47550.8376 56939.8461  19.7%     -   62s
+     0     0 56939.8197    0 1253 47550.8376 56939.8197  19.7%     -   63s
+     0     0 56939.8181    0 1257 47550.8376 56939.8181  19.7%     -   64s
+     0     0 56939.5746    0 1310 47550.8376 56939.5746  19.7%     -   66s
+H    0     0                    52714.473371 56939.5746  8.02%     -   68s
+H    0     0                    52716.324476 56939.5746  8.01%     -   68s
+     0     0 56939.5554    0 1519 52716.3245 56939.5554  8.01%     -   68s
+     0     0 56939.5543    0 1498 52716.3245 56939.5543  8.01%     -   69s
+     0     0 56939.5322    0 1473 52716.3245 56939.5322  8.01%     -   70s
+     0     0 56939.5303    0 1496 52716.3245 56939.5303  8.01%     -   71s
+     0     0 56939.4597    0 1497 52716.3245 56939.4597  8.01%     -   72s
+H    0     0                    52766.733970 56939.4597  7.91%     -   74s
+H    0     0                    52767.454989 56939.4597  7.91%     -   75s
+H    0     0                    53133.311288 56939.4597  7.16%     -   75s
+H    0     0                    55671.673402 56939.4597  2.28%     -   75s
+H    0     0                    55691.322126 56939.4597  2.24%     -   75s
+     0     0 56939.4297    0 1230 55691.3221 56939.4297  2.24%     -   75s
+     0     0 56939.4235    0 1220 55691.3221 56939.4235  2.24%     -   76s
+     0     0 56939.3227    0 1225 55691.3221 56939.3227  2.24%     -   77s
+     0     0 56939.3168    0 1216 55691.3221 56939.3168  2.24%     -   78s
+     0     0 56939.2910    0 1234 55691.3221 56939.2910  2.24%     -   79s
+H    0     0                    55986.422299 56939.2910  1.70%     -   82s
+H    0     0                    56095.726106 56939.2910  1.50%     -   82s
+H    0     0                    56095.935658 56939.2910  1.50%     -   82s
+     0     0 56939.2500    0 1220 56095.9357 56939.2500  1.50%     -   82s
+     0     0 56939.2499    0 1199 56095.9357 56939.2499  1.50%     -   83s
+     0     0 56938.9385    0 1195 56095.9357 56938.9385  1.50%     -   85s
+     0     0 56938.9316    0 1459 56095.9357 56938.9316  1.50%     -   86s
+     0     0 56938.9110    0 1450 56095.9357 56938.9110  1.50%     -   86s
+     0     0 56938.9110    0 1443 56095.9357 56938.9110  1.50%     -   86s
+     0     0 56938.6465    0 1161 56095.9357 56938.6465  1.50%     -   88s
+H    0     0                    56099.801189 56938.6465  1.50%     -   91s
+H    0     0                    56214.957007 56938.6465  1.29%     -   91s
+H    0     0                    56215.979668 56938.6465  1.29%     -   91s
+     0     0 56938.6320    0 1163 56215.9797 56938.6320  1.29%     -   91s
+     0     0 56938.6320    0 1156 56215.9797 56938.6320  1.29%     -   92s
+     0     0 56938.5242    0 1145 56215.9797 56938.5242  1.29%     -   93s
+     0     0 56938.3552    0 1139 56215.9797 56938.3552  1.29%     -   94s
+     0     0 56938.3056    0 1141 56215.9797 56938.3056  1.28%     -   95s
+     0     0 56938.2846    0 1136 56215.9797 56938.2846  1.28%     -   95s
+     0     0 56938.2562    0 1132 56215.9797 56938.2562  1.28%     -   96s
+     0     0 56938.2562    0 1127 56215.9797 56938.2562  1.28%     -   96s
+     0     0 56938.0695    0 1109 56215.9797 56938.0695  1.28%     -   97s
+     0     0 56938.0298    0 1115 56215.9797 56938.0298  1.28%     -   99s
+     0     0 56938.0278    0 1110 56215.9797 56938.0278  1.28%     -   99s
+     0     0 56937.7031    0  926 56215.9797 56937.7031  1.28%     -  101s
+     0     0 56937.6574    0  938 56215.9797 56937.6574  1.28%     -  102s
+     0     0 56937.4469    0  945 56215.9797 56937.4469  1.28%     -  103s
+     0     0 56937.4466    0  951 56215.9797 56937.4466  1.28%     -  103s
+     0     0 56937.2446    0 1208 56215.9797 56937.2446  1.28%     -  105s
+H    0     0                    56223.538594 56937.2361  1.27%     -  109s
+H    0     0                    56234.138219 56937.2361  1.25%     -  109s
+H    0     0                    56234.210792 56937.2361  1.25%     -  110s
+H    0     0                    56271.383159 56937.2361  1.18%     -  110s
+H    0     0                    56277.545098 56937.2361  1.17%     -  113s
+     0     0 56937.1947    0 1347 56277.5451 56937.1947  1.17%     -  113s
+     0     0 56937.1833    0 1345 56277.5451 56937.1833  1.17%     -  114s
+     0     0 56937.1832    0 1338 56277.5451 56937.1832  1.17%     -  114s
+     0     0 56937.1577    0 1327 56277.5451 56937.1577  1.17%     -  115s
+H    0     0                    56293.644085 56937.1577  1.14%     -  118s
+H    0     0                    56394.236177 56937.1577  0.96%     -  118s
+H    0     0                    56408.146122 56937.1577  0.94%     -  118s
+     0     0 56937.1554    0 1327 56408.1461 56937.1554  0.94%     -  118s
+     0     0 56937.0775    0 1072 56408.1461 56937.0775  0.94%     -  120s
+     0     0 56937.0761    0 1077 56408.1461 56937.0761  0.94%     -  121s
+     0     0 56936.8469    0 1293 56408.1461 56936.8469  0.94%     -  123s
+     0     0 56936.8469    0 1291 56408.1461 56936.8469  0.94%     -  124s
+     0     0 56936.8244    0 1256 56408.1461 56936.8244  0.94%     -  126s
+     0     0 56936.8159    0 1268 56408.1461 56936.8159  0.94%     -  126s
+     0     0 56936.8159    0 1267 56408.1461 56936.8159  0.94%     -  127s
+     0     0 56936.7555    0 1239 56408.1461 56936.7555  0.94%     -  128s
+     0     0 56936.7555    0 1230 56408.1461 56936.7555  0.94%     -  130s
+     0     0 56936.7555    0 1227 56408.1461 56936.7555  0.94%     -  130s
+     0     0 56936.7555    0  892 56408.1461 56936.7555  0.94%     -  133s
+H    0     0                    56408.146215 56936.6685  0.94%     -  139s
+     0     2 56936.6518    0  863 56408.1462 56936.6518  0.94%     -  139s
+     1     3 56936.6518    1 1124 56408.1462 56936.6518  0.94%   112 2090s
+
+Cutting planes:
+  Gomory: 10
+  Cover: 12
+  Implied bound: 1
+  MIR: 114
+  Flow cover: 173
+  Flow path: 10
+  BQP: 1
+
+Explored 2 nodes (42868 simplex iterations) in 2090.71 seconds (57.22 work units)
+Thread count was 1 (of 72 available processors)
+
+Solution count 10: 56408.1 56408.1 56408.1 ... 56223.5
+
+Time limit reached
+Best objective 5.640814621373e+04, best bound 5.693665184772e+04, gap 0.9369%
+
+Gurobi 13.0.3 (linux64) logging started Mon Oct 19 19:29:38 2026
+
+Set parameter LogFile to value "/home/gep/projects/jaffray-masc-fhops-model/data/output/rerun_v101_gurobi_alone/runs/ka_18_sub112_lock14_mip.gurobi.log"
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (linux64 - "Ubuntu 24.04.3 LTS")
+
+CPU model: Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 36 physical cores, 72 logical processors, using up to 1 threads
+
+Non-default parameters:
+TimeLimit  1800
+Threads  1
+
+Optimize a model with 131110 rows, 158017 columns and 451987 nonzeros (Max)
+Model fingerprint: 0x5f7a59e0
+Model has 4554 linear objective coefficients
+Variable types: 101070 continuous, 56947 integer (56947 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 3e+02]
+
+Presolve removed 111494 rows and 144177 columns
+Presolve time: 0.24s
+Presolved: 19616 rows, 13840 columns, 59080 nonzeros
+Variable types: 7545 continuous, 6295 integer (6295 binary)
+Performing another presolve...
+Presolve removed 2980 rows and 1680 columns
+Presolve time: 0.30s
+
+Root relaxation: objective 5.847571e+02, 1136 iterations, 0.08 seconds (0.06 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0     584.7570850  584.75708  0.00%     -    0s
+
+Explored 1 nodes (1136 simplex iterations) in 0.94 seconds (0.46 work units)
+Thread count was 1 (of 72 available processors)
+
+Solution count 2: 584.757 584.757 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.847570849978e+02, best bound 5.847570849978e+02, gap 0.0000%
+
+Gurobi 13.0.3 (linux64) logging started Mon Oct 19 19:29:47 2026
+
+Set parameter LogFile to value "/home/gep/projects/jaffray-masc-fhops-model/data/output/rerun_v101_gurobi_alone/runs/ka_18_sub112_lock14_mip.gurobi.log"
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (linux64 - "Ubuntu 24.04.3 LTS")
+
+CPU model: Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 36 physical cores, 72 logical processors, using up to 1 threads
+
+Non-default parameters:
+TimeLimit  900
+Threads  1
+
+Optimize a model with 131111 rows, 158017 columns and 456541 nonzeros (Max)
+Model fingerprint: 0x6752bd7e
+Model has 54432 linear objective coefficients
+Variable types: 101070 continuous, 56947 integer (56947 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+03]
+  Objective range  [4e-03, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 6e+02]
+
+Loaded user MIP start with objective 522.488
+
+Presolve removed 111494 rows and 144177 columns
+Presolve time: 0.13s
+Presolved: 19617 rows, 13840 columns, 60345 nonzeros
+Variable types: 7545 continuous, 6295 integer (6295 binary)
+Performing another presolve...
+Presolve removed 2980 rows and 1680 columns
+Presolve time: 0.24s
+
+Root relaxation: objective 5.844148e+02, 2473 iterations, 0.04 seconds (0.04 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0     584.4147667  584.41477  0.00%     -    0s
+
+Explored 1 nodes (2473 simplex iterations) in 0.49 seconds (0.33 work units)
+Thread count was 1 (of 72 available processors)
+
+Solution count 3: 584.415 584.415 522.488 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.844147667080e+02, best bound 5.844147667084e+02, gap 0.0000%
+
+Gurobi 13.0.3 (linux64) logging started Mon Oct 19 19:29:59 2026
+
+Set parameter LogFile to value "/home/gep/projects/jaffray-masc-fhops-model/data/output/rerun_v101_gurobi_alone/runs/ka_18_sub112_lock14_mip.gurobi.log"
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (linux64 - "Ubuntu 24.04.3 LTS")
+
+CPU model: Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 36 physical cores, 72 logical processors, using up to 1 threads
+
+Non-default parameters:
+TimeLimit  1800
+Threads  1
+
+Optimize a model with 100890 rows, 128538 columns and 351504 nonzeros (Max)
+Model fingerprint: 0x27fe7770
+Model has 3798 linear objective coefficients
+Variable types: 83178 continuous, 45360 integer (45360 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+00]
+
+Found heuristic solution: objective -0.0000000
+Presolve removed 100890 rows and 128538 columns
+Presolve time: 0.21s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.26 seconds (0.11 work units)
+Thread count was 1 (of 72 available processors)
+
+Solution count 1: -0 
+No other solutions better than -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -0.000000000000e+00, best bound -0.000000000000e+00, gap 0.0000%
+
+Gurobi 13.0.3 (linux64) logging started Mon Oct 19 19:30:06 2026
+
+Set parameter LogFile to value "/home/gep/projects/jaffray-masc-fhops-model/data/output/rerun_v101_gurobi_alone/runs/ka_18_sub112_lock14_mip.gurobi.log"
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (linux64 - "Ubuntu 24.04.3 LTS")
+
+CPU model: Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 36 physical cores, 72 logical processors, using up to 1 threads
+
+Non-default parameters:
+TimeLimit  900
+Threads  1
+
+Optimize a model with 100891 rows, 128538 columns and 355302 nonzeros (Max)
+Model fingerprint: 0x9157a88b
+Model has 45360 linear objective coefficients
+Variable types: 83178 continuous, 45360 integer (45360 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [5e-03, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e-06, 2e+00]
+
+Loaded user MIP start with objective -0
+
+Presolve removed 100891 rows and 128538 columns
+Presolve time: 0.22s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.25 seconds (0.09 work units)
+Thread count was 1 (of 72 available processors)
+
+Solution count 1: -0 
+No other solutions better than -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -0.000000000000e+00, best bound -0.000000000000e+00, gap 0.0000%
+
+Gurobi 13.0.3 (linux64) logging started Mon Oct 19 19:30:17 2026
+
+Set parameter LogFile to value "/home/gep/projects/jaffray-masc-fhops-model/data/output/rerun_v101_gurobi_alone/runs/ka_18_sub112_lock14_mip.gurobi.log"
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (linux64 - "Ubuntu 24.04.3 LTS")
+
+CPU model: Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 36 physical cores, 72 logical processors, using up to 1 threads
+
+Non-default parameters:
+TimeLimit  1800
+Threads  1
+
+Optimize a model with 80730 rows, 102834 columns and 281196 nonzeros (Max)
+Model fingerprint: 0xb0b7e603
+Model has 3042 linear objective coefficients
+Variable types: 66546 continuous, 36288 integer (36288 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+00]
+
+Found heuristic solution: objective -0.0000000
+Presolve removed 80730 rows and 102834 columns
+Presolve time: 0.21s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.28 seconds (0.08 work units)
+Thread count was 1 (of 72 available processors)
+
+Solution count 1: -0 
+No other solutions better than -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -0.000000000000e+00, best bound -0.000000000000e+00, gap 0.0000%
+
+Gurobi 13.0.3 (linux64) logging started Mon Oct 19 19:30:22 2026
+
+Set parameter LogFile to value "/home/gep/projects/jaffray-masc-fhops-model/data/output/rerun_v101_gurobi_alone/runs/ka_18_sub112_lock14_mip.gurobi.log"
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (linux64 - "Ubuntu 24.04.3 LTS")
+
+CPU model: Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 36 physical cores, 72 logical processors, using up to 1 threads
+
+Non-default parameters:
+TimeLimit  900
+Threads  1
+
+Optimize a model with 80731 rows, 102834 columns and 284238 nonzeros (Max)
+Model fingerprint: 0x2713416e
+Model has 36288 linear objective coefficients
+Variable types: 66546 continuous, 36288 integer (36288 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [6e-03, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e-06, 2e+00]
+
+Loaded user MIP start with objective -0
+
+Presolve removed 80731 rows and 102834 columns
+Presolve time: 0.08s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.10 seconds (0.07 work units)
+Thread count was 1 (of 72 available processors)
+
+Solution count 1: -0 
+No other solutions better than -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -0.000000000000e+00, best bound -0.000000000000e+00, gap 0.0000%
+
+Gurobi 13.0.3 (linux64) logging started Mon Oct 19 19:30:29 2026
+
+Set parameter LogFile to value "/home/gep/projects/jaffray-masc-fhops-model/data/output/rerun_v101_gurobi_alone/runs/ka_18_sub112_lock14_mip.gurobi.log"
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (linux64 - "Ubuntu 24.04.3 LTS")
+
+CPU model: Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 36 physical cores, 72 logical processors, using up to 1 threads
+
+Non-default parameters:
+TimeLimit  1800
+Threads  1
+
+Optimize a model with 60570 rows, 77130 columns and 210888 nonzeros (Max)
+Model fingerprint: 0x1288b8fa
+Model has 2286 linear objective coefficients
+Variable types: 49914 continuous, 27216 integer (27216 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+00]
+
+Found heuristic solution: objective -0.0000000
+Presolve removed 60570 rows and 77130 columns
+Presolve time: 0.12s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.16 seconds (0.06 work units)
+Thread count was 1 (of 72 available processors)
+
+Solution count 1: -0 
+No other solutions better than -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -0.000000000000e+00, best bound -0.000000000000e+00, gap 0.0000%
+
+Gurobi 13.0.3 (linux64) logging started Mon Oct 19 19:30:33 2026
+
+Set parameter LogFile to value "/home/gep/projects/jaffray-masc-fhops-model/data/output/rerun_v101_gurobi_alone/runs/ka_18_sub112_lock14_mip.gurobi.log"
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (linux64 - "Ubuntu 24.04.3 LTS")
+
+CPU model: Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 36 physical cores, 72 logical processors, using up to 1 threads
+
+Non-default parameters:
+TimeLimit  900
+Threads  1
+
+Optimize a model with 60571 rows, 77130 columns and 213174 nonzeros (Max)
+Model fingerprint: 0x79080c8d
+Model has 27216 linear objective coefficients
+Variable types: 49914 continuous, 27216 integer (27216 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [8e-03, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e-06, 2e+00]
+
+Loaded user MIP start with objective -0
+
+Presolve removed 60571 rows and 77130 columns
+Presolve time: 0.10s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.13 seconds (0.05 work units)
+Thread count was 1 (of 72 available processors)
+
+Solution count 1: -0 
+No other solutions better than -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -0.000000000000e+00, best bound -0.000000000000e+00, gap 0.0000%
+
+Gurobi 13.0.3 (linux64) logging started Mon Oct 19 19:30:38 2026
+
+Set parameter LogFile to value "/home/gep/projects/jaffray-masc-fhops-model/data/output/rerun_v101_gurobi_alone/runs/ka_18_sub112_lock14_mip.gurobi.log"
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (linux64 - "Ubuntu 24.04.3 LTS")
+
+CPU model: Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 36 physical cores, 72 logical processors, using up to 1 threads
+
+Non-default parameters:
+TimeLimit  1800
+Threads  1
+
+Optimize a model with 40410 rows, 51426 columns and 140580 nonzeros (Max)
+Model fingerprint: 0x210c6d07
+Model has 1530 linear objective coefficients
+Variable types: 33282 continuous, 18144 integer (18144 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+00]
+
+Found heuristic solution: objective -0.0000000
+Presolve removed 40410 rows and 51426 columns
+Presolve time: 0.06s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.09 seconds (0.04 work units)
+Thread count was 1 (of 72 available processors)
+
+Solution count 1: -0 
+No other solutions better than -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -0.000000000000e+00, best bound -0.000000000000e+00, gap 0.0000%
+
+Gurobi 13.0.3 (linux64) logging started Mon Oct 19 19:30:41 2026
+
+Set parameter LogFile to value "/home/gep/projects/jaffray-masc-fhops-model/data/output/rerun_v101_gurobi_alone/runs/ka_18_sub112_lock14_mip.gurobi.log"
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (linux64 - "Ubuntu 24.04.3 LTS")
+
+CPU model: Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 36 physical cores, 72 logical processors, using up to 1 threads
+
+Non-default parameters:
+TimeLimit  900
+Threads  1
+
+Optimize a model with 40411 rows, 51426 columns and 142110 nonzeros (Max)
+Model fingerprint: 0xc97a5d8a
+Model has 18144 linear objective coefficients
+Variable types: 33282 continuous, 18144 integer (18144 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [1e-02, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e-06, 2e+00]
+
+Loaded user MIP start with objective -0
+
+Presolve removed 40411 rows and 51426 columns
+Presolve time: 0.07s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.08 seconds (0.03 work units)
+Thread count was 1 (of 72 available processors)
+
+Solution count 1: -0 
+No other solutions better than -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -0.000000000000e+00, best bound -0.000000000000e+00, gap 0.0000%
+
+Gurobi 13.0.3 (linux64) logging started Mon Oct 19 19:30:43 2026
+
+Set parameter LogFile to value "/home/gep/projects/jaffray-masc-fhops-model/data/output/rerun_v101_gurobi_alone/runs/ka_18_sub112_lock14_mip.gurobi.log"
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (linux64 - "Ubuntu 24.04.3 LTS")
+
+CPU model: Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 36 physical cores, 72 logical processors, using up to 1 threads
+
+Non-default parameters:
+TimeLimit  1800
+Threads  1
+
+Optimize a model with 20250 rows, 25722 columns and 70272 nonzeros (Max)
+Model fingerprint: 0x48a07d12
+Model has 774 linear objective coefficients
+Variable types: 16650 continuous, 9072 integer (9072 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+00]
+
+Found heuristic solution: objective -0.0000000
+Presolve removed 20250 rows and 25722 columns
+Presolve time: 0.02s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds (0.02 work units)
+Thread count was 1 (of 72 available processors)
+
+Solution count 1: -0 
+No other solutions better than -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -0.000000000000e+00, best bound -0.000000000000e+00, gap 0.0000%

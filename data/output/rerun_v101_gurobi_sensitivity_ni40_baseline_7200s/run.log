@@ -1,0 +1,5 @@
+FHOPS 1.0.1 @ None (/tmp/opencode/venv-fhops101-grb/lib/python3.12/site-packages/fhops)
+1 specs, 1 pending, mip_workers=36, sa_workers=34
+pools: MIP 1 specs x 36 workers; SA 0 specs x 34 workers
+[1/1] ni_40_baseline_mip: ok
+Wrote data/output/rerun_v101_gurobi_sensitivity_ni40_baseline_7200s/summary.csv (1 runs)
